@@ -1,0 +1,16 @@
+.SideDrawerToggle {
+    height: 100%;
+    width: 50px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    div {
+        background-color: white;
+        height: 3px;
+        margin: 4px 0;
+    }
+}

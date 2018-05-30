@@ -10,7 +10,7 @@ class Home extends Component {
             <Aux>
                 <div className={classes.HeroBanner}>
                     <div className={classes.Title}>
-                        <h1>Mr. Tan</h1>
+                        <h1>Mr. Brian Tan</h1>
                         <p>I have some not so important things to say.</p>
                     </div>
                     <img src={homeBanner} alt="HomeBanner" />
