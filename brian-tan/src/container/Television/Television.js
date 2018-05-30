@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-import classes from './Home.scss';
-import homeBanner from '../../assets/images/heroBanner.jpg';
+import classes from './Television.scss';
 import Aux from '../../hoc/Aux/Aux';
+import homeBanner from '../../assets/images/actionFigures.jpg';
 
-class Home extends Component {
+class Television extends Component {
     render () {
         return (
             <Aux>
                 <div className={classes.HeroBanner}>
                     <div className={classes.Title}>
-                        <h1>Mr. Brian Tan</h1>
-                        <p>I have some not so important things to say.</p>
+                        <h1>Just a Televisionary</h1>
+                        <p>What I'm watching these days.</p>
                     </div>
                     <img src={homeBanner} alt="HomeBanner" />
                 </div>
@@ -20,4 +20,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Television;
