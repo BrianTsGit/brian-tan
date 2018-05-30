@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import classes from './Home.css';
+import classes from './Home.scss';
 import homeBanner from '../../assets/images/heroBanner.jpg';
 import Aux from '../../hoc/Aux/Aux';
 
