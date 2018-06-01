@@ -1,0 +1,50 @@
+.YelpResult {
+    border-top: 1px solid #ccc;
+    height: 200px;
+    width: 600px;
+    padding: 10px 0;
+    margin: 0 auto;
+    display: flex;
+    box-sizing: border-box;
+
+    .RestaurantImg {
+        width: 30%;
+        border-radius: 5px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .RestaurantDesc {
+        width: 65%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0 0 0 15px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    .GeneralInfo {
+        width: 60%;
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+
+    .Address {
+        width: 40%;
+        text-align: right;
+    }
+
+    .Review {
+        width: 100%;
+    }
+}

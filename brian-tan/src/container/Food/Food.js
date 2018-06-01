@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import classes from './Food.scss';
 import Aux from '../../hoc/Aux/Aux';
 import homeBanner from '../../assets/images/bakery.jpg';
+import RestaurantHitList from './RestaurantHitList/RestaurantHitList';
+
 class Food extends Component {
     render () {
         return (
@@ -14,6 +16,7 @@ class Food extends Component {
                     </div>
                     <img src={homeBanner} alt="HomeBanner" />
                 </div>
+                <RestaurantHitList />
             </Aux>
         );
     }
