@@ -10,6 +10,53 @@ body {
   h2 {
     font-family: 'Libre Franklin', sans-serif;
   }
+
+  .HeroBanner {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    } 
+
+    .Title {
+      width: 300px;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      margin-left: -150px;
+      color: white;
+      text-align: center;
+      z-index: 90;
+  
+      h1 {
+          font-size: 36px;
+          margin-bottom: 10px;
+      }
+  
+      p {
+          font-size: 12px;
+      }
+  
+      @media (min-width: 576px) {
+          width: 500px;
+          margin-left: -250px;
+  
+          h1 {
+              font-size: 72px;
+          }
+  
+          p {
+              font-size: 18px;
+          }  
+      }
+    }
+  }
 }
 
 

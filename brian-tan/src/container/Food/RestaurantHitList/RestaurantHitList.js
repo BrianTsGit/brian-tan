@@ -17,7 +17,11 @@ class RestaurantHitList extends Component {
 
         if (this.props.hitList && this.props.hitList.length) {
             hitList = this.props.hitList.map(item => {
-                return <li key={item.id}>{item.name}</li>
+                return (
+                    <li key={item.id}>
+                        <a href={item.url} target="_blank">{item.name}</a>
+                    </li>
+                )
             });
         }
 
