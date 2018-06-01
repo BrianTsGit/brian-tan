@@ -3,66 +3,35 @@ import { connect } from 'react-redux';
 
 import classes from './RestaurantHitList.scss';
 import * as actions from '../../../store/actions/index';
-import YelpResult from '../../../component/Food/YelpResult/YelpResult';
+import YelpSearch from '../YelpSearch/YelpSearch';
 
 class RestaurantHitList extends Component {
-    state = {
-        yelpSearchForm: {
-            searchTerm: '',
-            location: ''
-        }
-    };
-    
-    onChangeInputHandler = (event, identifier) => {
-        const updatedForm = {...this.state.yelpSearchForm};
-        updatedForm[identifier] = event.target.value;
 
-        this.setState({yelpSearchForm: updatedForm});
-    }
-
-    onSearchSubmitHandler = (event) => {
-        event.preventDefault();
-        console.log('[onSearchSubmitHandler]', this.state.searchTerm);
-        this.props.searchYelp(this.state.searchTerm);
+    componentDidMount () {
+        this.props.getHitList();
     }
 
     render () {
-        let listItems = null;
 
-        if (this.props.restaurants.length) {
-            console.log('in here!');
-            listItems = this.props.restaurants.map((res, index) => {
-                return (
-                    <YelpResult 
-                        key={res.id}
-                        index={index + 1}
-                        name={res.name}
-                        img={res.image_url}
-                        url={res.url}
-                        rating={res.rating}
-                        address={res.location.address1} />
-                );
+        let hitList = <p>There is nothing here yet.</p>
+
+        if (this.props.hitList && this.props.hitList.length) {
+            hitList = this.props.hitList.map(item => {
+                return <li key={item.id}>{item.name}</li>
             });
         }
 
         return (
-            <div className={classes.RestaurantHitList}>
-                <h1>Restaurant Hit List</h1>
-                <form className={classes.YelpForm} onSubmit={this.onSearchSubmitHandler}>
-                    <input 
-                        type="text" 
-                        placeholder="Find" 
-                        value={this.state.yelpSearchForm.searchTerm} 
-                        onChange={(event) => this.onChangeInputHandler(event, 'searchTerm')} />
-                    <input 
-                        type="text" 
-                        placeholder="Near" 
-                        value={this.state.yelpSearchForm.location} 
-                        onChange={(event) => this.onChangeInputHandler(event, 'location')} />
-                    <button><i class="fas fa-search"></i></button>
-                </form>
-                <div className={classes.SearchResults}>
-                    {listItems}
+            <div className={classes.RestaurantHitList}> 
+                <h2>Restaurant Hit List</h2>
+                <div className={classes.HitListContent}>
+                    <YelpSearch />
+                    <div className={classes.HitList}>
+                        <h3>Targets</h3>
+                        <ul>
+                            {hitList}
+                        </ul>
+                    </div>
                 </div>
             </div>
         );
@@ -71,13 +40,15 @@ class RestaurantHitList extends Component {
 
 const mapStateToProps = state => {
     return {
-        restaurants: state.restaurants
+        hitList: state.hitList,
+        loadingHitList: state.loadingHitList
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        searchYelp: (searchTerm) => dispatch(actions.searchYelp(searchTerm))
+        getHitList: () => dispatch(actions.getHitList()),
+        saveRestaurant: (restaurant) => dispatch(actions.saveRestaurant(restaurant))
     };
 };
 
