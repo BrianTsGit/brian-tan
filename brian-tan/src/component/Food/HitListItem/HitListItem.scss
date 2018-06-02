@@ -1,0 +1,20 @@
+.HitListItem {
+    height: 120px;
+    width: 120px;
+    border: 3px solid #d32323;
+    border-radius: 75px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 5px;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        height: 125px;
+        width: 125px;
+        border-radius: 5px;
+    }
+}

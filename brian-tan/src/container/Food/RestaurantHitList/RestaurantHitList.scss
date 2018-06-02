@@ -3,15 +3,32 @@
         text-align: center;
     }
 
-    .HitListContent {
+    .ContentContainer {
         display: flex;
         flex-flow: wrap;
-        margin-top: 50px;
+        margin-top: 30px;
     }
     
     .HitList {
-        width: 50%;
+        width: 100%;
         padding: 0 30px;
         box-sizing: border-box;
+
+        h3 {
+            text-align: center;
+        }
+
+        @media (min-width: 776px) {
+            width: 50%;
+        }
+    }
+    
+    .HitListItems {
+        width: 100%;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: flex-start;
+        margin: 0 auto;
+        padding: 5px;
     }
 }

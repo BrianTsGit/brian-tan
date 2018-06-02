@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import classes from './RestaurantHitList.scss';
 import * as actions from '../../../store/actions/index';
 import YelpSearch from '../YelpSearch/YelpSearch';
+import HitListItem from '../../../component/Food/HitListItem/HitListItem';
 
 class RestaurantHitList extends Component {
 
@@ -13,14 +14,15 @@ class RestaurantHitList extends Component {
 
     render () {
 
-        let hitList = <p>There is nothing here yet.</p>
+        let hitListItems = <p>There is nothing here yet.</p>
 
         if (this.props.hitList && this.props.hitList.length) {
-            hitList = this.props.hitList.map(item => {
+            hitListItems = this.props.hitList.map(item => {
                 return (
-                    <li key={item.id}>
-                        <a href={item.url} target="_blank">{item.name}</a>
-                    </li>
+                    <HitListItem 
+                        key={item.id} 
+                        img={item.image_url}
+                        url={item.url} />
                 )
             });
         }
@@ -28,13 +30,13 @@ class RestaurantHitList extends Component {
         return (
             <div className={classes.RestaurantHitList}> 
                 <h2>Restaurant Hit List</h2>
-                <div className={classes.HitListContent}>
+                <div className={classes.ContentContainer}>
                     <YelpSearch />
                     <div className={classes.HitList}>
                         <h3>Targets</h3>
-                        <ul>
-                            {hitList}
-                        </ul>
+                        <div className={classes.HitListItems}>
+                            {hitListItems}
+                        </div>
                     </div>
                 </div>
             </div>
