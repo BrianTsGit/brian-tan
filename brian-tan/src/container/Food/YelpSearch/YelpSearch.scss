@@ -1,5 +1,11 @@
 .YelpSearch {
-    width: 50%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        width: 50%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
 }
 
 .YelpLogo {
@@ -41,12 +47,12 @@
         }
     }
 
-    @media (min-width: 576px) {
-        width: 500px;
+    @media (min-width: 768px) {
+        width: 350px;
         height: 40px;
 
         input {
-            width: 225px;
+            width: 150px;
         }
 
         button {
@@ -55,21 +61,19 @@
         }
     }
 
-    @media (min-width: 768px) {
-        width: 600px;
+    @media (min-width: 992px) {
+        width: 450px;
         height: 40px;
 
         input {
-            width: 260px;
+            width: 200px;
         }
 
         button {
-            width: 80px;
-            font-size: 18px;
+            width: 50px;
+            font-size: 14px;
         }
     }
-
-
 }
 
 .SearchResults {

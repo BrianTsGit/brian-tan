@@ -5,11 +5,13 @@
 
     .HitListContent {
         display: flex;
+        flex-flow: wrap;
         margin-top: 50px;
     }
     
     .HitList {
         width: 50%;
         padding: 0 30px;
+        box-sizing: border-box;
     }
 }
