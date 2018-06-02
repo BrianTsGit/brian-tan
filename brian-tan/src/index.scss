@@ -13,7 +13,7 @@ body {
 
   .HeroBanner {
     position: relative;
-    height: 600px;
+    height: 200px;
     width: 100%;
     overflow: hidden;
 
@@ -42,19 +42,39 @@ body {
       p {
           font-size: 12px;
       }
-  
-      @media (min-width: 576px) {
-          width: 500px;
-          margin-left: -250px;
-  
-          h1 {
-              font-size: 72px;
-          }
-  
-          p {
-              font-size: 18px;
-          }  
-      }
+    }
+
+    @media (min-width: 576px) {
+        height: 300px;
+
+        .Title {
+            width: 350px;
+            margin-left: -175px;
+
+            h1 {
+                font-size: 64px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }   
+    }
+
+    @media (min-width: 776px) {
+        height: 500px;  
+        .Title {
+            width: 500px;
+            margin-left: -250px;
+
+            h1 {
+                font-size: 72px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        } 
     }
   }
 }
