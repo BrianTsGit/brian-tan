@@ -20,6 +20,7 @@ class RestaurantHitList extends Component {
                 <div className={classes.ContentContainer}>
                     <YelpSearch />
                     <div className={classes.HitList}>
+                        <h2>Restaurants to Visit</h2>
                         <YelpResults 
                             items={this.props.hitList} 
                             clickAction="Remove"
