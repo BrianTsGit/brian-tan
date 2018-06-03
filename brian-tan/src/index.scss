@@ -2,8 +2,83 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Rubik', serif;
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  h2 , h3 {
+    font-family: 'Libre Franklin', sans-serif;
+  }
+
+  .HeroBanner {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    } 
+
+    .Title {
+      width: 300px;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      margin-left: -150px;
+      color: white;
+      text-align: center;
+      z-index: 90;
+  
+      h1 {
+          font-size: 36px;
+          margin-bottom: 10px;
+      }
+  
+      p {
+          font-size: 12px;
+      }
+    }
+
+    @media (min-width: 576px) {
+        height: 300px;
+
+        .Title {
+            width: 350px;
+            margin-left: -175px;
+
+            h1 {
+                font-size: 64px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }   
+    }
+
+    @media (min-width: 776px) {
+        height: 500px;  
+        .Title {
+            width: 500px;
+            margin-left: -250px;
+
+            h1 {
+                font-size: 72px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        } 
+    }
+  }
 }
 
-body h1 {
-  font-family: 'Cormorant Garamond', serif;
-}
+
+
+

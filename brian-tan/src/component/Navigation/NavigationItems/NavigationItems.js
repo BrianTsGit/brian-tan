@@ -6,6 +6,7 @@ import NavigationItem from './NavigationItem/NavigationItem';
 const navigationItems = () => {
     return (
         <ul className={classes.NavigationItems}>
+            <NavigationItem sectionName="Home" link="/" />
             <NavigationItem sectionName="Food" link="/food" />
             <NavigationItem sectionName="Television" link="/television" />
             <NavigationItem sectionName="Gaming" link="/gaming" />
