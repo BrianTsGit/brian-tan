@@ -23,6 +23,7 @@
         }
     }
     
+    //This class not really used anymore
     .HitListItems {
         width: 100%;
         display: flex;
@@ -30,5 +31,9 @@
         justify-content: flex-start;
         margin: 0 auto;
         padding: 5px;
+
+        p { 
+            margin: 0 auto;
+        }
     }
 }

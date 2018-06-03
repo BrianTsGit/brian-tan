@@ -7,32 +7,6 @@ const initialState = {
     hitList: []
 };
 
-const formatYelpSearch = (restaurants) => {
-    //NOTE WHEN I GET NODE JS I SHOULD BE TRANSFORMING THE DATA  THERE
-    //note this formatting is unique to how i set up the data in firebase
-    //it will be different when calling from Yelp Fusion
-
-    //NOTE there is a way to read objects as an array through firebase!
-    //https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html
-    const formattedData = Object.keys(restaurants).map(key => {
-        const categoriesArray = Object.keys(restaurants[key].categories).map(catKey => {
-            return restaurants[key].categories[catKey];
-        })
-
-        const formattedCategories = categoriesArray.map(cat => {
-            return cat.title;
-        }).join(', ');
-
-        return {
-            ...restaurants[key],
-            id: key,
-            categories: formattedCategories
-        };
-    });
-
-    return formattedData;
-}
-
 const formatHitList = (hitList) => {
     return Object.keys(hitList).map(key => {
         return hitList[key];
@@ -52,7 +26,7 @@ const reducer = (state = initialState, action) => {
             return newState;
         case actionTypes.SEARCH_YELP_SUCCESS:
             newState.loadingSearch = false;
-            newState.restaurants = formatYelpSearch(action.restaurants);
+            newState.restaurants = action.businesses;
             return newState;
         case actionTypes.SEARCH_YELP_FAIL:
             newState.loadingSearch = false;

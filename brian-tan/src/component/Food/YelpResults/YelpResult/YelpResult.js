@@ -3,6 +3,7 @@ import React from 'react';
 import classes from './YelpResult.scss';
 
 const yelpResult = (props) => {
+
     return (
         <div className={classes.YelpResult}>
             <div className={classes.RestaurantImg}>
@@ -18,7 +19,7 @@ const yelpResult = (props) => {
                 </div>
                 <div className={classes.Address}>
                     <ul>
-                        <li>City</li>
+                        <li>{props.city}</li>
                         <li>{props.address}</li>
                     </ul>
                 </div>
@@ -30,7 +31,11 @@ const yelpResult = (props) => {
                     </p>
                 </div>
             </div>
-            <div className={classes.AddButton} onClick={props.saveRestaurant}>+</div>
+            <div 
+                className={[classes.ActionButton, classes[props.clickAction]].join(' ')} 
+                onClick={props.clicked}>
+                {props.clickAction === 'Save' ? '+' : '-'}
+            </div>
         </div>
     );
 }

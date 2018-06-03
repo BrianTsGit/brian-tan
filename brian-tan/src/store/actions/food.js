@@ -1,4 +1,5 @@
-import axios from '../../axios/axios-yelp';
+import axiosYelp from '../../axios/axios-yelp';
+import axiosFireBase from '../../axios/axios-fire-base';
 
 import * as actionTypes from './actionTypes';
 
@@ -8,10 +9,10 @@ export const searchYelpInit = () => {
     };
 };
 
-export const searchYelpSuccess = (restaurants) => {
+export const searchYelpSuccess = (businesses) => {
     return {
         type: actionTypes.SEARCH_YELP_SUCCESS,
-        restaurants: restaurants
+        businesses: businesses
     };
 }
 
@@ -21,25 +22,19 @@ export const searchYelpFail = () => {
     };
 }
 
-export const searchYelp = (searchTerm) => {
-    //add loader
+export const searchYelp = (term, loc) => {
+    term = encodeURI(term);
+    loc = encodeURI(loc);
+
     return dispatch => {
         dispatch(searchYelpInit());
-        // axios.get('/businesses/' + searchTerm)
-        axios.get('/yelpResults.json')
+        axiosYelp.get('/businesses/search?term=' + term + '&location=' + loc)
             .then(res => {
-                //use to format data from firebase
-                // const formattedData = Object.keys(res.data).map(key => {
-                //     return {
-                //         ...res.data[key],
-                //         id: key
-                //     };
-                // });
                 dispatch(searchYelpSuccess(res.data));
             })
             .catch(err => {
                 console.log(err);
-                //dispatch(searchYelpFail());
+                dispatch(searchYelpFail());
             });
     }
 }
@@ -66,7 +61,7 @@ export const getHitListFail = () => {
 export const getHitList = () => {
     return dispatch => {
         //set loading
-        axios.get('/restaurantHitList.json')
+        axiosFireBase.get('/restaurantHitList.json')
             .then(res => {
                 dispatch(getHitListSuccess(res.data));
             })
@@ -92,7 +87,7 @@ export const saveRestaurantFail = () => {
 export const saveRestaurant = (restaurant) => {
     return dispatch => {
         dispatch(saveRestaurantInit());
-        axios.post('/restaurantHitList.json', restaurant)
+        axiosFireBase.post('/restaurantHitList.json', restaurant)
             .then(res => {
                 dispatch(saveRestaurantSuccess(restaurant));
             })

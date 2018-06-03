@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 
 import classes from './YelpSearch.scss';
 import * as actions from '../../../store/actions/index';
-import YelpResult from '../../../component/Food/YelpResult/YelpResult';
+import YelpResults from '../../../component/Food/YelpResults/YelpResults';
 import yelpLogo from '../../../assets/images/yelpLogo.png';
 
 
 class YelpSearch extends Component {
     state = {
         yelpSearchForm: {
-            searchTerm: '',
+            term: '',
             location: ''
         }
     };
@@ -24,46 +24,12 @@ class YelpSearch extends Component {
 
     onSearchSubmitHandler = (event) => {
         event.preventDefault();
-        this.props.searchYelp(this.state.searchTerm);
-    }
-
-    onSaveRestaurantHandler = (res) => {
-        const formattedRestaurant = {
-            id: res.id,
-            name: res.name,
-            image_url: res.image_url,
-            url: res.url,
-            price: res.price,
-            rating: res.rating,
-            review_count: res.review_count,
-            address: res.location.display_address,
-            categories: res.categories
-        };
-
-        this.props.saveRestaurant(formattedRestaurant);
+        console.log(this.state);
+        this.props.searchYelp(this.state.yelpSearchForm.term, this.state.yelpSearchForm.location);
     }
 
     render () {
         const searchImgClass = this.props.loadingSearch ? 'fa fa-spinner' : 'fas fa-search';
-        let listItems = <p>Search restaurants to add to your hit list.</p>;
-        if (this.props.restaurants.length) {
-            listItems = this.props.restaurants.map((res, index) => {
-                return (
-                    <YelpResult 
-                        key={res.id}
-                        index={index + 1}
-                        name={res.name}
-                        img={res.image_url}
-                        url={res.url}
-                        reviewCount={res.review_count}
-                        rating={res.rating}
-                        price={res.price}
-                        categories={res.categories}
-                        address={res.location.address1}
-                        saveRestaurant={() => this.onSaveRestaurantHandler(res)} />
-                );
-            });
-        }
 
         return (
             <div className={classes.YelpSearch}>
@@ -74,8 +40,8 @@ class YelpSearch extends Component {
                     <input 
                         type="text" 
                         placeholder="Find" 
-                        value={this.state.yelpSearchForm.searchTerm} 
-                        onChange={(event) => this.onChangeInputHandler(event, 'searchTerm')} />
+                        value={this.state.yelpSearchForm.term} 
+                        onChange={(event) => this.onChangeInputHandler(event, 'term')} />
                     <input 
                         type="text" 
                         placeholder="Near" 
@@ -83,9 +49,10 @@ class YelpSearch extends Component {
                         onChange={(event) => this.onChangeInputHandler(event, 'location')} />
                     <button disabled={this.props.loadingSearch}><i className={searchImgClass}></i></button>
                 </form>
-                <div className={classes.SearchResults}>
-                    {listItems}
-                </div>
+                <YelpResults 
+                        items={this.props.restaurants} 
+                        clickAction="Save"
+                        placeholder="Search restaurants to add to your list." />
             </div>
         );
     }
@@ -100,8 +67,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        searchYelp: (searchTerm) => dispatch(actions.searchYelp(searchTerm)),
-        saveRestaurant: (restaurant) => dispatch(actions.saveRestaurant(restaurant))
+        searchYelp: (term, loc) => dispatch(actions.searchYelp(term, loc))
     };
 };
 
