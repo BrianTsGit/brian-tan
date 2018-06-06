@@ -9,7 +9,7 @@ const yelpResults = (props) => {
 
     const onSaveRestaurantHandler = (res) => {
         const formattedRestaurant = {
-            id: res.id,
+            yelp_id: res.yelp_id,
             name: res.name,
             image_url: res.image_url,
             url: res.url,
@@ -43,7 +43,7 @@ const yelpResults = (props) => {
         yelpResults = props.items.map((item, index) => {
             return (
                 <YelpResult 
-                    key={item.id}
+                    key={item.yelp_id}
                     index={index + 1}
                     name={item.name}
                     img={item.image_url}

@@ -1,4 +1,4 @@
-import axiosYelp from '../../axios/axios-yelp';
+import axiosServer from '../../axios/axios-server';
 import axiosFireBase from '../../axios/axios-fire-base';
 
 import * as actionTypes from './actionTypes';
@@ -28,7 +28,7 @@ export const searchYelp = (term, loc) => {
 
     return dispatch => {
         dispatch(searchYelpInit());
-        axiosYelp.get('/businesses/search?term=' + term + '&location=' + loc)
+        axiosServer.get('/yelp/businesses/search?term=' + term + '&location=' + loc)
             .then(res => {
                 dispatch(searchYelpSuccess(res.data));
             })
@@ -61,7 +61,7 @@ export const getHitListFail = () => {
 export const getHitList = () => {
     return dispatch => {
         //set loading
-        axiosFireBase.get('/restaurantHitList.json')
+        axiosServer.get('/food/yelpBusinesses')
             .then(res => {
                 dispatch(getHitListSuccess(res.data));
             })
@@ -87,7 +87,7 @@ export const saveRestaurantFail = () => {
 export const saveRestaurant = (restaurant) => {
     return dispatch => {
         dispatch(saveRestaurantInit());
-        axiosFireBase.post('/restaurantHitList.json', restaurant)
+        axiosServer.post('/food/yelpBusinesses', restaurant)
             .then(res => {
                 dispatch(saveRestaurantSuccess(restaurant));
             })

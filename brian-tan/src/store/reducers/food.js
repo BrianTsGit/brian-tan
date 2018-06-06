@@ -1,50 +1,47 @@
 import * as actionTypes from '../actions/actionTypes';
+import { updateObject } from '../utility';
 
 const initialState = {
     loadingSearch: false,
-    restaurants: [],
+    restaurants: [], 
     loadingHitList: false,
     hitList: []
 };
 
+//Will need to do this as long as we get from firebase
 const formatHitList = (hitList) => {
     return Object.keys(hitList).map(key => {
         return hitList[key];
     });
 }
 
-const reducer = (state = initialState, action) => {
-    const newState = {
-        ...state,
-        restaurants: [...state.restaurants],
-        hitList: [...state.hitList]
-    };
+const formatSearchResults = (results) => {
+    return results.map(result => {
+        return {
+            ...result,
+            yelp_id: result.id
+        };
+    });
+}
 
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SEARCH_YELP_INIT:
-            newState.loadingSearch = true;
-            return newState;
+            return updateObject(state, { loadingSearch: true });
         case actionTypes.SEARCH_YELP_SUCCESS:
-            newState.loadingSearch = false;
-            newState.restaurants = action.businesses;
-            return newState;
+            return updateObject(state, { loadingSearch: false, businesses: formatSearchResults(action.businesses) });
         case actionTypes.SEARCH_YELP_FAIL:
-            newState.loadingSearch = false;
-            return newState;
+            return updateObject(state, { loadingSearch: false });
         case actionTypes.GET_HIT_LIST_SUCCESS:
-            newState.loadingHitList = false;
-            newState.hitList = action.hitList ? formatHitList(action.hitList) : [];
-            return newState;
+            const hitList = action.hitList ? formatHitList(action.hitList) : [];
+            return updateObject(state, { loadingSearch: false, hitList: hitList });
         case actionTypes.HIT_LIST_INIT:
-            newState.loadingHitList = true;
-            return newState;
+            return updateObject(state, { loadingHitList: true });
         case actionTypes.SAVE_RESTAURANT_SUCCESS:
-            newState.loadingHitList = false;
-            newState.hitList = newState.hitList.concat(action.restaurant);
-            return newState;
+            const updatedHitList = state.hitList.concat(action.restaurant);
+            return updateObject(state, { loadingHitList: false, hitList: updatedHitList });
         case actionTypes.SAVE_RESTAURANT_FAIL:
-            newState.loadingHitList = false;
-            return newState; 
+            return updateObject(state, { loadingHitList: false });
         default:
             return state;
     }

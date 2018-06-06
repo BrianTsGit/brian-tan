@@ -24,7 +24,6 @@ class YelpSearch extends Component {
 
     onSearchSubmitHandler = (event) => {
         event.preventDefault();
-        console.log(this.state);
         this.props.searchYelp(this.state.yelpSearchForm.term, this.state.yelpSearchForm.location);
     }
 
@@ -50,9 +49,9 @@ class YelpSearch extends Component {
                     <button disabled={this.props.loadingSearch}><i className={searchImgClass}></i></button>
                 </form>
                 <YelpResults 
-                        items={this.props.restaurants} 
+                        items={this.props.businesses} 
                         clickAction="Save"
-                        placeholder="Search restaurants to add to your list." />
+                        placeholder="Search businesses to add to your list." />
             </div>
         );
     }
@@ -60,7 +59,7 @@ class YelpSearch extends Component {
 
 const mapStateToProps = state => {
     return {
-        restaurants: state.restaurants,
+        businesses: state.businesses,
         loadingSearch: state.loadingSearch
     };
 };
