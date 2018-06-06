@@ -24,7 +24,7 @@ const yelpResults = (props) => {
     }
 
     const onRemoveRestaurantHandler = (res) => {
-        console.log('Removing this restaurant', res);
+        props.deleteRestaurant(res.yelp_id);
     }
 
     const onClickHandler = (res) => {
@@ -38,8 +38,14 @@ const yelpResults = (props) => {
         }
     }
 
-    let yelpResults = <p>{props.placeholder}</p>
-    if (props.items && props.items.length) {
+    let yelpResults = <p>{props.placeholder}</p>;
+    if (props.loading) {
+        yelpResults = (
+            <div className={classes.Loader}>
+                <i className="fa fa-spinner"></i>
+            </div>
+        );
+    } else if (props.items && props.items.length) {
         yelpResults = props.items.map((item, index) => {
             return (
                 <YelpResult 
@@ -69,7 +75,8 @@ const yelpResults = (props) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        saveRestaurant: (restaurant) => dispatch(actions.saveRestaurant(restaurant))
+        saveRestaurant: restaurant => dispatch(actions.saveBusiness(restaurant)),
+        deleteRestaurant: id => dispatch(actions.deleteBusiness(id))
     };
 }
 

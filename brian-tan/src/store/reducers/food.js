@@ -3,7 +3,7 @@ import { updateObject } from '../utility';
 
 const initialState = {
     loadingSearch: false,
-    restaurants: [], 
+    businesses: [], 
     loadingHitList: false,
     hitList: []
 };
@@ -24,23 +24,43 @@ const formatSearchResults = (results) => {
     });
 }
 
+const filterOutByProperties = (arrayToFilter, arrayToCompare, propertyName) => {
+    const propertyValuesArray = {};
+    for (let item of arrayToCompare) {
+        propertyValuesArray[item[propertyName]] = true;
+    }
+    return arrayToFilter.filter(item => !propertyValuesArray[item[propertyName]]);
+}
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SEARCH_YELP_INIT:
             return updateObject(state, { loadingSearch: true });
         case actionTypes.SEARCH_YELP_SUCCESS:
-            return updateObject(state, { loadingSearch: false, businesses: formatSearchResults(action.businesses) });
+            const searchResults = formatSearchResults(action.businesses);
+            const filteredSearchResults = filterOutByProperties(searchResults, state.hitList, 'yelp_id');
+            return updateObject(state, { loadingSearch: false, businesses: filteredSearchResults });
         case actionTypes.SEARCH_YELP_FAIL:
             return updateObject(state, { loadingSearch: false });
         case actionTypes.GET_HIT_LIST_SUCCESS:
             const hitList = action.hitList ? formatHitList(action.hitList) : [];
-            return updateObject(state, { loadingSearch: false, hitList: hitList });
-        case actionTypes.HIT_LIST_INIT:
+            return updateObject(state, { loadingHitList: false, hitList: hitList });
+        case actionTypes.GET_HIT_LIST_INIT:
             return updateObject(state, { loadingHitList: true });
-        case actionTypes.SAVE_RESTAURANT_SUCCESS:
+        case actionTypes.SAVE_BUSINESS_INIT:
+            return updateObject(state, { loadingHitList: true, loadingSearch: true });
+        case actionTypes.SAVE_BUSINESS_SUCCESS:
             const updatedHitList = state.hitList.concat(action.restaurant);
-            return updateObject(state, { loadingHitList: false, hitList: updatedHitList });
-        case actionTypes.SAVE_RESTAURANT_FAIL:
+            const updatedBusinesses = state.businesses.filter(b => b.yelp_id !== action.restaurant.yelp_id);
+            return updateObject(state, { loadingHitList: false, loadingSearch: false, businesses: updatedBusinesses, hitList: updatedHitList });
+        case actionTypes.SAVE_BUSINESS_FAIL:
+            return updateObject(state, { loadingHitList: false, loadingSearch: false });
+        case actionTypes.DELETE_BUSINESS_INIT:
+            return updateObject(state, { loadingHitList: true });
+        case actionTypes.DELETE_BUSINESS_SUCCESS:
+            const newHitList = state.hitList.filter(item => item.yelp_id !== action.yelp_id);
+            return updateObject(state, { loadingHitList: false, hitList: newHitList });
+        case actionTypes.DELETE_BUSINESS_FAIL:
             return updateObject(state, { loadingHitList: false });
         default:
             return state;
