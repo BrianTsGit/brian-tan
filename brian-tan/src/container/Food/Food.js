@@ -4,6 +4,7 @@ import sharedClasses from '../../index.scss';
 import classes from './Food.scss';
 import Aux from '../../hoc/Aux/Aux';
 import homeBanner from '../../assets/images/bakery.jpg';
+import YelpSearch from './YelpSearch/YelpSearch';
 import RestaurantHitList from './RestaurantHitList/RestaurantHitList';
 
 class Food extends Component {
@@ -17,7 +18,14 @@ class Food extends Component {
                     </div>
                     <img src={homeBanner} alt="HomeBanner" />
                 </div>
-                <RestaurantHitList />
+                <div className={classes.YelpContainer}> 
+                    <h2>Restaurant Hit List 🔫</h2>
+                    <div className={classes.YelpItems}>
+                        <YelpSearch />
+                        <div className={classes.Divider}>------</div>
+                        <RestaurantHitList />
+                    </div>
+                </div>
             </Aux>
         );
     }
