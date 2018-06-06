@@ -22,7 +22,8 @@ class RestaurantHitList extends Component {
                     <div className={classes.HitList}>
                         <h2>Restaurants to Visit</h2>
                         <YelpResults 
-                            items={this.props.hitList} 
+                            items={this.props.hitList}
+                            loading={this.props.loadingHitList} 
                             clickAction="Remove"
                             placeholder="There are no items yet." />
                     </div>

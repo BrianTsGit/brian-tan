@@ -1,5 +1,6 @@
 export {
     searchYelp,
     getHitList,
-    saveRestaurant
+    saveBusiness,
+    deleteBusiness
 } from './food';

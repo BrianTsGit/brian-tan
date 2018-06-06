@@ -1,5 +1,4 @@
 import axiosServer from '../../axios/axios-server';
-import axiosFireBase from '../../axios/axios-fire-base';
 
 import * as actionTypes from './actionTypes';
 
@@ -39,9 +38,9 @@ export const searchYelp = (term, loc) => {
     }
 }
 
-export const saveRestaurantInit = () => {
+export const getHitListInit = () => {
     return {
-        type: actionTypes.HIT_LIST_INIT
+        type: actionTypes.GET_HIT_LIST_INIT
     };
 };
 
@@ -60,7 +59,7 @@ export const getHitListFail = () => {
 
 export const getHitList = () => {
     return dispatch => {
-        //set loading
+        dispatch(getHitListInit());
         axiosServer.get('/food/yelpBusinesses')
             .then(res => {
                 dispatch(getHitListSuccess(res.data));
@@ -71,30 +70,68 @@ export const getHitList = () => {
     }
 }
 
-export const saveRestaurantSuccess = (restaurant) => {
+export const saveRestaurantInit = () => {
     return {
-        type: actionTypes.SAVE_RESTAURANT_SUCCESS,
-        restaurant: restaurant
+        type: actionTypes.SAVE_BUSINESS_INIT
     };
 };
 
-export const saveRestaurantFail = () => {
+export const saveBusinessSuccess = (business) => {
     return {
-        type: actionTypes.SAVE_RESTAURANT_FAIL
+        type: actionTypes.SAVE_BUSINESS_SUCCESS,
+        restaurant: business
+    };
+};
+
+export const saveBusinessFail = () => {
+    return {
+        type: actionTypes.SAVE_BUSINESS_FAIL
     }
 };
 
-export const saveRestaurant = (restaurant) => {
+export const saveBusiness = (business) => {
     return dispatch => {
         dispatch(saveRestaurantInit());
-        axiosServer.post('/food/yelpBusinesses', restaurant)
+        axiosServer.post('/food/yelpBusinesses', business)
             .then(res => {
-                dispatch(saveRestaurantSuccess(restaurant));
+                dispatch(saveBusinessSuccess(business));
             })
             .catch(err => {
-                dispatch(saveRestaurantFail());
+                dispatch(saveBusinessFail());
             });
     }
 }
+
+export const deleteBusinessInit = () => {
+    return {
+        type: actionTypes.DELETE_BUSINESS_INIT
+    };
+};
+
+export const deleteBusinessSuccess = (yelpId) => {
+    return {
+        type: actionTypes.DELETE_BUSINESS_SUCCESS,
+        yelp_id: yelpId
+    };
+};
+
+export const deleteBusinessFail = () => {
+    return {
+        type: actionTypes.DELETE_BUSINESS_FAIL
+    };
+};
+
+export const deleteBusiness = (yelpId) => {
+    return dispatch => {
+        dispatch(deleteBusinessInit());
+        axiosServer.delete('/food/yelpBusinesses?yelpId=' + yelpId)
+            .then(res => {
+                dispatch(deleteBusinessSuccess(yelpId));
+            })
+            .catch(err => {
+                dispatch(deleteBusinessFail());
+            });
+    };
+};
 
 

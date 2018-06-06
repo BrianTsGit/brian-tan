@@ -50,6 +50,7 @@ class YelpSearch extends Component {
                 </form>
                 <YelpResults 
                         items={this.props.businesses} 
+                        loading={this.props.loadingSearch}
                         clickAction="Save"
                         placeholder="Search businesses to add to your list." />
             </div>
