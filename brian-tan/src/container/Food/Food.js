@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import sharedClasses from '../../index.scss';
 import classes from './Food.scss';
 import Aux from '../../hoc/Aux/Aux';
-import homeBanner from '../../assets/images/bakery.jpg';
+import imageUrls from '../../assets/imageUrls';
 import YelpSearch from './YelpSearch/YelpSearch';
 import RestaurantHitList from './RestaurantHitList/RestaurantHitList';
 
@@ -13,10 +13,10 @@ class Food extends Component {
             <Aux>
                 <div className={sharedClasses.HeroBanner}>
                     <div className={sharedClasses.Title}>
-                        <h1>Foodventures</h1>
-                        <p>Look what I'm turning into poop!</p>
+                        <h1>Foodventures.</h1>
+                        <p>Think the "No Reservations" Bourdain.</p>
                     </div>
-                    <img src={homeBanner} alt="HomeBanner" />
+                    <img src={imageUrls.foodBanner} alt="HomeBanner" />
                 </div>
                 <div className={classes.YelpContainer}> 
                     <h2>Restaurant Hit List 🔫</h2>
