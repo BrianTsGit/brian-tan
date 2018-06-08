@@ -45,6 +45,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.GET_HIT_LIST_SUCCESS:
             const hitList = action.hitList ? formatHitList(action.hitList) : [];
             return updateObject(state, { loadingHitList: false, hitList: hitList });
+        case actionTypes.GET_HITLIST_FAIL:
+            return updateObject(state, { loadingHitList: false });
         case actionTypes.GET_HIT_LIST_INIT:
             return updateObject(state, { loadingHitList: true });
         case actionTypes.SAVE_BUSINESS_INIT:

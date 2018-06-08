@@ -27,7 +27,7 @@ export const searchYelp = (term, loc) => {
 
     return dispatch => {
         dispatch(searchYelpInit());
-        axiosServer.get('/yelp/businesses/search?term=' + term + '&location=' + loc)
+        axiosServer.get('/api/yelp/businesses/search?term=' + term + '&location=' + loc)
             .then(res => {
                 dispatch(searchYelpSuccess(res.data));
             })
@@ -60,7 +60,7 @@ export const getHitListFail = () => {
 export const getHitList = () => {
     return dispatch => {
         dispatch(getHitListInit());
-        axiosServer.get('/food/yelpBusinesses')
+        axiosServer.get('/api/food/yelpBusinesses')
             .then(res => {
                 dispatch(getHitListSuccess(res.data));
             })
@@ -92,7 +92,7 @@ export const saveBusinessFail = () => {
 export const saveBusiness = (business) => {
     return dispatch => {
         dispatch(saveRestaurantInit());
-        axiosServer.post('/food/yelpBusinesses', business)
+        axiosServer.post('/api/food/yelpBusinesses', business)
             .then(res => {
                 dispatch(saveBusinessSuccess(business));
             })
@@ -124,7 +124,7 @@ export const deleteBusinessFail = () => {
 export const deleteBusiness = (yelpId) => {
     return dispatch => {
         dispatch(deleteBusinessInit());
-        axiosServer.delete('/food/yelpBusinesses?yelpId=' + yelpId)
+        axiosServer.delete('/api/food/yelpBusinesses?yelpId=' + yelpId)
             .then(res => {
                 dispatch(deleteBusinessSuccess(yelpId));
             })

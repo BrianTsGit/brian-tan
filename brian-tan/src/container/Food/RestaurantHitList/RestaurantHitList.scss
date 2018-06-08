@@ -1,39 +1,18 @@
 .RestaurantHitList {
-    h2 {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    .HitListHeader {
         text-align: center;
-    }
-
-    .ContentContainer {
-        display: flex;
-        flex-flow: wrap;
-        margin-top: 30px;
-    }
-    
-    .HitList {
-        width: 100%;
-        padding: 0 30px;
-        box-sizing: border-box;
-
-        h2 {
-            margin-bottom: 108px;
-        }
-
-        @media (min-width: 776px) {
-            width: 50%;
+        
+        .Icon {
+            font-size: 45px;
         }
     }
-    
-    //This class not really used anymore
-    .HitListItems {
-        width: 100%;
-        display: flex;
-        flex-flow: wrap;
-        justify-content: flex-start;
-        margin: 0 auto;
-        padding: 5px;
 
-        p { 
-            margin: 0 auto;
-        }
+
+    @media (min-width: 776px) {
+        width: 50%;
     }
 }

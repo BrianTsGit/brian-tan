@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import sharedClasses from '../../index.scss';
 import classes from './Gaming.scss';
 import Aux from '../../hoc/Aux/Aux';
-import homeBanner from '../../assets/images/actionFigures.jpg';
+import imageUrls from '../../assets/imageUrls';
+import Placeholder from '../../component/UI/Placeholder/Placeholder';
 
 class Gaming extends Component {
     render () {
@@ -11,11 +12,12 @@ class Gaming extends Component {
             <Aux>
                 <div className={sharedClasses.HeroBanner}>
                     <div className={sharedClasses.Title}>
-                        <h1>Gaming</h1>
-                        <p>Damn gaming is different when you get older.</p>
+                        <h1>Gaming.</h1>
+                        <p>Most likely very little Nintendo here.</p>
                     </div>
-                    <img src={homeBanner} alt="HomeBanner" />
+                    <img src={imageUrls.gamingBanner} alt="HomeBanner" />
                 </div>
+                <Placeholder />
             </Aux>
         );
     }

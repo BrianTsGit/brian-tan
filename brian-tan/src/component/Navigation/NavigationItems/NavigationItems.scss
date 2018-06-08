@@ -7,6 +7,22 @@
     align-items: center;
     list-style: none;
 
+    .Login {
+        height: 50px;
+        width: 50px;
+        padding: 10px;
+        box-sizing: border-box;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+
     @media (min-width: 568px) {
         padding: 0 10px;
         flex-flow: row;

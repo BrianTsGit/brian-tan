@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import sharedClasses from '../../index.scss';
 import classes from './Television.scss';
 import Aux from '../../hoc/Aux/Aux';
-import homeBanner from '../../assets/images/actionFigures.jpg';
+import imageUrls from '../../assets/imageUrls';
+import Placeholder from '../../component/UI/Placeholder/Placeholder';
 
 class Television extends Component {
     render () {
@@ -11,11 +12,12 @@ class Television extends Component {
             <Aux>
                 <div className={sharedClasses.HeroBanner}>
                     <div className={sharedClasses.Title}>
-                        <h1>Just a Televisionary</h1>
+                        <h1>TV Guide.</h1>
                         <p>What I'm watching these days.</p>
                     </div>
-                    <img src={homeBanner} alt="HomeBanner" />
+                    <img src={imageUrls.televisionBanner} alt="HomeBanner" />
                 </div>
+                <Placeholder />
             </Aux>
         );
     }

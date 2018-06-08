@@ -4,3 +4,6 @@ export {
     saveBusiness,
     deleteBusiness
 } from './food';
+export {
+    googleSignIn
+} from './user';

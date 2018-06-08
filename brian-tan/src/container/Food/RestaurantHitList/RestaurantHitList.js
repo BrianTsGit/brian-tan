@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import classes from './RestaurantHitList.scss';
 import * as actions from '../../../store/actions/index';
-import YelpSearch from '../YelpSearch/YelpSearch';
 import YelpResults from '../../../component/Food/YelpResults/YelpResults';
-import HitListItem from '../../../component/Food/HitListItem/HitListItem';
 
 class RestaurantHitList extends Component {
 
@@ -15,19 +13,16 @@ class RestaurantHitList extends Component {
 
     render () {
         return (
-            <div className={classes.RestaurantHitList}> 
-                <h2>Restaurant Hit List</h2>
-                <div className={classes.ContentContainer}>
-                    <YelpSearch />
-                    <div className={classes.HitList}>
-                        <h2>Restaurants to Visit</h2>
-                        <YelpResults 
-                            items={this.props.hitList}
-                            loading={this.props.loadingHitList} 
-                            clickAction="Remove"
-                            placeholder="There are no items yet." />
-                    </div>
+            <div className={classes.RestaurantHitList}>
+                <div className={classes.HitListHeader}>
+                    <h2>Restaurants to Visit</h2>
+                    <span className={classes.Icon}>👀</span>
                 </div>
+                <YelpResults 
+                    items={this.props.hitList}
+                    loading={this.props.loadingHitList} 
+                    clickAction="Remove"
+                    placeholder="There are no items yet." />
             </div>
         );
     }

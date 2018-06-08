@@ -1,0 +1,27 @@
+.YelpContainer {
+    h2 {
+        text-align: center;
+    }
+
+    .YelpItems {
+        display: flex;
+        flex-flow: wrap;
+        margin-top: 30px;
+        min-height: 600px;
+
+        .Divider {
+            margin: 20px auto 0;
+            font-size: 30px;
+        }
+    }
+
+    @media (min-width: 776px) {
+        .YelpItems {
+            min-height: 300px;
+
+            .Divider {
+                display: none;
+            }
+        }
+    }
+}
