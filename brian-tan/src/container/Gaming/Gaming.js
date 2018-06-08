@@ -4,7 +4,6 @@ import sharedClasses from '../../index.scss';
 import classes from './Gaming.scss';
 import Aux from '../../hoc/Aux/Aux';
 import imageUrls from '../../assets/imageUrls';
-import homeBanner from '../../assets/images/actionFigures.jpg';
 import Placeholder from '../../component/UI/Placeholder/Placeholder';
 
 class Gaming extends Component {
