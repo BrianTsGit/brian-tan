@@ -12,7 +12,7 @@ class Home extends Component {
             <Aux>
                 <div className={sharedClasses.HeroBanner}>
                     <div className={sharedClasses.Title}>
-                        <h1>Journal.</h1>
+                        <h1>Brian Tan</h1>
                         <p>Personal site of Brian Tan</p>
                     </div>
                     <img src={imageUrls.homeBanner} alt="HomeBanner" />

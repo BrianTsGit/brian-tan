@@ -14,7 +14,7 @@ class Food extends Component {
                 <div className={sharedClasses.HeroBanner}>
                     <div className={sharedClasses.Title}>
                         <h1>Foodventures.</h1>
-                        <p>Think the "No Reservations" Bourdain.</p>
+                        <p>The Food Part of the Website.</p>
                     </div>
                     <img src={imageUrls.foodBanner} alt="HomeBanner" />
                 </div>
