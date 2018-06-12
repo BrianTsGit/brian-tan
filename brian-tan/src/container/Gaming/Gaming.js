@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import sharedClasses from '../../index.scss';
-import classes from './Gaming.scss';
+//import classes from './Gaming.scss';
 import Aux from '../../hoc/Aux/Aux';
 import imageUrls from '../../assets/imageUrls';
 import Placeholder from '../../component/UI/Placeholder/Placeholder';

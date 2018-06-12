@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import classes from './NavigationItems.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
-import googlePlusLogo from '../../../assets/images/googlePlusLogo.png';
+//import googlePlusLogo from '../../../assets/images/googlePlusLogo.png';
 import * as actions from '../../../store/actions/index';
 
 const navigationItems = (props) => {
@@ -19,11 +19,11 @@ const navigationItems = (props) => {
             <NavigationItem sectionName="Television" link="/television" />
             <NavigationItem sectionName="Gaming" link="/gaming" />
             <NavigationItem sectionName="Misc." link="/" />
-            <li className={classes.Login}>
+            {/* <li className={classes.Login}>
                 <a href="http://localhost:5000/auth/google">
                     <img src={googlePlusLogo} alt="Login" />
                 </a>
-            </li>
+            </li> */}
         </ul>
     );
 };

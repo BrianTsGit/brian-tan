@@ -16,7 +16,7 @@ class RestaurantHitList extends Component {
             <div className={classes.RestaurantHitList}>
                 <div className={classes.HitListHeader}>
                     <h2>Restaurants to Visit</h2>
-                    <span className={classes.Icon}>👀</span>
+                    <span className={classes.Icon} role="img" aria-label="image">👀</span>
                 </div>
                 <YelpResults 
                     items={this.props.hitList}

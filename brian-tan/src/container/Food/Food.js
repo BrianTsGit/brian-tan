@@ -19,7 +19,7 @@ class Food extends Component {
                     <img src={imageUrls.foodBanner} alt="HomeBanner" />
                 </div>
                 <div className={classes.YelpContainer}> 
-                    <h2>Restaurant Hit List 🔫</h2>
+                    <h2>Restaurant Hit List <span role="img" aria-label="image">🔫</span></h2>
                     <div className={classes.YelpItems}>
                         <YelpSearch />
                         <div className={classes.Divider}>------</div>
