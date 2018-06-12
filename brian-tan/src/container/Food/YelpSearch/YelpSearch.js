@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 
 import classes from './YelpSearch.scss';
 import * as actions from '../../../store/actions/index';
+import axios from '../../../axios/axios-server';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import YelpResults from '../../../component/Food/YelpResults/YelpResults';
 import yelpLogo from '../../../assets/images/yelpLogo.png';
-
 
 class YelpSearch extends Component {
     state = {
@@ -84,6 +85,7 @@ class YelpSearch extends Component {
                         <input 
                             type="text" 
                             placeholder="bbq, ribs..." 
+                            className={this.state.yelpSearchForm.term.touched && !this.state.yelpSearchForm.term.valid ? classes.Invalid : null}
                             value={this.state.yelpSearchForm.term.value} 
                             onChange={(event) => this.onChangeInputHandler(event, 'term')} />
                     </div> 
@@ -97,6 +99,7 @@ class YelpSearch extends Component {
                         <input 
                             type="text" 
                             placeholder="Queens, NY" 
+                            className={this.state.yelpSearchForm.location.touched && !this.state.yelpSearchForm.location.valid ? classes.Invalid : null}
                             value={this.state.yelpSearchForm.location.value} 
                             onChange={(event) => this.onChangeInputHandler(event, 'location')} />
                     </div>
@@ -125,4 +128,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(YelpSearch); 
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(YelpSearch, axios)); 

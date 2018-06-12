@@ -54,7 +54,7 @@
             }
 
             &.Invalid {
-                border: 1px solid red;
+                border-bottom: 1px solid red;
             }
         }
     }
@@ -118,7 +118,7 @@
             width: 200px;
 
             input {
-                width: 155px;
+                width: 160px;
             }
         }
 
