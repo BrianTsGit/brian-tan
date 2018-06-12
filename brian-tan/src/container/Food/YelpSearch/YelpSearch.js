@@ -36,16 +36,29 @@ class YelpSearch extends Component {
                     <img src={yelpLogo} alt="YelpLogo" />
                 </div>
                 <form className={classes.YelpForm} onSubmit={this.onSearchSubmitHandler}>
-                    <input 
-                        type="text" 
-                        placeholder="Find" 
-                        value={this.state.yelpSearchForm.term} 
-                        onChange={(event) => this.onChangeInputHandler(event, 'term')} />
-                    <input 
-                        type="text" 
-                        placeholder="Near" 
-                        value={this.state.yelpSearchForm.location} 
-                        onChange={(event) => this.onChangeInputHandler(event, 'location')} />
+                    <div className={classes.Input}>
+                        <div className={classes.Label}>
+                            <span>Find</span>
+                        </div>
+                        <input 
+                            type="text" 
+                            placeholder="bbq, ribs..." 
+                            value={this.state.yelpSearchForm.term} 
+                            onChange={(event) => this.onChangeInputHandler(event, 'term')} />
+                    </div> 
+                    <div className={classes.Divider}>
+                        <span>|</span>
+                    </div>
+                    <div className={classes.Input}>
+                        <div className={classes.Label}>
+                            <span>Near</span>
+                        </div>
+                        <input 
+                            type="text" 
+                            placeholder="Queens, NY" 
+                            value={this.state.yelpSearchForm.location} 
+                            onChange={(event) => this.onChangeInputHandler(event, 'location')} />
+                    </div>
                     <button disabled={this.props.loadingSearch}><i className={searchImgClass}></i></button>
                 </form>
                 <YelpResults 
