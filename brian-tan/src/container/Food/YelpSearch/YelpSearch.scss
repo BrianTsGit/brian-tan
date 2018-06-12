@@ -25,14 +25,45 @@
     margin: 0 auto;
     display: flex;
 
-    input {
-        width: 120px;
+    .Input {
+        width: 118px;
         height: 100%;
-        border: none;
-        box-sizing: border-box;
-        font-size: 16px;
-        font-weight: bold;
-        padding-left: 5px;
+
+        .Label {
+            width: 30px;
+            height: 100%;
+            padding: 0 0 0 2px;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: bold;
+            box-sizing: border-box;
+            color: #666666;
+        }
+
+        input {
+            width: 88px;
+            height: 100%;
+            border: none;
+            box-sizing: border-box;
+            font-size: 12px;
+            padding-left: 5px;
+            color: #666666;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.Invalid {
+                border-bottom: 1px solid red;
+            }
+        }
+    }
+
+    .Divider {
+        width: 4px;
+        padding: 7px 0;
+        font-size: 14px;
+        color: #666666;
     }
 
     button {
@@ -52,23 +83,47 @@
     @media (min-width: 776px) {
         width: 350px;
         height: 40px;
+        
+        .Input {
+            width: 153px;
 
-        input {
-            width: 150px;
+            .Label {
+                width: 40px;
+                padding: 0 0 0 5px;
+                font-size: 14px;
+            }
+
+            input {
+                width: 113px;
+                font-size: 14px;
+            }
         }
 
+        .Divider {
+            width: 4px;
+            padding: 9px 0;
+            font-size: 20px;
+        }
+        
         button {
-            width: 50px;
+            width: 40px;
             font-size: 20px;
         }
     }
 
     @media (min-width: 992px) {
         width: 450px;
-        height: 40px;
 
-        input {
+        .Input {
             width: 200px;
+
+            input {
+                width: 160px;
+            }
         }
+
+        .Divider {
+            width: 10px;
+        }   
     }
 }

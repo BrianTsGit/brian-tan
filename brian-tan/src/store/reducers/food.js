@@ -16,12 +16,16 @@ const formatHitList = (hitList) => {
 }
 
 const formatSearchResults = (results) => {
-    return results.map(result => {
-        return {
-            ...result,
-            yelp_id: result.id
-        };
-    });
+    if (results.length) {
+        return results.map(result => {
+            return {
+                ...result,
+                yelp_id: result.id
+            };
+        });
+    } else {
+        return [];
+    }
 }
 
 const filterOutByProperties = (arrayToFilter, arrayToCompare, propertyName) => {

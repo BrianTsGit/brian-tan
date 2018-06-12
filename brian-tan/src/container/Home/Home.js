@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import sharedClasses from '../../index.scss';
-import classes from './Home.scss';
+//import classes from './Home.scss';
 import imageUrls from '../../assets/imageUrls';
 import Aux from '../../hoc/Aux/Aux';
 import Placeholder from '../../component/UI/Placeholder/Placeholder';

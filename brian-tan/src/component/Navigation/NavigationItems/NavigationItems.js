@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import classes from './NavigationItems.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
-import googlePlusLogo from '../../../assets/images/googlePlusLogo.png';
+//import googlePlusLogo from '../../../assets/images/googlePlusLogo.png';
 import * as actions from '../../../store/actions/index';
 
 const navigationItems = (props) => {

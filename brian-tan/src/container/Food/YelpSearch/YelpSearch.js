@@ -3,28 +3,70 @@ import { connect } from 'react-redux';
 
 import classes from './YelpSearch.scss';
 import * as actions from '../../../store/actions/index';
+import axios from '../../../axios/axios-server';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import YelpResults from '../../../component/Food/YelpResults/YelpResults';
 import yelpLogo from '../../../assets/images/yelpLogo.png';
-
 
 class YelpSearch extends Component {
     state = {
         yelpSearchForm: {
-            term: '',
-            location: ''
-        }
+            term: {
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false,
+                touched: false
+            },
+            location: {
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false,
+                touched: false
+            }
+        },
+        formIsValid: false,
+        placeholderMessage: 'Search businesses to add to your list.'
     };
+
+    checkValidity = (value, rules) => {
+        let isValid = false;
+
+        if (rules.required) {
+            isValid = value.trim() !== '';
+        } else {
+            isValid = true;
+        }
+
+        return isValid;
+    }
 
     onChangeInputHandler = (event, identifier) => {
         const updatedForm = {...this.state.yelpSearchForm};
-        updatedForm[identifier] = event.target.value;
+        const updatedFormElement = {...updatedForm[identifier]};
+        updatedFormElement.value = event.target.value;
+        updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+        updatedFormElement.touched = true;
+        updatedForm[identifier] = updatedFormElement;
 
-        this.setState({yelpSearchForm: updatedForm});
+        let formIsValid = true;
+        for (let inputIdentier in updatedForm) {
+            formIsValid = updatedForm[inputIdentier].valid && formIsValid;
+        }
+
+        this.setState({ yelpSearchForm: updatedForm, formIsValid: formIsValid });
     }
 
     onSearchSubmitHandler = (event) => {
         event.preventDefault();
-        this.props.searchYelp(this.state.yelpSearchForm.term, this.state.yelpSearchForm.location);
+        if (this.state.formIsValid) {
+            this.props.searchYelp(this.state.yelpSearchForm.term.value, this.state.yelpSearchForm.location.value);
+        } else {
+            this.setState({ placeholderMessage: 'Please enter a valid search term and location.'})
+        }
     }
 
     render () {
@@ -36,23 +78,38 @@ class YelpSearch extends Component {
                     <img src={yelpLogo} alt="YelpLogo" />
                 </div>
                 <form className={classes.YelpForm} onSubmit={this.onSearchSubmitHandler}>
-                    <input 
-                        type="text" 
-                        placeholder="Find" 
-                        value={this.state.yelpSearchForm.term} 
-                        onChange={(event) => this.onChangeInputHandler(event, 'term')} />
-                    <input 
-                        type="text" 
-                        placeholder="Near" 
-                        value={this.state.yelpSearchForm.location} 
-                        onChange={(event) => this.onChangeInputHandler(event, 'location')} />
+                    <div className={classes.Input}>
+                        <div className={classes.Label}>
+                            <span>Find</span>
+                        </div>
+                        <input 
+                            type="text" 
+                            placeholder="bbq, ribs..." 
+                            className={this.state.yelpSearchForm.term.touched && !this.state.yelpSearchForm.term.valid ? classes.Invalid : null}
+                            value={this.state.yelpSearchForm.term.value} 
+                            onChange={(event) => this.onChangeInputHandler(event, 'term')} />
+                    </div> 
+                    <div className={classes.Divider}>
+                        <span>|</span>
+                    </div>
+                    <div className={classes.Input}>
+                        <div className={classes.Label}>
+                            <span>Near</span>
+                        </div>
+                        <input 
+                            type="text" 
+                            placeholder="Queens, NY" 
+                            className={this.state.yelpSearchForm.location.touched && !this.state.yelpSearchForm.location.valid ? classes.Invalid : null}
+                            value={this.state.yelpSearchForm.location.value} 
+                            onChange={(event) => this.onChangeInputHandler(event, 'location')} />
+                    </div>
                     <button disabled={this.props.loadingSearch}><i className={searchImgClass}></i></button>
                 </form>
                 <YelpResults 
                         items={this.props.businesses} 
                         loading={this.props.loadingSearch}
                         clickAction="Save"
-                        placeholder="Search businesses to add to your list." />
+                        placeholder={this.state.placeholderMessage} />
             </div>
         );
     }
@@ -71,4 +128,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(YelpSearch); 
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(YelpSearch, axios)); 

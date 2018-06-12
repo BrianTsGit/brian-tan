@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import classes from './RestaurantHitList.scss';
 import * as actions from '../../../store/actions/index';
+import axios from '../../../axios/axios-server';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import YelpResults from '../../../component/Food/YelpResults/YelpResults';
 
 class RestaurantHitList extends Component {
@@ -16,7 +18,7 @@ class RestaurantHitList extends Component {
             <div className={classes.RestaurantHitList}>
                 <div className={classes.HitListHeader}>
                     <h2>Restaurants to Visit</h2>
-                    <span className={classes.Icon}>👀</span>
+                    <span className={classes.Icon} role="img" aria-label="image">👀</span>
                 </div>
                 <YelpResults 
                     items={this.props.hitList}
@@ -41,4 +43,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantHitList);
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(RestaurantHitList, axios));
