@@ -37,6 +37,7 @@
             font-size: 12px;
             font-weight: bold;
             box-sizing: border-box;
+            color: #666666;
         }
 
         input {
@@ -46,9 +47,14 @@
             box-sizing: border-box;
             font-size: 12px;
             padding-left: 5px;
+            color: #666666;
 
             &:focus {
                 outline: none;
+            }
+
+            &.Invalid {
+                border: 1px solid red;
             }
         }
     }
@@ -57,6 +63,7 @@
         width: 4px;
         padding: 7px 0;
         font-size: 14px;
+        color: #666666;
     }
 
     button {
