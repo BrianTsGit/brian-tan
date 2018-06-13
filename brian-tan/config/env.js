@@ -77,7 +77,8 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
-        REACT_APP_API_HOST: 'http://localhost:5000'
+        REACT_APP_API_HOST: 'http://localhost:5000',
+        REACT_APP_GOOGLE_API_KEY: 'AIzaSyDj8-XjYSBinK929WNoHHq9EYu1SAWWLjM'
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

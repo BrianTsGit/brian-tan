@@ -6,6 +6,7 @@ import Aux from '../../hoc/Aux/Aux';
 import imageUrls from '../../assets/imageUrls';
 import YelpSearch from './YelpSearch/YelpSearch';
 import RestaurantHitList from './RestaurantHitList/RestaurantHitList';
+import Map from '../MapContainer/MapContainer';
 
 class Food extends Component {
     render () {
@@ -26,6 +27,7 @@ class Food extends Component {
                         <RestaurantHitList />
                     </div>
                 </div>
+                <Map />
             </Aux>
         );
     }
