@@ -105,25 +105,7 @@ class Map extends Component {
         }
     }
 
-    onPushMarkerHandler = (marker) => {
-        if (!this.markers) {
-            this.markers = [];
-        }
-        this.markers.push(marker);
-    }
-    
-    deleteMapMarkers = () => {
-        if (this.markers) {
-            for (var i = 0; i < this.markers.length; i++) {
-                this.markers[i].setMap(null);
-            }
-            this.markers = [];
-        }
-    }
-
     renderChildren = () => {
-        this.deleteMapMarkers();
-
         const {children} = this.props;
 
         if (!children) return;
@@ -134,8 +116,7 @@ class Map extends Component {
             return React.cloneElement(c, {
                 map: this.map,
                 google: this.props.google,
-                mapCenter: this.state.currentLocation,
-                pushMarker: this.onPushMarkerHandler
+                mapCenter: this.state.currentLocation
             });
         });
 

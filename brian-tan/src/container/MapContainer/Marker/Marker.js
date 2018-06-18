@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
+
+const eventNames = ['click', 'mouseover'];
 
 class Marker extends Component {
     componentDidMount () {
@@ -11,6 +13,28 @@ class Marker extends Component {
             (this.props.position !== prevProps.position)) {
                 this.renderMarker();
             } 
+    }
+
+    componentWillUnmount () {
+        if (this.marker) {
+            this.marker.setMap(null);
+        }
+    }
+
+    camelize = (str) => {
+        return str.split(' ').map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join('');
+    };
+
+    handleEvent (eventName) {
+        const handlerName = `on${this.camelize(eventName)}`; //template literal notation
+
+        return (e) => {
+            if (this.props[handlerName]) {
+                this.props[handlerName](this.props, this.marker, e);
+            }
+        }
     }
 
     renderMarker () {
@@ -27,6 +51,10 @@ class Marker extends Component {
         };
         this.marker = new google.maps.Marker(pref); //this creates the actually marker
         this.props.pushMarker(this.marker);
+
+        eventNames.forEach(e => {
+            this.marker.addListener(e, this.handleEvent(e));
+        });
     }
 
     render () {

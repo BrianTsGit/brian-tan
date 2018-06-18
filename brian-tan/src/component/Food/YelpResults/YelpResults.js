@@ -21,8 +21,6 @@ const yelpResults = (props) => {
             coordinates: res.coordinates
         };
 
-        console.log(formattedRestaurant);
-
         props.saveRestaurant(formattedRestaurant);
     }
 
