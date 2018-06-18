@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import GoogleMap from '../../hoc/GoogleMap/GoogleMap';
 import classes from './MapContainer.scss';
@@ -61,13 +61,13 @@ class MapContainer extends Component {
 
         let markersComponents = null;
 
-        if (this.props.hitList) {
+        if (this.props.locations) {
             this.deleteMapMarkers();
-            markersComponents = this.props.hitList.map((item, index) => {
+            markersComponents = this.props.locations.map((item, index) => {
                 const pos = { lat: item.coordinates.latitude, lng: item.coordinates.longitude };
                 return (
                     <Marker 
-                        key={item.yelp_id} 
+                        key={item.name} 
                         name={(index + 1) + '. ' + item.name}
                         position={pos}
                         onClick={this.onMarkerClickHandler}
@@ -96,10 +96,8 @@ class MapContainer extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        hitList: state.hitList
-    };
+MapContainer.propTypes = {
+    locations: PropTypes.arrayOf(PropTypes.object)
 };
 
-export default connect(mapStateToProps, null)(GoogleMap({ apiKey: process.env.REACT_APP_GOOGLE_API_KEY })(MapContainer))
+export default(GoogleMap({ apiKey: process.env.REACT_APP_GOOGLE_API_KEY })(MapContainer))
