@@ -17,7 +17,8 @@ const yelpResults = (props) => {
             rating: res.rating,
             review_count: res.review_count,
             location: res.location,
-            categories: res.categories
+            categories: res.categories,
+            coordinates: res.coordinates
         };
 
         props.saveRestaurant(formattedRestaurant);
