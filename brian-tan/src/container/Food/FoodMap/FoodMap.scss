@@ -16,6 +16,16 @@
     .Map {
         width: 90%;
         margin: 20px auto;
+        position: relative;
+
+        .LoaderArea {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
     }
 
     @media (min-width: 768px) {

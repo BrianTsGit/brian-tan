@@ -3,10 +3,15 @@ import { connect } from 'react-redux';
 
 import classes from './FoodMap.scss';
 import MapContainer from '../../MapContainer/MapContainer';
+import Loader from '../../../component/UI/Loader/Loader';
 
 class FoodMap extends Component {
     render () {
-        let foodMap = <div>Loading...</div>;
+        let foodMap = (
+            <div className={classes.LoaderArea}>
+                <Loader />
+            </div>
+        );
 
         if (this.props.hitList) {
             foodMap = <MapContainer 

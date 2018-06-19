@@ -5,6 +5,7 @@ import classes from './YelpBusinesses.scss';
 import YelpBusiness from './YelpBusiness/YelpBusiness';
 import * as actions from '../../../store/actions/index';
 import Aux from '../../../hoc/Aux/Aux';
+import Loader from '../../../component/UI/Loader/Loader';
 
 const yelpBusinesses = (props) => {
 
@@ -43,8 +44,8 @@ const yelpBusinesses = (props) => {
     let yelpResults = <p>{props.placeholder}</p>;
     if (props.loading) {
         yelpResults = (
-            <div className={classes.Loader}>
-                <i className="fa fa-spinner"></i>
+            <div className={classes.LoaderArea}>
+                <Loader />
             </div>
         );
     } else if (props.items && props.items.length) {
