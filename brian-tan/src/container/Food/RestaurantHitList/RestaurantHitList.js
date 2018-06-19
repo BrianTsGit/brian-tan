@@ -6,6 +6,7 @@ import * as actions from '../../../store/actions/index';
 import axios from '../../../axios/axios-server';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import YelpResults from '../../../component/Food/YelpResults/YelpResults';
+import YelpBusinesses from '../../../component/Food/YelpBusinesses/YelpBusinesses';
 
 class RestaurantHitList extends Component {
 
@@ -16,13 +17,11 @@ class RestaurantHitList extends Component {
     render () {
         return (
             <div className={classes.RestaurantHitList}>
-                <div className={classes.HitListHeader}>
-                    <h2>Restaurants to Visit</h2>
-                    <span className={classes.Icon} role="img" aria-label="image">👀</span>
-                </div>
-                <YelpResults 
+                <YelpBusinesses 
                     items={this.props.hitList}
                     loading={this.props.loadingHitList} 
+                    showHeader
+                    headerText="SAVED"
                     clickAction="Remove"
                     placeholder="There are no items yet." />
             </div>

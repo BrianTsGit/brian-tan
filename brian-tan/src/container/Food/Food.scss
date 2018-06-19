@@ -1,7 +1,6 @@
-.YelpContainer {
-    h2 {
-        text-align: center;
-    }
+.HitListSection {
+    padding: 50px 0 100px;
+    background-color: rgba(0, 0, 0, .05);
 
     .YelpItems {
         display: flex;
@@ -13,10 +12,8 @@
             margin: 20px auto 0;
             font-size: 30px;
         }
-    }
 
-    @media (min-width: 776px) {
-        .YelpItems {
+        @media (min-width: 776px) {
             min-height: 300px;
 
             .Divider {
@@ -25,3 +22,5 @@
         }
     }
 }
+
+
