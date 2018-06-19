@@ -21,7 +21,9 @@ class Food extends Component {
                 </div>
 
                 <div className={classes.HitListSection}>
-                    <h3 className={classes.HitListTitle}>Restaurant Bookmarks</h3>
+                    <div className={classes.HitListTitle}>
+                        <span>Restaurant Bookmarks</span>
+                    </div>
                     <YelpSearch />
                     <YelpBusinessGrid />
                 </div>
