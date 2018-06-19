@@ -73,7 +73,7 @@ class YelpBusinessGrid extends Component {
                                 loading={this.props.loadingSearch}
                                 clickAction="Save"
                                 showHeader
-                                headerText="SEARCH"
+                                headerText="SEARCHED"
                                 placeholder="Search businesses to add to your list." />
                     </div>
                     <div className={classes.ItemSection}>

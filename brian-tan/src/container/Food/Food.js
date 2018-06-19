@@ -5,8 +5,6 @@ import classes from './Food.scss';
 import Aux from '../../hoc/Aux/Aux';
 import imageUrls from '../../assets/imageUrls';
 import YelpSearch from './YelpSearch/YelpSearch';
-import YelpSearchResults from './YelpSearchResults/YelpSearchResults';
-import RestaurantHitList from './RestaurantHitList/RestaurantHitList';
 import YelpBusinessGrid from './YelpBusinessGrid/YelpBusinessGrid';
 import Map from './FoodMap/FoodMap';
 
@@ -23,18 +21,10 @@ class Food extends Component {
                 </div>
 
                 <div className={classes.HitListSection}>
-                    {/* <h3 className={classes.HitListTitle}>Restaurant Bookmarks</h3> */}
-                    <div className={classes.SearchSection}>
-                        <YelpSearch />
-                    </div>
+                    <h3 className={classes.HitListTitle}>Restaurant Bookmarks</h3>
+                    <YelpSearch />
                     <YelpBusinessGrid />
-
-                    {/* <div className={classes.YelpItems}>
-                        <YelpSearchResults />
-                        <RestaurantHitList />
-                    </div> */}
                 </div>
-
                 <Map />
             </Aux>
         );
