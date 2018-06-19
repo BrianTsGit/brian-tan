@@ -6,6 +6,7 @@ import * as actions from '../../../store/actions/index';
 import axios from '../../../axios/axios-server';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import YelpResults from '../../../component/Food/YelpResults/YelpResults';
+import YelpBusinesses from '../../../component/Food/YelpBusinesses/YelpBusinesses';
 import yelpLogo from '../../../assets/images/yelpLogo.png';
 
 class YelpSearch extends Component {
@@ -105,22 +106,10 @@ class YelpSearch extends Component {
                     </div>
                     <button disabled={this.props.loadingSearch}><i className={searchImgClass}></i></button>
                 </form>
-                <YelpResults 
-                        items={this.props.businesses} 
-                        loading={this.props.loadingSearch}
-                        clickAction="Save"
-                        placeholder={this.state.placeholderMessage} />
             </div>
         );
     }
 }
-
-const mapStateToProps = state => {
-    return {
-        businesses: state.businesses,
-        loadingSearch: state.loadingSearch
-    };
-};
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -128,4 +117,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(YelpSearch, axios)); 
+export default connect(null, mapDispatchToProps)(withErrorHandler(YelpSearch, axios)); 

@@ -1,27 +1,29 @@
-.YelpContainer {
-    h2 {
+.HitListSection {
+    padding-bottom: 30px;
+    background-color: rgba(0, 0, 0, .05);
+
+    .HitListTitle {
+        width: 100%;
+        height: 90px;
+        font-size: 21px;
+        font-family: 'Permanent Marker', 'sans-serif';
+        color: black;
+        background-color: #ff4545;
         text-align: center;
-    }
+        padding: 30px 0;
+        box-sizing: border-box;
 
-    .YelpItems {
-        display: flex;
-        flex-flow: wrap;
-        margin-top: 30px;
-        min-height: 600px;
-
-        .Divider {
-            margin: 20px auto 0;
-            font-size: 30px;
+        @media (min-width: 768px) {
+            height: auto;
+            padding: 50px 0 0 0;
+            background-color: transparent;
+            font-size: 42px;
         }
-    }
 
-    @media (min-width: 776px) {
-        .YelpItems {
-            min-height: 300px;
-
-            .Divider {
-                display: none;
-            }
+        @media (min-width: 968px) {
+            font-size: 56px;
         }
     }
 }
+
+

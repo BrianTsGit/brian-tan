@@ -1,0 +1,86 @@
+.FoodMap {
+    height: 480px;
+
+    .MapHeader {
+        width: 100%;
+        height: 90px;
+        font-family: 'Permanent Marker', 'sans-serif';
+        font-size: 21px;
+        color: black;
+        background-color: #ff4545;
+        padding: 15px 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .Map {
+        width: 90%;
+        margin: 20px auto;
+        position: relative;
+
+        .LoaderArea {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @media (min-width: 768px) {
+        height: 410px;
+        padding: 30px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+
+        .MapHeader {
+            width: 350px;
+            height: 350px;
+            font-size: 28px;
+            text-align: left;
+            padding: 110px 30px;
+        }
+
+        .Map {
+            width: 350px;
+            height: 350px;
+            margin: 0;
+        }
+    }
+
+    @media (min-width: 992px) {
+        height: 550px;
+        padding: 50px;
+
+        .MapHeader {
+            width: 450px;
+            height: 450px;
+            font-size: 38px;
+            padding: 140px 30px;
+        }
+
+        .Map {
+            width: 450px;
+            height: 450px;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        height: 740px;
+        padding: 70px;
+
+        .MapHeader {
+            width: 600px;
+            height: 600px;
+            font-size: 52px;
+            padding: 190px 30px;
+        }
+
+        .Map {
+            width: 600px;
+            height: 600px;
+        }
+    }
+}

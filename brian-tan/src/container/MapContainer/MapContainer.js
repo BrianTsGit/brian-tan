@@ -78,7 +78,7 @@ class MapContainer extends Component {
 
         return (
             <div className={classes.Map}>
-                <Map 
+                <Map
                     google={this.props.google}
                     onClick={this.onMapClickHandler} >
                     {markersComponents}
