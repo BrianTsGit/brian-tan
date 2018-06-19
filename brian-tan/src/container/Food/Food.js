@@ -7,6 +7,7 @@ import imageUrls from '../../assets/imageUrls';
 import YelpSearch from './YelpSearch/YelpSearch';
 import YelpSearchResults from './YelpSearchResults/YelpSearchResults';
 import RestaurantHitList from './RestaurantHitList/RestaurantHitList';
+import YelpBusinessGrid from './YelpBusinessGrid/YelpBusinessGrid';
 import Map from './FoodMap/FoodMap';
 
 class Food extends Component {
@@ -20,23 +21,18 @@ class Food extends Component {
                     </div>
                     <img src={imageUrls.foodBanner} alt="HomeBanner" />
                 </div>
-                {/* <div className={classes.YelpContainer}> 
-                    <h2>Restaurant Hit List <span role="img" aria-label="image">🔫</span></h2>
-                    <div className={classes.YelpItems}>
-                        <YelpSearch />
-                        <div className={classes.Divider}>------</div>
-                        <RestaurantHitList />
-                    </div>
-                </div> */}
 
                 <div className={classes.HitListSection}>
+                    {/* <h3 className={classes.HitListTitle}>Restaurant Bookmarks</h3> */}
                     <div className={classes.SearchSection}>
                         <YelpSearch />
                     </div>
-                    <div className={classes.YelpItems}>
+                    <YelpBusinessGrid />
+
+                    {/* <div className={classes.YelpItems}>
                         <YelpSearchResults />
                         <RestaurantHitList />
-                    </div>
+                    </div> */}
                 </div>
 
                 <Map />
