@@ -6,6 +6,19 @@ import MapContainer from '../../MapContainer/MapContainer';
 import Loader from '../../../component/UI/Loader/Loader';
 
 class FoodMap extends Component {
+
+    mapifyYelpBusinesses = (businesses) => {
+        return businesses.map(b => {
+            return {
+                ...b,
+                address: b.location.address1 + ', ' + b.location.city,
+                img: b.image_url,
+                desc: b.rating + ' stars w/ ' + b.review_count + ' reviews',
+                additionalDesc: b.price 
+            }
+        }); 
+    }
+
     render () {
         let foodMap = (
             <div className={classes.LoaderArea}>
@@ -14,8 +27,8 @@ class FoodMap extends Component {
         );
 
         if (this.props.hitList) {
-            foodMap = <MapContainer 
-                locations={this.props.hitList} />  
+            let mapifiedYelpBusinesses = this.mapifyYelpBusinesses(this.props.hitList);
+            foodMap = <MapContainer locations={mapifiedYelpBusinesses} />
         }
 
         return (

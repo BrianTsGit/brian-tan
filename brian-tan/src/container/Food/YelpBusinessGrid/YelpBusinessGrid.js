@@ -11,7 +11,8 @@ class YelpBusinessGrid extends Component {
     }
 
     componentDidMount () {
-        this.props.getHitList();
+        if (!this.props.hitList.length)
+            this.props.getHitList();
     }
 
     onTabChangeHandler = (savedTab) => {
