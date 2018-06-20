@@ -147,7 +147,7 @@ Map.propTypes = {
 };
 
 Map.defaultProps = {
-    zoom: 12,
+    zoom: 11,
     initialCenter: {
         lat: 40.7675,
         lng: -73.8331

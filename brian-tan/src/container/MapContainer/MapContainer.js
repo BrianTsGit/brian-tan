@@ -6,6 +6,7 @@ import classes from './MapContainer.scss';
 import Map from './Map/Map';
 import Marker from './Marker/Marker';
 import InfoWindow from './InfoWindow/InfoWindow';
+import Loader from '../../component/UI/Loader/Loader';
 
 class MapContainer extends Component {
     state = {
@@ -56,7 +57,7 @@ class MapContainer extends Component {
 
     render () {
         if (!this.props.loaded) {
-            return <div>Loading...</div>;
+            return <Loader />;
         }
 
         let markersComponents = null;
@@ -68,7 +69,11 @@ class MapContainer extends Component {
                 return (
                     <Marker 
                         key={item.name} 
-                        name={(index + 1) + '. ' + item.name}
+                        name={item.name}
+                        address={item.address}
+                        img={item.img}
+                        desc={item.desc}
+                        additionalDesc={item.additionalDesc}
                         position={pos}
                         onClick={this.onMarkerClickHandler}
                         pushMarker= {this.onPushMarkerHandler} />
@@ -87,7 +92,17 @@ class MapContainer extends Component {
                         visible={this.state.showingInfoWindow}
                         onClose={this.onInfoWindowClose} >
                         <div className={classes.InfoWindow}>
-                            <p>{this.state.selectedPlace.name}</p>
+                            <div className={classes.WindowImage}>
+                                <img src={this.state.selectedPlace.img} alt="Image"/>
+                            </div>
+                            <div className={classes.WindowDesc}>
+                                <ul>
+                                    <li><strong>{this.state.selectedPlace.name}</strong></li>
+                                    <li>{this.state.selectedPlace.address}</li>
+                                    <li>{this.state.selectedPlace.desc}</li>
+                                    <li>{this.state.selectedPlace.additionalDesc}</li>
+                                </ul>
+                            </div> 
                         </div>
                     </InfoWindow>
                 </Map>
