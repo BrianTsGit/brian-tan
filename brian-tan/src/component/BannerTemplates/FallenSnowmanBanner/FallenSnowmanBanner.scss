@@ -1,0 +1,121 @@
+.FallenSnowmanBanner {
+    width: 100%;
+    height: 450px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+
+    @media (min-width: 998px) {
+        height: 550px;
+        padding: 30px;
+    }
+
+    .ImageContainer {
+        width: 100%;
+        height: 300px;
+
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        @media (min-width: 998px){
+            height: 350px;
+        }
+
+        .BannerImage {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border-radius: 300px;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &.ImageMedium,
+            &.ImageSmall,
+            &.ImageSmaller,
+            &.ImageSmallest {
+                display: none;
+            }
+
+            &.ImageMedium {
+                width: 155px;
+                height: 155px;
+            }
+
+            &.ImageSmall {
+                width: 95px;
+                height: 95px;
+            }
+
+            &.ImageSmaller {
+                width: 55px;
+                height: 55px;
+            }
+
+            &.ImageSmallest {
+                width: 30px;
+                height: 30px;
+            }
+
+            @media (min-width: 768px) {
+                width: 250px;
+                height: 250px;
+
+                &.ImageMedium,
+                &.ImageSmall,
+                &.ImageSmaller,
+                &.ImageSmallest {
+                    display: inline-block;
+                }
+            }
+
+            @media (min-width: 998px) {
+                width: 325px;
+                height: 325px;
+
+                &.ImageMedium {
+                    width: 230px;
+                    height: 230px;
+                }
+    
+                &.ImageSmall {
+                    width: 160px;
+                    height: 160px;
+                }
+    
+                &.ImageSmaller {
+                    width: 100px;
+                    height: 100px;
+                }
+    
+                &.ImageSmallest {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+
+    .BannerTitle {
+        height: 130px;
+        padding: 20px 0;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 32px;
+        font-family: 'Permanent Marker', 'sans-serif';
+
+        @media (min-width: 768px) {
+            font-size: 38px;
+        }
+
+        @media (min-width: 998px) {
+            font-size: 46px;
+        }
+    }
+}
