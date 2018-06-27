@@ -28,7 +28,17 @@ class FoodMap extends Component {
 
         if (this.props.hitList) {
             let mapifiedYelpBusinesses = this.mapifyYelpBusinesses(this.props.hitList);
-            foodMap = <MapContainer locations={mapifiedYelpBusinesses} />
+            let initialCenter = {
+                lat: 40.7675,
+                lng: -73.8331
+            };
+            if (mapifiedYelpBusinesses.length) {
+                initialCenter = {
+                    lat: mapifiedYelpBusinesses[0].coordinates.latitude,
+                    lng: mapifiedYelpBusinesses[0].coordinates.longitude
+                };
+            }
+            foodMap = <MapContainer locations={mapifiedYelpBusinesses} initialCenter={initialCenter}/>
         }
 
         return (

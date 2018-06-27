@@ -85,7 +85,8 @@ class MapContainer extends Component {
             <div className={classes.Map}>
                 <Map
                     google={this.props.google}
-                    onClick={this.onMapClickHandler} >
+                    onClick={this.onMapClickHandler}
+                    initialCenter={this.props.initialCenter} >
                     {markersComponents}
                     <InfoWindow 
                         marker={this.state.activeMarker}
