@@ -1,0 +1,12 @@
+.RoundThumbnailSlide {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+
+    .ThumbnailContainer {
+        width: 280px;
+        height: 300px;
+        margin: 0 auto;
+    }
+}
