@@ -4,7 +4,7 @@
     border-radius: 125px;
     overflow: hidden;
     display: inline-block;
-    margin: 0 5px;
+    margin: 5px 7px;
 
     .ThumbnailImage {
         width: 125px;
@@ -24,6 +24,35 @@
         font-family: 'Permanent Marker', 'sans-serif';
         background-color: #fced3A;
         box-sizing: border-box;
-        padding: 5px 10px 0;
+        padding: 6px 10px 0;
+
+        &.Entertainers {
+            background-color: #fced3A;
+        }
+
+        &.Artists {
+            background-color: #3dde2f;
+        }
+
+        &.Creators {
+            background-color: #ff4545;
+        }
+    }
+
+    @media (min-width: 998px) {
+        width: 215px;
+        height: 215px;
+        border-radius: 215px;
+
+        .ThumbnailImage {
+            width: 215px;
+            height: 150px;
+        }
+    
+        .ThumbnailDesc {
+            width: 215px;
+            height: 65px;
+            font-size: 14px;
+        }
     }
 }

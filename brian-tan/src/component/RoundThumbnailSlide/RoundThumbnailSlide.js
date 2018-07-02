@@ -12,7 +12,8 @@ const roundThumbnailSlide = (props) => {
                 <RoundThumbnail 
                     key={item._id}
                     image={item.image_url} 
-                    text={item.text} />
+                    text={item.text}
+                    category={item.category} />
             );
         });
     }

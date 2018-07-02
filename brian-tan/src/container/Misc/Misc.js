@@ -14,18 +14,39 @@ class Misc extends Component {
     }
 
     render () {
-        let carousel = null;
+        let carousels = null;
 
         if (this.props.miscInterests.length) {
-            carousel = <RoundThumbnailCarousel slideItems={this.props.miscInterests} />;
+            //Convert list of miscInterests into carousel sections based on their category
+            carousels = [];
+            let carouselCollections = {};
+
+            for (let item of this.props.miscInterests) {
+                if (!carouselCollections[item.category]) {
+                    carouselCollections[item.category] = [];
+                }
+                carouselCollections[item.category].push(item);
+            }
+
+            for (let collection in carouselCollections) {
+                carousels.push(
+                    <div key={collection} className={classes.CarouselSection}>
+                        <div className={classes.SectionTitle}>
+                            <span>{collection.toUpperCase()}</span>
+                        </div>
+                        <RoundThumbnailCarousel slideItems={carouselCollections[collection]} />
+                    </div>
+                );
+            }
+
         }
 
         return (
-            <div>
+            <div className={classes.Misc}>
                 <div className={sharedClasses.Banner}>
-                    <h1>TEMP MISC BANNER</h1>
+                    <h1>Banner Placeholder.</h1>
                 </div>
-                {carousel}
+                {carousels}
             </div>
         );
     }

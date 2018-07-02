@@ -8,14 +8,6 @@ class RoundThumbnailCarousel extends Component {
         translateValue : 0
     };
 
-    componentDidMount () {
-        console.log('mounted');
-    }
-
-    componentDidUpdate () {
-        console.log('updated');
-    }
-
     slideWidth = () => {
         return document.querySelector('.carousel').clientWidth;
     }
@@ -40,14 +32,14 @@ class RoundThumbnailCarousel extends Component {
         //Creates a RoundThumbnailSlide for every 4 slideItems
         if (this.props.slideItems.length) {
             let thumbnailContent = [];
-            // const slideWith = this.slideWidth();
             carouselSlides = this.props.slideItems.reduce((slides, item, index, array) => {
                 thumbnailContent.push(item);
                 if ((index + 1) % 4 === 0 || index === array.length - 1) {
                     slides.push(
                         <RoundThumbnailSlide 
                             key={index} 
-                            items={thumbnailContent} />
+                            items={thumbnailContent}
+                            category={item.category} />
                     );
                     thumbnailContent = [];
                 }
@@ -61,19 +53,19 @@ class RoundThumbnailCarousel extends Component {
                     className={classes.CarouselWrapper}
                     style={{
                         transform: `translateX(${this.state.translateValue}px)`,
-                        transition: 'transform ease-out 0.45s'
+                        transition: 'transform ease-out 0.3s'
                     }}>
                     {carouselSlides}
                 </div>
                 <div 
                     className={classes.NextArrow}
                     onClick={this.navigateRightHandler}>
-                    <i className="fa fa-arrow-right fa-2x"></i>
+                    <i className="fa fa-angle-right fa-2x"></i>
                 </div>
                 <div 
                     className={classes.PrevArrow}
                     onClick={this.navigateLeftHandler}>
-                    <i className="fa fa-arrow-left fa-2x"></i>
+                    <i className="fa fa-angle-left fa-2x"></i>
                 </div>
             </div>
         )
