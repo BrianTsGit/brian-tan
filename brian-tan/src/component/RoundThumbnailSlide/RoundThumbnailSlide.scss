@@ -1,0 +1,28 @@
+.RoundThumbnailSlide {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+
+    .ThumbnailContainer {
+        width: 280px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .ThumbnailContainer {
+            width: 560px;
+            height: auto;
+            // display: flex;
+            // justify-content: space-between;
+        }
+    }
+
+    @media (min-width: 998px) {
+        .ThumbnailContainer {
+            width: 920px;
+        }
+    }
+
+}

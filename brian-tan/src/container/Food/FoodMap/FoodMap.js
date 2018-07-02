@@ -54,7 +54,7 @@ class FoodMap extends Component {
 
 const mapStateToProps = state => {
     return {
-        hitList: state.hitList
+        hitList: state.food.hitList
     };
 };
 

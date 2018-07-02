@@ -94,10 +94,10 @@ class YelpBusinessGrid extends Component {
 
 const mapStateToProps = state => {
     return {
-        businesses: state.businesses,
-        loadingSearch: state.loadingSearch,
-        hitList: state.hitList,
-        loadingHitList: state.loadingHitList
+        businesses: state.food.businesses,
+        loadingSearch: state.food.loadingSearch,
+        hitList: state.food.hitList,
+        loadingHitList: state.food.loadingHitList
     };
 };
 

@@ -26,8 +26,8 @@ class YelpSearchResults extends Component {
 
 const mapStateToProps = state => {
     return {
-        businesses: state.businesses,
-        loadingSearch: state.loadingSearch
+        businesses: state.food.businesses,
+        loadingSearch: state.food.loadingSearch
     };
 };
 

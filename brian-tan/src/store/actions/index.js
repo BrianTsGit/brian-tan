@@ -5,5 +5,5 @@ export {
     deleteBusiness
 } from './food';
 export {
-    googleSignIn
-} from './user';
+    getMiscInterests
+} from './miscInterest';

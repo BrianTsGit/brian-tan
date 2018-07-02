@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import sharedClasses from '../../index.scss';
 import classes from './Food.scss';
 import Aux from '../../hoc/Aux/Aux';
-import { bannerImages, foodBannerImages } from '../../assets/imageUrls';
+import { foodBannerImages } from '../../assets/imageUrls';
 import YelpSearch from './YelpSearch/YelpSearch';
 import YelpBusinessGrid from './YelpBusinessGrid/YelpBusinessGrid';
 import Map from './FoodMap/FoodMap';

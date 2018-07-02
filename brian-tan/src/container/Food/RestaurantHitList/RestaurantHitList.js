@@ -31,8 +31,8 @@ class RestaurantHitList extends Component {
 
 const mapStateToProps = state => {
     return {
-        hitList: state.hitList,
-        loadingHitList: state.loadingHitList
+        hitList: state.food.hitList,
+        loadingHitList: state.food.loadingHitList
     };
 };
 
