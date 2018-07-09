@@ -6,23 +6,24 @@
 
     .ThumbnailContainer {
         width: 280px;
-        height: 300px;
         margin: 0 auto;
+
+        .ThumbnailWrapper {
+            display: inline-block;
+        }
     }
 
     @media (min-width: 768px) {
+        padding: 0 65px;
+        box-sizing: border-box;
+
         .ThumbnailContainer {
-            width: 560px;
-            height: auto;
-            // display: flex;
-            // justify-content: space-between;
+            width: 100%;
+
+            .ThumbnailWrapper {
+                width: 25%;
+                text-align: center;
+            }
         }
     }
-
-    @media (min-width: 998px) {
-        .ThumbnailContainer {
-            width: 920px;
-        }
-    }
-
 }

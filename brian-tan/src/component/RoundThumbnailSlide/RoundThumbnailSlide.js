@@ -9,11 +9,13 @@ const roundThumbnailSlide = (props) => {
     if (props.items.length) {
         thumbnails = props.items.map(item => {
             return (
-                <RoundThumbnail 
-                    key={item._id}
-                    image={item.image_url} 
-                    text={item.text}
-                    category={item.category} />
+                <div className={classes.ThumbnailWrapper}>
+                    <RoundThumbnail 
+                        key={item._id}
+                        image={item.image_url} 
+                        text={item.text}
+                        category={item.category} />
+                </div>
             );
         });
     }

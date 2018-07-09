@@ -13,7 +13,7 @@
     .NextArrow, .PrevArrow {
         width: 50px;
         height: 50px;
-        border-radius: 40px;
+        border-radius: 100%;
         position: absolute;
         top: 50%;
         margin-top: -25px;
@@ -30,10 +30,59 @@
     }
 
     .NextArrow {
-        right: 10px;
+        right: 5px;
     }
 
     .PrevArrow {
-        left: 10px;
+        left: 5px;
+    }
+
+    @media (min-width: 768px) {
+        .NextArrow, .PrevArrow {
+            width: 125px;
+            height: 125px;
+            top: 0;
+            margin-top: 0;
+            
+            i {
+                font-size: 24px;
+                opacity: 0;
+            }
+
+            &:hover {
+                background: rgba(0, 0, 0, .7);
+
+                i {
+                    opacity: 1;
+                }
+            }
+        } 
+
+        .NextArrow {
+            padding: 50px 60px 0 0;
+            right: -80px;
+        }
+    
+        .PrevArrow {
+            padding: 50px 0 0 60px;
+            left: -80px;
+        }
+    }
+
+    @media (min-width: 998px) {
+        .NextArrow, .PrevArrow {
+            width: 215px;
+            height: 215px;
+        } 
+
+        .NextArrow {
+            padding: 95px 150px 0 0;
+            right: -170px;
+        }
+    
+        .PrevArrow {
+            padding: 95px 0 0 150px;
+            left: -170px;
+        }
     }
 }

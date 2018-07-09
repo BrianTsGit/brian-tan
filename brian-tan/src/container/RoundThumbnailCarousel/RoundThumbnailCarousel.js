@@ -5,8 +5,25 @@ import RoundThumbnailSlide from '../../component/RoundThumbnailSlide/RoundThumbn
 
 class RoundThumbnailCarousel extends Component {
     state = {
-        translateValue : 0
+        translateValue : 0,
+        slideCount: 1,
+        currentSlide: 1
     };
+
+    componentDidMount () {
+        this.updateSlides();
+    }
+
+    componentDidUpdate (prevProps, prevState) {
+        if (this.props.slideItems !== prevProps.slideItems) {
+            this.updateSlides();
+        }
+    }
+
+    updateSlides = () => {
+        const slideCount = Math.ceil(this.props.slideItems.length / 4);
+        this.setState({ slideCount: slideCount, currentSlide: 1 });
+    }
 
     slideWidth = () => {
         return document.querySelector('.carousel').clientWidth;
@@ -15,14 +32,20 @@ class RoundThumbnailCarousel extends Component {
     navigateRightHandler = () => {
         const movementVal = this.slideWidth();
         this.setState(prevState => { 
-            return {translateValue: prevState.translateValue - movementVal}
+            return { 
+                translateValue: prevState.translateValue - movementVal,
+                currentSlide: prevState.currentSlide + 1 
+            }
         });
     };
 
     navigateLeftHandler = () => {
         const movementVal = this.slideWidth();
         this.setState(prevState => { 
-            return {translateValue: prevState.translateValue + movementVal}
+            return {
+                translateValue: prevState.translateValue + movementVal,
+                currentSlide: prevState.currentSlide - 1
+            }
         });
     };
 
@@ -57,16 +80,22 @@ class RoundThumbnailCarousel extends Component {
                     }}>
                     {carouselSlides}
                 </div>
-                <div 
-                    className={classes.NextArrow}
-                    onClick={this.navigateRightHandler}>
-                    <i className="fa fa-angle-right fa-2x"></i>
-                </div>
-                <div 
-                    className={classes.PrevArrow}
-                    onClick={this.navigateLeftHandler}>
-                    <i className="fa fa-angle-left fa-2x"></i>
-                </div>
+                { this.state.currentSlide === this.state.slideCount ? 
+                    null :
+                    <div 
+                        className={classes.NextArrow}
+                        onClick={this.navigateRightHandler}>
+                        <i className="fa fa-angle-right fa-2x"></i>
+                    </div>
+                }
+                { this.state.currentSlide === 1 ? 
+                    null : 
+                    <div 
+                        className={classes.PrevArrow}
+                        onClick={this.navigateLeftHandler}>
+                        <i className="fa fa-angle-left fa-2x"></i>
+                    </div>
+                }
             </div>
         )
     }
