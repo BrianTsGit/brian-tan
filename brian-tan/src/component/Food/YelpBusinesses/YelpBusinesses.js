@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import classes from './YelpBusinesses.scss';
 import YelpBusiness from './YelpBusiness/YelpBusiness';
@@ -8,40 +7,8 @@ import Aux from '../../../hoc/Aux/Aux';
 import Loader from '../../../component/UI/Loader/Loader';
 
 const yelpBusinesses = (props) => {
-
-    const onSaveRestaurantHandler = (res) => {
-        const formattedRestaurant = {
-            yelp_id: res.yelp_id,
-            name: res.name,
-            image_url: res.image_url,
-            url: res.url,
-            price: res.price,
-            rating: res.rating,
-            review_count: res.review_count,
-            location: res.location,
-            categories: res.categories,
-            coordinates: res.coordinates
-        };
-
-        props.saveRestaurant(formattedRestaurant);
-    }
-
-    const onRemoveRestaurantHandler = (res) => {
-        props.deleteRestaurant(res.yelp_id);
-    }
-
-    const onClickHandler = (res) => {
-        switch (props.clickAction) {
-            case 'Save':
-                return onSaveRestaurantHandler(res);
-            case 'Remove':
-                return onRemoveRestaurantHandler(res);
-            default:
-                return null;
-        }
-    }
-
     let yelpResults = <p>{props.placeholder}</p>;
+    
     if (props.loading) {
         yelpResults = (
             <div className={classes.LoaderArea}>
@@ -63,8 +30,8 @@ const yelpBusinesses = (props) => {
                     categories={item.categories}
                     city={item.location.city}
                     address={item.location.address1}
-                    clickAction={props.clickAction}
-                    clicked={() => onClickHandler(item)} />
+                    clickType={props.clickType}
+                    clicked={() => props.clickAction(item)} />
             )
         });
     }
@@ -89,11 +56,4 @@ const yelpBusinesses = (props) => {
     );
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        saveRestaurant: restaurant => dispatch(actions.saveBusiness(restaurant)),
-        deleteRestaurant: id => dispatch(actions.deleteBusiness(id))
-    };
-}
-
-export default connect(null, mapDispatchToProps)(yelpBusinesses);
+export default yelpBusinesses;

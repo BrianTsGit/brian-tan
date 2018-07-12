@@ -17,7 +17,13 @@ describe ('<NavigationItems />', () => {
     }); 
 });
 
-//jest helper methods for testing
-//describe (nameOfComponent:String, functionThatHasTestInIt:Function)
-//it (descriptionOfComponentBehavior:String, functionOfActualTestToRun:Function)
-//expect (methodOfWhatToExpect)
+// jest helper methods for testing
+// describe (nameOfComponent:String, functionThatHasTestInIt:Function)
+// beforeEach (setupFunction:Function)
+// it (descriptionOfComponentBehavior:String, functionOfActualTestToRun:Function)
+// expect (methodOfWhatToExpect:Function)
+
+// enzyme methods
+// configure (objectWithAdapter:Object)
+// shallow (functionDescribingReactElement:Function(JSX))
+    // shallow.setProps(objectRepresentingComponentProps:Object)

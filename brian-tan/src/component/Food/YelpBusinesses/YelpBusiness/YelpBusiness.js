@@ -22,9 +22,9 @@ const yelpBusiness = (props) => {
                     <li>{props.rating} stars w/ {props.reviewCount} reviews</li>
                 </ul>
             </div>
-            <div className={[classes.ActionButton, classes[props.clickAction]].join(' ')} 
+            <div className={[classes.ActionButton, classes[props.clickType]].join(' ')} 
                 onClick={props.clicked}>
-                {props.clickAction === 'Save' ? <i className="far fa-bookmark"></i> : <i className="far fa-trash-alt"></i>}
+                {props.clickType === 'Save' ? <i className="far fa-bookmark"></i> : <i className="far fa-trash-alt"></i>}
             </div>
         </div>
     );
