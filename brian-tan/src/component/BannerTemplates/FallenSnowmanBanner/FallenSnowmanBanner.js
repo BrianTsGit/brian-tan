@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './FallenSnowmanBanner.scss';
 
@@ -27,6 +28,17 @@ const fallenSnowmanBanner = (props) => {
             </div>
         </div>
     );
+}
+
+fallenSnowmanBanner.propTypes = {
+    header: PropTypes.string,
+    icons: PropTypes.shape({
+        icon1: PropTypes.string,
+        icon2: PropTypes.string,
+        icon3: PropTypes.string,
+        icon4: PropTypes.string,
+        icon5: PropTypes.string
+    })
 }
 
 export default fallenSnowmanBanner; 

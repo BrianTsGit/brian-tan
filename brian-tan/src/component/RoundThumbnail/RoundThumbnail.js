@@ -16,7 +16,7 @@ const roundThumbnail = (props) => {
     return (
         <div className={classes.RoundThumbnail}>
             <div className={classes.ThumbnailImage}>
-                <img src={props.image} alt="ThumbnailImg" />
+                <img src={props.image_url} alt="ThumbnailImg" />
             </div>
             <div className={descClasses}>
                 <span>{props.text}</span>
@@ -26,8 +26,8 @@ const roundThumbnail = (props) => {
 }
 
 roundThumbnail.propTypes = {
-    image: PropTypes.string,
-    text: PropTypes.string,
+    image_url: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
     category: PropTypes.string
 };
 
