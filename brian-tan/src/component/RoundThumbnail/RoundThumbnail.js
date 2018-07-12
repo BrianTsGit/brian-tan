@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './RoundThumbnail.scss';
 
@@ -23,5 +24,11 @@ const roundThumbnail = (props) => {
         </div>
     );
 }
+
+roundThumbnail.propTypes = {
+    image: PropTypes.string,
+    text: PropTypes.string,
+    category: PropTypes.string
+};
 
 export default roundThumbnail;

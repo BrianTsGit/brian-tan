@@ -2,7 +2,8 @@ export {
     searchYelp,
     getHitList,
     saveBusiness,
-    deleteBusiness
+    deleteBusiness,
+    getTopRestaurants
 } from './food';
 export {
     getMiscInterests

@@ -101,4 +101,12 @@ class RoundThumbnailCarousel extends Component {
     }
 }
 
+// Expects an array of an object that contains: 
+// {
+//     ._id: String,
+//     image_url: String,
+//     text: String,
+//     category: String (Optional)
+// }
+
 export default RoundThumbnailCarousel;

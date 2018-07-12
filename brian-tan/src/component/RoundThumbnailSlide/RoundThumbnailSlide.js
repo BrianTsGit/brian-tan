@@ -9,7 +9,7 @@ const roundThumbnailSlide = (props) => {
     if (props.items.length) {
         thumbnails = props.items.map(item => {
             return (
-                <div className={classes.ThumbnailWrapper}>
+                <div key={item._id + '_wrapper'} className={classes.ThumbnailWrapper}>
                     <RoundThumbnail 
                         key={item._id}
                         image={item.image_url} 
@@ -28,5 +28,13 @@ const roundThumbnailSlide = (props) => {
         </div>
     );
 }
+
+// Expects an array of an object that contains: 
+// {
+//     ._id: String,
+//     image_url: String,
+//     text: String,
+//     category: String (Optional)
+// }
 
 export default roundThumbnailSlide;

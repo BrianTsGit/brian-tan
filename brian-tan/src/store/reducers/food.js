@@ -5,7 +5,9 @@ const initialState = {
     loadingSearch: false,
     businesses: [], 
     loadingHitList: false,
-    hitList: []
+    hitList: [],
+    loadingTopRestaurants: false,
+    topRestaurants: []
 };
 
 //Will need to do this as long as we get from firebase
@@ -68,6 +70,12 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, { loadingHitList: false, hitList: newHitList });
         case actionTypes.DELETE_BUSINESS_FAIL:
             return updateObject(state, { loadingHitList: false });
+        case actionTypes.GET_TOP_RESTAURANTS_INIT:
+            return updateObject(state, { loadingTopRestaurants: true });
+        case actionTypes.GET_TOP_RESTAURANTS_SUCCESS:
+            return updateObject(state, { loadingTopRestaurants: false, topRestaurants: action.topRestaurants });
+        case actionTypes.GET_TOP_RESTAURANTS_FAIL:
+            return updateObject(state, { loadingTopRestaurants: false });
         default:
             return state;
     }
