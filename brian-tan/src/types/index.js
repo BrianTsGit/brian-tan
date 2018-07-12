@@ -1,0 +1,15 @@
+import { shape, number, string, oneOf } from 'prop-types';
+
+export const yelpBusinessType = shape({
+    yelp_id: string.isRequired,
+    name: string.isRequired,
+    image_url: string.isRequired,
+    url: string.isRequired,
+    review_count: number.isRequired,
+    rating: number.isRequired,
+    price: string.isRequired,
+    location: shape({
+        city: string,
+        address1: string
+    }).isRequired
+});

@@ -5,7 +5,6 @@ import classes from './YelpSearch.scss';
 import * as actions from '../../../store/actions/index';
 import axios from '../../../axios/axios-server';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
-import YelpResults from '../../../component/Food/YelpResults/YelpResults';
 import YelpBusinesses from '../../../component/Food/YelpBusinesses/YelpBusinesses';
 import yelpLogo from '../../../assets/images/yelpLogo.png';
 

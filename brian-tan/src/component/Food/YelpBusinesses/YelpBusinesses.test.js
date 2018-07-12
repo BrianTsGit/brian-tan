@@ -13,7 +13,11 @@ describe('<YelpBusinesses />', () => {
     let items = [];
 
     beforeEach(() => {
-        wrapper = shallow(<YelpBusinesses />);
+        wrapper = shallow(<YelpBusinesses items={items} />);
+    });
+
+    it ('should have no <YelpBusiness /> components if there is nothing in props.items', () => {
+        expect(wrapper.find(YelpBusiness)).toHaveLength(0);
     });
 
     it ('should have <Loader /> element if loading prop is true', () => {

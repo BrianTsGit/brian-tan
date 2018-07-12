@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './YelpBusinesses.scss';
+import { yelpBusinessType } from '../../../types/index';
 import YelpBusiness from './YelpBusiness/YelpBusiness';
 import * as actions from '../../../store/actions/index';
 import Aux from '../../../hoc/Aux/Aux';
@@ -8,7 +10,7 @@ import Loader from '../../../component/UI/Loader/Loader';
 
 const yelpBusinesses = (props) => {
     let yelpResults = <p>{props.placeholder}</p>;
-    
+
     if (props.loading) {
         yelpResults = (
             <div className={classes.LoaderArea}>
@@ -20,16 +22,7 @@ const yelpBusinesses = (props) => {
             return (
                 <YelpBusiness 
                     key={item.yelp_id}
-                    index={index + 1}
-                    name={item.name}
-                    img={item.image_url}
-                    url={item.url}
-                    reviewCount={item.review_count}
-                    rating={item.rating}
-                    price={item.price}
-                    categories={item.categories}
-                    city={item.location.city}
-                    address={item.location.address1}
+                    item={item}
                     clickType={props.clickType}
                     clicked={() => props.clickAction(item)} />
             )
@@ -55,5 +48,13 @@ const yelpBusinesses = (props) => {
         </div>
     );
 }
+
+yelpBusinesses.propTypes = {
+    showHeader: PropTypes.bool,
+    loading: PropTypes.bool,
+    items: PropTypes.arrayOf(yelpBusinessType).isRequired,
+    clickType: PropTypes.string,
+    clickAction: PropTypes.func,
+};
 
 export default yelpBusinesses;
