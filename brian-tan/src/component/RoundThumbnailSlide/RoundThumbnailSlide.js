@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import classes from './RoundThumbnailSlide.scss';
+import { roundThumbnailType } from '../../types/index';
 import RoundThumbnail from '../RoundThumbnail/RoundThumbnail';
 
 const roundThumbnailSlide = (props) => {
@@ -31,12 +32,7 @@ const roundThumbnailSlide = (props) => {
 }
 
 roundThumbnailSlide.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({
-        _id: PropTypes.string,
-        image_url: PropTypes.string,
-        text: PropTypes.string,
-        category: PropTypes.string
-    }))
+    items: PropTypes.arrayOf(roundThumbnailType)
 };
 
 export default roundThumbnailSlide;

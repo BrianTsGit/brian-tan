@@ -49,7 +49,7 @@ class YelpBusinessGrid extends Component {
                             loading={this.props.loadingSearch}
                             clickType="Save"
                             clickAction={this.onSaveRestaurantHandler}
-                            placeholder="Search businesses to add to your list." />
+                            placeholder="Search businesses to add to my list." />
                 </div>
             ) :
             (
@@ -99,7 +99,7 @@ class YelpBusinessGrid extends Component {
                                 clickAction={this.onSaveRestaurantHandler}
                                 showHeader
                                 headerText="SEARCHED"
-                                placeholder="Search businesses to add to your list." />
+                                placeholder="Search businesses to add to my list." />
                     </div>
                     <div className={classes.ItemSection}>
                         <YelpBusinesses 

@@ -13,3 +13,10 @@ export const yelpBusinessType = shape({
         address1: string
     }).isRequired
 });
+
+export const roundThumbnailType = shape({
+    _id: string,
+    text: string.isRequired,
+    image_url: string.isRequired,
+    category: string
+});

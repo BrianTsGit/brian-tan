@@ -6,7 +6,7 @@ import * as actions from '../../../store/actions/index';
 import Loader from '../../../component/UI/Loader/Loader';
 import RoundThumbnailCarousel from '../../RoundThumbnailCarousel/RoundThumbnailCarousel';
 
-class TopRestaurants extends Component {
+export class TopRestaurants extends Component {
 
     componentDidMount () {
         //we probably need a better way to test this condition

@@ -16,10 +16,6 @@ describe('<YelpBusinesses />', () => {
         wrapper = shallow(<YelpBusinesses items={items} />);
     });
 
-    it ('should have no <YelpBusiness /> components if there is nothing in props.items', () => {
-        expect(wrapper.find(YelpBusiness)).toHaveLength(0);
-    });
-
     it ('should have <Loader /> element if loading prop is true', () => {
         wrapper.setProps({ loading: true });
         expect(wrapper.contains(<Loader />)).toEqual(true);
@@ -56,7 +52,7 @@ describe('<YelpBusinesses />', () => {
                 }
             },
         ];
-        wrapper.setProps({ loading: false, items: items, clickAction: 'Save' });
+        wrapper.setProps({ loading: false, items: items });
         expect(wrapper.find(YelpBusiness)).toHaveLength(2);
     });
 

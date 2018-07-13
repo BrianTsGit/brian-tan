@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import classes from './FallenSnowmanBanner.scss';
 
+//This Banner Component takes in an object with 5 image sources and displays them
+//as circles with decreasing sizes 
+
 const fallenSnowmanBanner = (props) => {
     return (
         <div className={classes.FallenSnowmanBanner}>
