@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import sharedClasses from '../../index.scss';
 import classes from './Home.scss';
 import TiledBanner from '../../component/BannerTemplates/TiledBanner/TiledBanner';
-import ramenIcon from '../../assets/images/initials.png';
+import ramenIcon from '../../assets/images/ramen.png';
 import Aux from '../../hoc/Aux/Aux';
 import YelpSearch from '../Food/YelpSearch/YelpSearch';
 import YelpBusinessGrid from '../Food/YelpBusinessGrid/YelpBusinessGrid';
