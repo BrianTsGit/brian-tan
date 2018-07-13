@@ -1,10 +1,9 @@
 .TiledBanner {
     width: 100%;
-    height: 300px;
     overflow: hidden;
 
     .Tile {
-        width: 25%;
+        width: 100%;
         display: inline-block;
 
         img {
@@ -14,6 +13,10 @@
 
     @media (min-width: 768px) {
         height: 450px;
+
+        .Tile {
+            width: 25%;
+        }
     }
 
     @media (min-width: 968px) {
@@ -22,5 +25,19 @@
         .Tile {
             width: 20%;
         }
+    }
+}
+
+.MobileComponent {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.DesktopComponent {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
     }
 }

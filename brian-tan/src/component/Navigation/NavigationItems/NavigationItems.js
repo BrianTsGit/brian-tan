@@ -7,8 +7,8 @@ const navigationItems = (props) => {
 
     return (
         <ul className={classes.NavigationItems}>
-            <NavigationItem sectionName="Home" link="/" />
-            <NavigationItem sectionName="About" link="/about" />
+            <NavigationItem sectionName="Home" link="/" clicked={props.clicked} />
+            <NavigationItem sectionName="About" link="/about" clicked={props.clicked} />
             {/* <NavigationItem sectionName="Food" link="/food" />
             <NavigationItem sectionName="Television" link="/television" />
             <NavigationItem sectionName="Gaming" link="/gaming" />

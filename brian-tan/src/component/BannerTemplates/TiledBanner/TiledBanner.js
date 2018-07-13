@@ -16,7 +16,14 @@ const tiledBanner = (props) => {
 
     return (
         <div className={classes.TiledBanner}>
-            {background}
+            <div className={classes.MobileComponent}>
+                <div className={classes.Tile}>
+                    <img src={props.image} alt="TileImg" />
+                </div>
+            </div>
+            <div className={classes.DesktopComponent}>
+                {background}
+            </div>
         </div>
     );
 }

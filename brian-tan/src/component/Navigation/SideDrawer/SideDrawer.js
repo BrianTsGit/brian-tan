@@ -16,7 +16,7 @@ const sideDrawer = (props) => {
         <Aux>
             <Backdrop show={props.show} clicked={props.close} />
             <div className={sideDrawerClasses.join(' ')}>
-                <NavigationItems />
+                <NavigationItems clicked={props.close} />
             </div>
         </Aux>
     );
