@@ -19,6 +19,27 @@ class YelpBusinessGrid extends Component {
         this.setState({ savedTabOpen: savedTab });
     }
 
+    onSaveRestaurantHandler = (res) => {
+        const formattedRestaurant = {
+            yelp_id: res.yelp_id,
+            name: res.name,
+            image_url: res.image_url,
+            url: res.url,
+            price: res.price,
+            rating: res.rating,
+            review_count: res.review_count,
+            location: res.location,
+            categories: res.categories,
+            coordinates: res.coordinates
+        };
+
+        this.props.saveRestaurant(formattedRestaurant);
+    }
+
+    onRemoveRestaurantHandler = (res) => {
+        this.props.deleteRestaurant(res.yelp_id);
+    }
+
     render () {
         let tabSection = !this.state.savedTabOpen ? 
             (
@@ -26,8 +47,9 @@ class YelpBusinessGrid extends Component {
                     <YelpBusinesses 
                             items={this.props.businesses} 
                             loading={this.props.loadingSearch}
-                            clickAction="Save"
-                            placeholder="Search businesses to add to your list." />
+                            clickType="Save"
+                            clickAction={this.onSaveRestaurantHandler}
+                            placeholder="Search businesses to add to my list." />
                 </div>
             ) :
             (
@@ -35,7 +57,8 @@ class YelpBusinessGrid extends Component {
                     <YelpBusinesses 
                         items={this.props.hitList}
                         loading={this.props.loadingHitList} 
-                        clickAction="Remove"
+                        clickType="Remove"
+                        clickAction={this.onRemoveRestaurantHandler}
                         placeholder="There are no items yet." />
                 </div>
             );
@@ -72,10 +95,11 @@ class YelpBusinessGrid extends Component {
                         <YelpBusinesses 
                                 items={this.props.businesses} 
                                 loading={this.props.loadingSearch}
-                                clickAction="Save"
+                                clickType="Save"
+                                clickAction={this.onSaveRestaurantHandler}
                                 showHeader
                                 headerText="SEARCHED"
-                                placeholder="Search businesses to add to your list." />
+                                placeholder="Search businesses to add to my list." />
                     </div>
                     <div className={classes.ItemSection}>
                         <YelpBusinesses 
@@ -83,7 +107,8 @@ class YelpBusinessGrid extends Component {
                             loading={this.props.loadingHitList} 
                             showHeader
                             headerText="SAVED"
-                            clickAction="Remove"
+                            clickType="Remove"
+                            clickAction={this.onRemoveRestaurantHandler}
                             placeholder="There are no items yet." />
                     </div>
                 </div>
@@ -103,7 +128,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getHitList: () => dispatch(actions.getHitList())
+        getHitList: () => dispatch(actions.getHitList()),
+        saveRestaurant: restaurant => dispatch(actions.saveBusiness(restaurant)),
+        deleteRestaurant: id => dispatch(actions.deleteBusiness(id))
     };
 };
 

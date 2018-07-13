@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './RoundThumbnailCarousel.scss';
+import { roundThumbnailType } from '../../types/index';
 import RoundThumbnailSlide from '../../component/RoundThumbnailSlide/RoundThumbnailSlide';
 
 class RoundThumbnailCarousel extends Component {
@@ -100,5 +102,9 @@ class RoundThumbnailCarousel extends Component {
         )
     }
 }
+
+RoundThumbnailCarousel.propTypes = {
+    slideItems: PropTypes.arrayOf(roundThumbnailType)
+};
 
 export default RoundThumbnailCarousel;

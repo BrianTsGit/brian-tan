@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './RoundThumbnailSlide.scss';
+import { roundThumbnailType } from '../../types/index';
 import RoundThumbnail from '../RoundThumbnail/RoundThumbnail';
 
 const roundThumbnailSlide = (props) => {
@@ -9,10 +11,10 @@ const roundThumbnailSlide = (props) => {
     if (props.items.length) {
         thumbnails = props.items.map(item => {
             return (
-                <div className={classes.ThumbnailWrapper}>
+                <div key={item._id + '_wrapper'} className={classes.ThumbnailWrapper}>
                     <RoundThumbnail 
                         key={item._id}
-                        image={item.image_url} 
+                        image_url={item.image_url} 
                         text={item.text}
                         category={item.category} />
                 </div>
@@ -28,5 +30,9 @@ const roundThumbnailSlide = (props) => {
         </div>
     );
 }
+
+roundThumbnailSlide.propTypes = {
+    items: PropTypes.arrayOf(roundThumbnailType)
+};
 
 export default roundThumbnailSlide;

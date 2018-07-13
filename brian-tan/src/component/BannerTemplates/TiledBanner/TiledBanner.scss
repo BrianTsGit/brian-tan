@@ -1,0 +1,26 @@
+.TiledBanner {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+
+    .Tile {
+        width: 25%;
+        display: inline-block;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        height: 450px;
+    }
+
+    @media (min-width: 968px) {
+        height: 600px;
+
+        .Tile {
+            width: 20%;
+        }
+    }
+}

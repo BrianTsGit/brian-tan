@@ -8,6 +8,7 @@ import Television from './container/Television/Television';
 import Gaming from './container/Gaming/Gaming';
 import Food from './container/Food/Food';
 import Misc from './container/Misc/Misc';
+import About from './container/About/About';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/gaming" component={Gaming}></Route>
           <Route path="/food" component={Food}></Route>
           <Route path="/misc" component={Misc}></Route>
+          <Route path="/about" component={About}></Route>
           <Route path="/" component={Home}></Route>
         </Switch>
       </Layout>

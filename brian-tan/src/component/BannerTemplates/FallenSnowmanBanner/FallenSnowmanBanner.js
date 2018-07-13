@@ -1,6 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './FallenSnowmanBanner.scss';
+
+//This Banner Component takes in an object with 5 image sources and displays them
+//as circles with decreasing sizes 
 
 const fallenSnowmanBanner = (props) => {
     return (
@@ -27,6 +31,17 @@ const fallenSnowmanBanner = (props) => {
             </div>
         </div>
     );
+}
+
+fallenSnowmanBanner.propTypes = {
+    header: PropTypes.string,
+    icons: PropTypes.shape({
+        icon1: PropTypes.string,
+        icon2: PropTypes.string,
+        icon3: PropTypes.string,
+        icon4: PropTypes.string,
+        icon5: PropTypes.string
+    })
 }
 
 export default fallenSnowmanBanner; 

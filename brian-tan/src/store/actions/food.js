@@ -134,4 +134,37 @@ export const deleteBusiness = (yelpId) => {
     };
 };
 
+export const getTopRestaurantsInit = () => {
+    return {
+        type: actionTypes.GET_TOP_RESTAURANTS_INIT
+    };
+}
+
+export const getTopRestaurantsSuccess = (topRestaurants) => {
+    return {
+        type: actionTypes.GET_TOP_RESTAURANTS_SUCCESS,
+        topRestaurants: topRestaurants
+    };
+}
+
+export const getTopRestaurantsFail = () => {
+    return {
+        type: actionTypes.GET_TOP_RESTAURANTS_FAIL
+    };
+}
+
+export const getTopRestaurants = () => {
+    return dispatch => {
+        dispatch(getTopRestaurantsInit());
+        axiosServer.get('/api/food/topRestaurants')
+            .then(res => {
+                dispatch(getTopRestaurantsSuccess(res.data));
+            })
+            .catch(err => {
+                console.log(err);
+                dispatch(getTopRestaurantsFail());
+            });
+    }
+}
+
 
