@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import classes from './ConceptGrid.scss';
-import ConceptGridImage from './GridImage/GridImage';
+import ConceptGridImage from '../../component/ConceptGrid/ConceptGridImage/ConceptGridImage';
+import ConceptGridCell from '../../component/ConceptGrid/ConceptGridCell/ConceptGridCell';
 
 class ConceptGrid extends Component {
     state = {
@@ -32,20 +33,25 @@ class ConceptGrid extends Component {
     render () {
         let conceptsGridClasses = [classes.ConceptsGrid, classes.GridClosed].join(' ');
 
-        if (this.props.showConceptsGrid) {
+        if (this.props.showConceptGrid) {
             conceptsGridClasses = [classes.ConceptsGrid, classes.GridOpened].join(' ');
         }
 
         let conceptCells = this.state.concepts.map(concept => {
             return (
-                <a key={concept.text} href={concept.url}>
-                    <div 
-                        className={classes.ConceptCell}
-                        onMouseEnter={() => this.onConceptCellMouseEnterHandler(concept.image)}
-                        onMouseLeave={this.onConceptCellMouseLeaveHandler}>
-                            <span>{concept.text}</span>  
-                    </div>
-                </a>
+                <ConceptGridCell 
+                    key={concept.text}
+                    concept={concept}
+                    mouseEnter={() => this.onConceptCellMouseEnterHandler(concept.image)}
+                    mouseLeave={this.onConceptCellMouseLeaveHandler}/>
+                // <a key={concept.text} href={concept.url}>
+                //     <div 
+                //         className={classes.ConceptCell}
+                //         onMouseEnter={() => this.onConceptCellMouseEnterHandler(concept.image)}
+                //         onMouseLeave={this.onConceptCellMouseLeaveHandler}>
+                //             <span>{concept.text}</span>  
+                //     </div>
+                // </a>
             )
         })
 
@@ -56,7 +62,7 @@ class ConceptGrid extends Component {
                     <ConceptGridImage show image={this.state.conceptGridImage} />
                 </div>
                 <div className={classes.GridHeader}>
-                    <div onClick={this.props.closeConceptsGrid} className={classes.CloseButton}>
+                    <div onClick={this.props.closeConceptGrid} className={classes.CloseButton}>
                         <i className="fas fa-times"/>
                     </div>
                 </div>

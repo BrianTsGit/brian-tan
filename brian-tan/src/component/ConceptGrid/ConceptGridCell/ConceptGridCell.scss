@@ -1,0 +1,14 @@
+.ConceptCell {
+    width: 20%;
+    height: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+
+    span {
+        text-decoration: none;
+        color: white;
+    }
+}

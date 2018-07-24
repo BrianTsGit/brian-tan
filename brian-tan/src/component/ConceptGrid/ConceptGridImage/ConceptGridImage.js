@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './GridImage.scss';
+import classes from './ConceptGridImage.scss';
 
 const gridImage = (props) => {
     let gridImageClasses = [classes.GridImage, classes.Hide].join(' ');
