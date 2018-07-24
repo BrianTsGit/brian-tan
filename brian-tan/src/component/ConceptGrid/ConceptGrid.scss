@@ -73,8 +73,9 @@
     display: inline-block;
     overflow: hidden;
     text-align: center;
-    
-    &:hover {
-        cursor: pointer;
+
+    span {
+        text-decoration: none;
+        color: white;
     }
 }

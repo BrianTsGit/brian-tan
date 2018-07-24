@@ -4,4 +4,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    // transition: all .5s;
+
+    &.Hide {
+        display: none;
+    }
+
+    &.Show {
+        display: block;
+    }
 }
