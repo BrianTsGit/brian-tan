@@ -8,7 +8,7 @@ import * as actions from '../../store/actions/index';
 import Aux from '../../hoc/Aux/Aux';
 import NavigationItems from '../../component/Navigation/NavigationItems/NavigationItems';
 import SideDrawerToggle from '../../component/Navigation/SideDrawer/SideDrawerToggle/SideDrawerToggle';
-import ConceptGrid from '../../component/ConceptGrid/ConceptGrid';
+import ConceptGrid from '../ConceptGrid/ConceptGrid';
 
 class Toolbar extends Component {
 
@@ -28,7 +28,7 @@ class Toolbar extends Component {
                     </NavLink>
                 </div>
                 <nav className={[classes.PullRight, classes.DesktopComponent].join(' ')}>
-                    <NavigationItems showConcepts={this.props.openConceptsGrid} />
+                    <NavigationItems showConcepts={this.props.openConceptGrid} />
                 </nav>
                 <nav 
                     className={[classes.PullRight, classes.MobileNav, classes.MobileComponent].join(' ')}
@@ -37,8 +37,8 @@ class Toolbar extends Component {
                 </nav>
             </div>
             <ConceptGrid 
-                showConceptsGrid={this.props.showConceptsGrid} 
-                closeConceptsGrid={this.props.closeConceptsGrid} />
+                showConceptGrid={this.props.showConceptGrid} 
+                closeConceptGrid={this.props.closeConceptGrid} />
             </Aux>
         );
     }
@@ -46,14 +46,14 @@ class Toolbar extends Component {
 
 const mapStateToProps = state => {
     return {
-        showConceptsGrid: state.ui.showConceptsGrid
+        showConceptGrid: state.ui.showConceptGrid
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        openConceptsGrid: () => dispatch(actions.openConceptsGrid()),
-        closeConceptsGrid: () => dispatch(actions.closeConceptsGrid())
+        openConceptGrid: () => dispatch(actions.openConceptGrid()),
+        closeConceptGrid: () => dispatch(actions.closeConceptGrid())
     };
 };
 

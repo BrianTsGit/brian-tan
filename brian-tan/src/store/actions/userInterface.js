@@ -1,13 +1,13 @@
 import * as actionTypes from './actionTypes';
 
-export const openConceptsGrid = () => {
+export const openConceptGrid = () => {
     return {
-        type: actionTypes.OPEN_CONCEPTS_GRID
+        type: actionTypes.OPEN_CONCEPT_GRID
     };
 }
 
-export const closeConceptsGrid = () => {
+export const closeConceptGrid = () => {
     return {
-        type: actionTypes.CLOSE_CONCEPTS_GRID
+        type: actionTypes.CLOSE_CONCEPT_GRID
     };
 }

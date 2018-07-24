@@ -2,15 +2,17 @@ import * as actionType from '../actions/actionTypes';
 import { updateObject } from '../utility';
 
 const initialState = {
-    showConceptsGrid: false
+    showConceptGrid: false
 };
 
 const store = (state = initialState, action) => {
     switch (action.type) {
-        case actionType.OPEN_CONCEPTS_GRID: 
-            return updateObject(state, { showConceptsGrid: true });
-        case actionType.CLOSE_CONCEPTS_GRID: 
-            return updateObject(state, { showConceptsGrid: false });          
+        case actionType.OPEN_CONCEPT_GRID: 
+            console.log('opened');
+            return updateObject(state, { showConceptGrid: true });
+        case actionType.CLOSE_CONCEPT_GRID: 
+            console.log('closed');
+            return updateObject(state, { showConceptGrid: false });          
         default:
             return state;
     }

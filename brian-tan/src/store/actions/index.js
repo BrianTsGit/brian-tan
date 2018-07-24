@@ -9,6 +9,6 @@ export {
     getMiscInterests
 } from './miscInterest';
 export {
-    openConceptsGrid,
-    closeConceptsGrid
+    openConceptGrid,
+    closeConceptGrid
 } from './userInterface';
