@@ -7,6 +7,25 @@
     align-items: center;
     list-style: none;
 
+    .NavigationControl {
+        height: 50px;
+        width: 100%;
+        padding: 10px 0;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'Permanent Marker', 'sans-serif';
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (min-width: 568px) {
+            height: 100%;
+            width: auto;
+            padding: 15px 10px;
+        }
+    }
+
     .Login {
         height: 50px;
         width: 50px;

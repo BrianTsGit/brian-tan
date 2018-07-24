@@ -10,12 +10,14 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import foodReducer from './store/reducers/food';
 import miscInterestReducer from './store/reducers/miscInterest';
+import uiReducer from './store/reducers/userInterface';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //allow us to use redux dev tools
 
 const rootReducer = combineReducers({
    food: foodReducer,
-   miscInterest: miscInterestReducer 
+   miscInterest: miscInterestReducer,
+   ui: uiReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(
