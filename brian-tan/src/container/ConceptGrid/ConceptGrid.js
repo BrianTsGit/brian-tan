@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import classes from './ConceptGrid.scss';
+import * as actions from '../../store/actions/index';
 import ConceptGridImage from '../../component/ConceptGrid/ConceptGridImage/ConceptGridImage';
 import ConceptGridCell from '../../component/ConceptGrid/ConceptGridCell/ConceptGridCell';
 
@@ -10,17 +12,17 @@ class ConceptGrid extends Component {
             {
                 text: 'Montage Magazine',
                 image: 'https://images.pexels.com/photos/936112/pexels-photo-936112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                url: 'https://wovenmagazine.com/'
+                route: '/about'
             },
             {
                 text: 'GA',
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                url: 'https://www.gq.com/?us_site=y'
+                route: '/about'
             },
             {
                 text: 'yeppers',
                 image: 'https://images.pexels.com/photos/1086719/pexels-photo-1086719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                url: 'https://www.bonappetit.com/'
+                route: '/about'
             },
         ],
         conceptGridImage: null
@@ -46,6 +48,7 @@ class ConceptGrid extends Component {
                 <ConceptGridCell 
                     key={concept.text}
                     concept={concept}
+                    clicked={this.props.closeConceptGrid}
                     mouseEnter={() => this.onConceptCellMouseEnterHandler(concept.image)}
                     mouseLeave={this.onConceptCellMouseLeaveHandler}/>
             )
@@ -70,4 +73,10 @@ class ConceptGrid extends Component {
     }
 }
 
-export default ConceptGrid;
+const mapDispatchToProps = dispatch => {
+    return {
+        closeConceptGrid: () => dispatch(actions.closeConceptGrid())
+    };
+};
+
+export default connect(null, mapDispatchToProps)(ConceptGrid);
