@@ -27,14 +27,14 @@ class Toolbar extends Component {
                         <span>Tan Out Of Tan</span>
                     </NavLink>
                 </div>
-                <nav className={[classes.PullRight, classes.DesktopComponent].join(' ')}>
+                <nav className={classes.PullRight}>
                     <NavigationItems showConcepts={this.props.openConceptGrid} />
                 </nav>
-                <nav 
+                {/* <nav 
                     className={[classes.PullRight, classes.MobileNav, classes.MobileComponent].join(' ')}
                     onClick={this.props.toggleSideDrawer}>
                     <SideDrawerToggle />
-                </nav>
+                </nav> */}
             </div>
             <ConceptGrid 
                 showConceptGrid={this.props.showConceptGrid} 

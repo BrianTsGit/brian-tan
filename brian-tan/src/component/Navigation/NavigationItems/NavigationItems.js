@@ -4,8 +4,14 @@ import classes from './NavigationItems.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
 
 const navigationItems = (props) => {
+    let navigationItemsClasses = classes.NavigationItems;
+
+    if (props.sideDrawer) {
+        navigationItemsClasses = [classes.NavigationItems, classes.SideDrawer].join(' ');
+    }
+
     return (
-        <ul className={classes.NavigationItems}>
+        <ul className={navigationItemsClasses}>
             <li className={classes.NavigationControl}>
                 <span onClick={props.showConcepts}>Concepts</span>
             </li>

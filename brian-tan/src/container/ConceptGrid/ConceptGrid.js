@@ -16,13 +16,17 @@ class ConceptGrid extends Component {
                 text: 'GA',
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 url: 'https://www.gq.com/?us_site=y'
-            }
+            },
+            {
+                text: 'yeppers',
+                image: 'https://images.pexels.com/photos/1086719/pexels-photo-1086719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                url: 'https://www.bonappetit.com/'
+            },
         ],
         conceptGridImage: null
     };
 
     onConceptCellMouseEnterHandler = (conceptGridImage) => {
-        console.log('conceptGridImage', conceptGridImage);
         this.setState({ conceptGridImage: conceptGridImage });
     }
 
@@ -44,14 +48,6 @@ class ConceptGrid extends Component {
                     concept={concept}
                     mouseEnter={() => this.onConceptCellMouseEnterHandler(concept.image)}
                     mouseLeave={this.onConceptCellMouseLeaveHandler}/>
-                // <a key={concept.text} href={concept.url}>
-                //     <div 
-                //         className={classes.ConceptCell}
-                //         onMouseEnter={() => this.onConceptCellMouseEnterHandler(concept.image)}
-                //         onMouseLeave={this.onConceptCellMouseLeaveHandler}>
-                //             <span>{concept.text}</span>  
-                //     </div>
-                // </a>
             )
         })
 
