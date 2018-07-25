@@ -1,11 +1,35 @@
 .NavigationItems {
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 10px; 
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: center;
     list-style: none;
+
+    &.SideDrawer {
+        padding: 0;
+        flex-flow: column;
+    }
+
+    .NavigationControl {
+        height: 50px;
+        width: 100%;
+        padding: 12px 8px;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'Permanent Marker', 'sans-serif';
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            height: 100%;
+            width: auto;
+            padding: 15px 10px;
+        }
+    }
 
     .Login {
         height: 50px;
@@ -21,10 +45,5 @@
             height: 30px;
             width: 30px;
         }
-    }
-
-    @media (min-width: 568px) {
-        padding: 0 10px;
-        flex-flow: row;
     }
 }

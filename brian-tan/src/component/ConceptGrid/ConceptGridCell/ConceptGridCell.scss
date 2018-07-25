@@ -1,0 +1,19 @@
+.ConceptCell {
+    width: 25%;
+    height: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+
+    span {
+        text-decoration: none;
+        color: white;
+    }
+    
+    @media (min-width: 768px) {
+        width: 20%;
+        height: 20%;
+    }
+}
