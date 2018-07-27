@@ -27,3 +27,12 @@ export const featureItemType = shape({
     image_url: string.isRequired,
     url: string.isRequired
 });
+
+export const titleCardType = shape({
+    _id: string,
+    headline: string.isRequired,
+    image_url: string.isRequired,
+    url: string.isRequired,
+    creator: string.isRequired,
+    size: string
+});
