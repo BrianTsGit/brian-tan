@@ -17,7 +17,7 @@ class ConceptGrid extends Component {
             {
                 text: 'GA',
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                route: '/about'
+                route: '/ga-magazine'
             },
             {
                 text: 'yeppers',

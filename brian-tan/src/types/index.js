@@ -20,3 +20,10 @@ export const roundThumbnailType = shape({
     image_url: string.isRequired,
     category: string
 });
+
+export const featureItemType = shape({
+    _id: string,
+    text: string.isRequired,
+    image_url: string.isRequired,
+    url: string.isRequired
+});

@@ -7,6 +7,7 @@ import Layout from './hoc/Layout/Layout';
 import Home from './container/Home/Home';
 import Food from './container/Food/Food';
 import About from './container/About/About';
+import FashionMagazine from './container/FashionMagazine/FashionMagazine';
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
           <Switch>
             <Route path="/food" component={Food}></Route>
             <Route path="/about" component={About}></Route>
+            <Route path="/ga-magazine" component={FashionMagazine}></Route>
             <Route path="/" component={Home}></Route>
           </Switch>
         </Layout>
