@@ -11,6 +11,9 @@ const fashionHeroBanner = (props) => {
 
     return (
         <div className={classes.FashionHeroBanner}>
+            <a href={props.banner.url}>
+                <div className={classes.BannerOverlay} />
+            </a>
             <div 
                 className={classes.HeroImage}
                 style={{
