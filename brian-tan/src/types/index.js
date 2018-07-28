@@ -36,3 +36,12 @@ export const titleCardType = shape({
     creator: string.isRequired,
     size: string
 });
+
+export const headlineFeedItemType = shape({
+    _id: string,
+    url: string.isRequired,
+    headline: string.isRequired,
+    description: string.isRequired,
+    time_published: number.isRequired,
+    image_url: string.isRequired
+})
