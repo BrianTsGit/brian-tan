@@ -34,6 +34,7 @@ export const titleCardType = shape({
     image_url: string.isRequired,
     url: string.isRequired,
     creator: string.isRequired,
+    category: string.isRequired,
     size: string
 });
 

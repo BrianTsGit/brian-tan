@@ -7,8 +7,6 @@ const fashionHeroBanner = (props) => {
 
     let imageUrl = 'url(' + props.banner.image_url + ')';
 
-    console.log(imageUrl);
-
     return (
         <div className={classes.FashionHeroBanner}>
             <a href={props.banner.url}>

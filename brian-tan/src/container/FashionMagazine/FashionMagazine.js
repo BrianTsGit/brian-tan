@@ -6,6 +6,7 @@ import FashionHeroBanner from '../../component/FashionMagazine/FashionHeroBanner
 import FeatureItems from '../../component/FashionMagazine/FeatureItems/FeatureItems';
 import TitleCardGrid from '../../component/FashionMagazine/TitleCardGrid/TitleCardGrid';
 import HeadlineFeed from '../../component/FashionMagazine/HeadlineFeed/HeadlineFeed';
+import SectionPreviewGrid from '../../component/FashionMagazine/SectionPreviewGrid/SectionPreviewGrid';
 
 class FashionMagazine extends Component {
     state = fashionMagazineData;
@@ -21,6 +22,9 @@ class FashionMagazine extends Component {
                 <div className={classes.RightRailing}>
                     <HeadlineFeed feedItems={this.state.headlineFeedItems} />
                 </div>
+                <SectionPreviewGrid 
+                    sectionPreview={this.state.sectionPreview1.sectionPreview} 
+                    titleCards={this.state.sectionPreview1.titleCards} />
             </div>
         );
     }

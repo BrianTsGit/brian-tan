@@ -2,7 +2,7 @@ export const fashionMagazineData = {
     banner: {
         image_url: 'https://images.pexels.com/photos/875722/pexels-photo-875722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         title: 'Most Popular',
-        headline: 'Tips on How You Can Pull Off Denim Year Round.',
+        headline: 'Tips to Off Denim Year Round.',
         url: 'https://www.gq.com/?us_site=y'
     },
     featureItems: [
@@ -102,5 +102,70 @@ export const fashionMagazineData = {
             description: 'It\'s actually not as hard as you think',
             time_published: 2
         },
-    ]
+    ],
+    sectionPreview1: {
+        sectionPreview: {
+            headerImage: 'https://media.gq.com/photos/5a0126136c531f2c62ea3fcd/1:1/w_100/street-circle.gif',
+            url: 'https://www.gq.com/style',
+            headerText: 'Latest in Style'
+        },
+        titleCards: [
+            {
+                _id: 'titleCard1',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://media.gq.com/photos/5b575cbc694b552c7cc41a7c/3:4/w_240/Whats-My-Rating-GQ-July-2018-072418.jpg',
+                category: 'Really Long Category',
+                headline: 'This Is What Happened When I Asked My Friends to Rate Me',
+                creator: 'CLAY SKIPPER'
+            },
+            {
+                _id: 'titleCard2',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://media.gq.com/photos/5b59fb3bebe0f9125a9fbb4f/3:4/w_240/Screen%20Shot%202018-07-26%20at%2012.46.35%20PM.png',
+                category: 'Sneakers',
+                headline: 'Off-White\'s Nike Air Presto Is Back and More Hyped Than Ever',
+                creator: 'CLAY SKIPPER'
+            },
+            {
+                _id: 'titleCard3',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://media.gq.com/photos/5b5a2662aa6bf94608b2597c/3:4/w_240/Underrated-Exercises-GQ-2018-072618.jpg',
+                category: 'Fitness',
+                headline: 'The Gym\'s 3 Most Underrated Exercises, According to Personal Trainers',
+                creator: 'CLAY SKIPPER'
+            },
+            {
+                _id: 'titleCard4',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://media.gq.com/photos/5b575cbc694b552c7cc41a7c/3:4/w_240/Whats-My-Rating-GQ-July-2018-072418.jpg',
+                category: 'Really Long Category',
+                headline: 'This Is What Happened When I Asked My Friends to Rate Me',
+                creator: 'CLAY SKIPPER'
+            },
+            {
+                _id: 'titleCard5',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://media.gq.com/photos/5b59fb3bebe0f9125a9fbb4f/3:4/w_240/Screen%20Shot%202018-07-26%20at%2012.46.35%20PM.png',
+                category: 'Sneakers',
+                headline: 'Off-White\'s Nike Air Presto Is Back and More Hyped Than Ever',
+                creator: 'CLAY SKIPPER'
+            },
+            {
+                _id: 'titleCard6',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://media.gq.com/photos/5b5a2662aa6bf94608b2597c/3:4/w_240/Underrated-Exercises-GQ-2018-072618.jpg',
+                category: 'Fitness',
+                headline: 'The Gym\'s 3 Most Underrated Exercises, According to Personal Trainers',
+                creator: 'CLAY SKIPPER'
+            },
+            {
+                _id: 'titleCard7',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://media.gq.com/photos/5b575cbc694b552c7cc41a7c/3:4/w_240/Whats-My-Rating-GQ-July-2018-072418.jpg',
+                category: 'Really Long Category',
+                headline: 'This Is What Happened When I Asked My Friends to Rate Me',
+                creator: 'CLAY SKIPPER'
+            },
+        ]
+    }
 };

@@ -27,7 +27,9 @@ const headlineFeed = (props) => {
             </div>
             {feedItems}
             <div className={classes.FeedFooter}>
-                <span>View More Posts<i className="fas fa-arrow-right" /></span>
+                <a href="/ga-magazine">
+                    <span>View More Posts<i className="fas fa-arrow-right" /></span>
+                </a>
             </div>
         </div>
     );

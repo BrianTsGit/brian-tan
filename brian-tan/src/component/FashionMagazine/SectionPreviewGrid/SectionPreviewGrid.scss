@@ -1,0 +1,47 @@
+.SectionPreviewGrid {
+    width: 100%;
+    display: block;
+
+    .GridHeader {
+        width: 100%;
+        display: flex;
+        border-top: 1px solid #e5e5e5;
+
+        .HeaderText {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            flex: 1;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            span {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            i {
+                transition: all .5s;
+                color: #ff4545;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    .HeaderText {
+        span {
+            font-size: 42px;
+        }
+
+        &:hover {
+            i {
+                transform: translateX(5px);
+            }       
+        }
+    }
+}

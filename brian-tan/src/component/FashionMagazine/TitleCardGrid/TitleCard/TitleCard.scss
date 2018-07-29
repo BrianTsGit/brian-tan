@@ -100,14 +100,15 @@
 @media (min-width: 768px) {
 
     .TitleCard {
-        max-height: 450px;
         flex-flow: column;
+        max-height: 500px;
 
-        &.OneThird {
+        &.Large {
             width: 33.3%;
         }
 
-        &.OneQuarter {
+        &.Small {
+            height: 40vw;
             width: 25%;
         }
 
@@ -147,7 +148,7 @@
 
 @media (min-width: 968px) {
     .TitleCard {
-        &.OneThird, &.OneQuarter {
+        &.Large {
             width: 50%;
         }
     }

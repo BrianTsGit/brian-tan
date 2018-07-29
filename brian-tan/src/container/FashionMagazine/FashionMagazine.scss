@@ -16,6 +16,7 @@
 
     @media (min-width: 968px) {
         display: flex;
+        flex-flow: wrap;
 
         .LeftRailing {
             width: 62.5%;

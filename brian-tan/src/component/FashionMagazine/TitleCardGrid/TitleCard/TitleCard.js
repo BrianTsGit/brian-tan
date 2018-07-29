@@ -6,10 +6,10 @@ import { titleCardType } from '../../../../types/index';
 
 const titleCard = (props) => {
 
-    let titleCardClasses = [classes.TitleCard, classes.OneThird].join(' ');
+    let titleCardClasses = [classes.TitleCard, classes.Large].join(' ');
 
-    if (props.size && props.size === 'OneFourth') {
-        titleCardClasses = [classes.TitleCard, classes.OneFourth].join(' ');
+    if (props.small) {
+        titleCardClasses = [classes.TitleCard, classes.Small].join(' ');
     }
 
     return (
