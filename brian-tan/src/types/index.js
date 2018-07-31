@@ -20,3 +20,29 @@ export const roundThumbnailType = shape({
     image_url: string.isRequired,
     category: string
 });
+
+export const featureItemType = shape({
+    _id: string,
+    text: string.isRequired,
+    image_url: string.isRequired,
+    url: string.isRequired
+});
+
+export const titleCardType = shape({
+    _id: string,
+    headline: string.isRequired,
+    image_url: string.isRequired,
+    url: string.isRequired,
+    creator: string.isRequired,
+    category: string.isRequired,
+    size: string
+});
+
+export const headlineFeedItemType = shape({
+    _id: string,
+    url: string.isRequired,
+    headline: string.isRequired,
+    description: string.isRequired,
+    time_published: number.isRequired,
+    image_url: string.isRequired
+})

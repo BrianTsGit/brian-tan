@@ -36,9 +36,7 @@ class Toolbar extends Component {
                     <SideDrawerToggle />
                 </nav> */}
             </div>
-            <ConceptGrid 
-                showConceptGrid={this.props.showConceptGrid} 
-                closeConceptGrid={this.props.closeConceptGrid} />
+            <ConceptGrid showConceptGrid={this.props.showConceptGrid} />
             </Aux>
         );
     }
@@ -52,8 +50,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        openConceptGrid: () => dispatch(actions.openConceptGrid()),
-        closeConceptGrid: () => dispatch(actions.closeConceptGrid())
+        openConceptGrid: () => dispatch(actions.openConceptGrid())
     };
 };
 

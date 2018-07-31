@@ -5,18 +5,17 @@ import { connect } from 'react-redux';
 import classes from './App.scss';
 import Layout from './hoc/Layout/Layout';
 import Home from './container/Home/Home';
-import Television from './container/Television/Television';
-import Gaming from './container/Gaming/Gaming';
 import Food from './container/Food/Food';
-import Misc from './container/Misc/Misc';
 import About from './container/About/About';
+import FashionMagazine from './container/FashionMagazine/FashionMagazine';
+import Placeholder from './component/UI/Placeholder/Placeholder';
 
 class App extends Component {
 
   render() {
     let innerBodyClasses = classes.InnerBody;
 
-    if (this.props.showConceptsGrid) {
+    if (this.props.showConceptGrid) {
       innerBodyClasses = [classes.InnerBody, classes.ShowConceptGrid].join(' ');
     }
 
@@ -24,11 +23,10 @@ class App extends Component {
       <div className={innerBodyClasses}>
         <Layout>
           <Switch>
-            <Route path="/television" component={Television}></Route>
-            <Route path="/gaming" component={Gaming}></Route>
             <Route path="/food" component={Food}></Route>
-            <Route path="/misc" component={Misc}></Route>
             <Route path="/about" component={About}></Route>
+            <Route path="/ga-magazine" component={FashionMagazine}></Route>
+            <Route path="/coming-soon" component={Placeholder}></Route>
             <Route path="/" component={Home}></Route>
           </Switch>
         </Layout>
@@ -39,7 +37,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    showConceptsGrid: state.ui.showConceptsGrid
+    showConceptGrid: state.ui.showConceptGrid
   }
 };
 

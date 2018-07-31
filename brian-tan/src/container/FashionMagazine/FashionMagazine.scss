@@ -1,0 +1,29 @@
+.FashionMagazine {
+    margin-top: 50px;
+    
+    .LeftRailing {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .RightRailing {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        background-color: #f2f2f2;
+    }
+
+    @media (min-width: 968px) {
+        display: flex;
+        flex-flow: wrap;
+
+        .LeftRailing {
+            width: 62.5%;
+        }
+
+        .RightRailing {
+            width: 37.5%;
+        }
+    }
+}

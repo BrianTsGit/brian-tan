@@ -1,0 +1,10 @@
+.TitleCardGrid {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .TitleCardGrid {
+        display: flex; 
+        flex-wrap: wrap;
+    }
+}
