@@ -11,7 +11,7 @@
             display: flex;
             flex-flow: column;
             justify-content: center;
-            flex: 1;
+            // flex: 1;
 
             a {
                 text-decoration: none;
@@ -33,15 +33,26 @@
 }
 
 @media (min-width: 640px) {
-    .HeaderText {
-        span {
-            font-size: 42px;
-        }
+    .SectionPreviewGrid {
+        .GridHeader {
+            .HeaderText {
+                
+                padding-left: 20px;
 
-        &:hover {
-            i {
-                transform: translateX(5px);
-            }       
+                span {
+                    font-size: 42px;
+                }
+
+                i {
+                    margin-left: 10px;
+                }
+        
+                &:hover {
+                    i {
+                        transform: translateX(10px);
+                    }       
+                }
+            }
         }
-    }
+    } 
 }

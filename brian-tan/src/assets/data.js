@@ -105,7 +105,10 @@ export const fashionMagazineData = {
     ],
     sectionPreview1: {
         sectionPreview: {
-            headerImage: 'https://media.gq.com/photos/5a0126136c531f2c62ea3fcd/1:1/w_100/street-circle.gif',
+            headerImage: {
+                default: 'https://media.gq.com/photos/5a0126136c531f2c62ea3fcd/1:1/w_100/street-circle.gif',
+                size640: 'https://media.gq.com/photos/5a0126136c531f2c62ea3fcd/1:1/w_140/street-circle.gif'
+            },
             url: 'https://www.gq.com/style',
             headerText: 'Latest in Style'
         },
@@ -166,6 +169,78 @@ export const fashionMagazineData = {
                 headline: 'WoWo Ma: "I am the Face of Jumble Rap"',
                 creator: 'KENNY PEPPERS'
             },
+        ]
+    },
+    sectionPreview2: {
+        sectionPreview: {
+            headerImage: {
+                default: 'https://media.gq.com/photos/5a010a4907e8e92ddab895fd/1:1/w_100/travel-circle.gif',
+                size640: 'https://media.gq.com/photos/5a010a4907e8e92ddab895fd/1:1/w_140/travel-circle.gif'
+            },
+            url: 'https://www.gq.com/style',
+            headerText: 'Travel & Eats'
+        },
+        titleCards: [
+            {
+                _id: 'titleCard1',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/262897/pexels-photo-262897.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                category: 'Food',
+                headline: 'Kansas City Has the Best Korean Rice Bowls',
+                creator: 'JAMES DENG'
+            },
+            {
+                _id: 'titleCard2',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/723240/pexels-photo-723240.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                category: 'Travel',
+                headline: 'Earlier Flights are Becoming More Common',
+                creator: 'WILL JOHNSTON'
+            },
+            {
+                _id: 'titleCard3',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/681847/pexels-photo-681847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                category: 'Drink',
+                headline: 'The Ultimate Beer Guide for Your Favorite Meals',
+                creator: 'JAMES DENG'
+            }
+        ]
+    },
+    sectionPreview3: {
+        sectionPreview: {
+            headerImage: {
+                default: 'https://media.gq.com/photos/5a01264503714b6ea9a918f9/1:1/w_100/fitness-hp-circle-4x3.gif',
+                size640: 'https://media.gq.com/photos/5a01264503714b6ea9a918f9/1:1/w_140/fitness-hp-circle-4x3.gif'
+            },
+            url: 'https://www.gq.com/style',
+            headerText: 'Health & Fitness'
+        },
+        titleCards: [
+            {
+                _id: 'titleCard1',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/17840/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                category: 'Fitness',
+                headline: 'Chest Tattoo Guy\'s Squat Tutorial for Experts',
+                creator: 'LENNY TZU'
+            },
+            {
+                _id: 'titleCard2',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                category: 'Fitness',
+                headline: 'Darren Jacobs Says "DO Scream for that Last Rep"',
+                creator: 'HALEY JENKINS'
+            },
+            {
+                _id: 'titleCard3',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/700446/pexels-photo-700446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                category: 'Fitness',
+                headline: 'Low Weights are Best for These Certain Exercises',
+                creator: 'GERALD PESHDU'
+            }
         ]
     }
 };

@@ -25,6 +25,12 @@ class FashionMagazine extends Component {
                 <SectionPreviewGrid 
                     sectionPreview={this.state.sectionPreview1.sectionPreview} 
                     titleCards={this.state.sectionPreview1.titleCards} />
+                <SectionPreviewGrid
+                    sectionPreview={this.state.sectionPreview2.sectionPreview}
+                    titleCards={this.state.sectionPreview2.titleCards} />
+                <SectionPreviewGrid
+                    sectionPreview={this.state.sectionPreview3.sectionPreview}
+                    titleCards={this.state.sectionPreview3.titleCards} />
             </div>
         );
     }

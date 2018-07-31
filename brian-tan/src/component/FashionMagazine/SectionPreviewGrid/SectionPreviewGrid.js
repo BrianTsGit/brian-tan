@@ -11,7 +11,11 @@ const sectionPreviewGrid = (props) => {
             <div className={classes.GridHeader}>
                 <a className={classes.HeaderImageLink}>
                     <div className={classes.HeaderImage}>
-                        <img src={props.sectionPreview.headerImage} alt="Preview Section Header Image"/>
+                        <picture>
+                            <source media="(min-width: 640px)" srcset={props.sectionPreview.headerImage.size640} />
+                            <source media="(min-width: 0px)" srcset={props.sectionPreview.headerImage.default} />
+                            <img alt="Preview Section Header Image" />
+                        </picture>
                     </div>
                 </a>
                 <div className={classes.HeaderText}>
