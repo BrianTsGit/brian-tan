@@ -22,12 +22,12 @@ class ConceptGrid extends Component {
             {
                 text: 'yeppers',
                 image: 'https://images.pexels.com/photos/1086719/pexels-photo-1086719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                route: '/about'
+                route: '/coming-soon'
             },
             {
                 text: 'Montage Magazine',
                 image: 'https://images.pexels.com/photos/936112/pexels-photo-936112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                route: '/about'
+                route: '/coming-soon'
             },
         ],
         conceptGridImage: null
