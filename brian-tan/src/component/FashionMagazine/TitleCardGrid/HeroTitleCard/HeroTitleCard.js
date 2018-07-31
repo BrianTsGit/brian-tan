@@ -8,8 +8,6 @@ const heroTitleCard = (props) => {
 
     let imageUrl = 'url(' + props.heroTitleCard.image_url + ')';
 
-    console.log('inside HeroTitleCard', props);
-
     return (
         <div className={classes.HeroTitleCard}>
             <a className={classes.HeroImageLink} href={props.heroTitleCard.url}>

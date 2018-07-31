@@ -7,15 +7,17 @@ import classes from './ConceptGridCell.scss';
 const conceptGridCell = (props) => {
 
     return (
-        <NavLink to={props.concept.route}>
-            <div 
-                className={classes.ConceptCell}
-                onClick={props.clicked}
-                onMouseEnter={props.mouseEnter}
-                onMouseLeave={props.mouseLeave}>
-                    <span>{props.concept.text}</span>  
-            </div>
-        </NavLink>
+        <div className={classes.ConceptCell}>
+            <NavLink to={props.concept.route}>
+                <div 
+                    className={classes.ConceptCellContent}
+                    onClick={props.clicked}
+                    onMouseEnter={props.mouseEnter}
+                    onMouseLeave={props.mouseLeave}>
+                        <span>{props.concept.text}</span>  
+                </div>
+            </NavLink>
+        </div>
     );
 }
 

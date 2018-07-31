@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import classes from './Toolbar.scss';
 import * as actions from '../../store/actions/index';
+import initials from '../../assets/images/initials_white.png';
 import Aux from '../../hoc/Aux/Aux';
 import NavigationItems from '../../component/Navigation/NavigationItems/NavigationItems';
 import SideDrawerToggle from '../../component/Navigation/SideDrawer/SideDrawerToggle/SideDrawerToggle';
@@ -24,7 +25,7 @@ class Toolbar extends Component {
             <div className={classes.Toolbar}>
                 <div className={classes.Title}>
                     <NavLink to="/">
-                        <span>Tan Out Of Tan</span>
+                        <img src={initials} alt="Initials"/>
                     </NavLink>
                 </div>
                 <nav className={classes.PullRight}>

@@ -10,25 +10,25 @@ class ConceptGrid extends Component {
     state = {
         concepts: [
             {
-                text: 'Tan Out Of Tan',
-                image: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                text: 'Personal Site',
+                image: 'https://images.pexels.com/photos/1064129/pexels-photo-1064129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 route: '/'
             },
             {
-                text: 'GA',
+                text: 'GQ Clone',
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 route: '/ga-magazine'
             },
-            {
-                text: 'yeppers',
-                image: 'https://images.pexels.com/photos/1086719/pexels-photo-1086719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                route: '/coming-soon'
-            },
-            {
-                text: 'Montage Magazine',
-                image: 'https://images.pexels.com/photos/936112/pexels-photo-936112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                route: '/coming-soon'
-            },
+            // {
+            //     text: 'yeppers',
+            //     image: 'https://images.pexels.com/photos/1086719/pexels-photo-1086719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            //     route: '/coming-soon'
+            // },
+            // {
+            //     text: 'Montage Magazine',
+            //     image: 'https://images.pexels.com/photos/936112/pexels-photo-936112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            //     route: '/coming-soon'
+            // },
         ],
         conceptGridImage: null
     };
