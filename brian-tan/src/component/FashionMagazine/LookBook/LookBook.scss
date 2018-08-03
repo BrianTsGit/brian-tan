@@ -1,0 +1,112 @@
+.LookBook {
+    position: relative;
+    width: 100%;
+
+    .Header {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding-left: 20px;
+        box-sizing: border-box;
+
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    .LookBookSlider {
+        position: relative;
+        width: 100%;
+        height: 325px;
+        
+
+        .LookBookSliderContent {
+            height: 100%;
+            display: flex;
+            overflow-x: scroll;
+            padding-bottom: 40px;
+            -ms-overflow-style: none;  // IE 10+
+
+            &::-webkit-scrollbar { 
+                display: none;  // Safari and Chrome
+            }
+
+            .SpaceItem {
+                
+                &::after {
+                    
+                }
+
+                &:first-child {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+    .LeftButton, .RightButton {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 40%;
+        background-color: white;
+        border: none;
+        display: none;
+
+        i {
+            font-size: 22px;
+            transition: all .2s;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            i {
+                color: #ff4545;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .LeftButton {
+        left: 0;
+    }
+
+    .RightButton {
+        right: 0;
+    }
+
+    @media (min-width: 640px) {
+        .Header {
+            height: 150px;
+            padding-left: 30px;
+
+            h2 {
+                font-size: 42px;
+            }
+        }
+
+        .LookBookSlider {
+            height: 400px;
+
+            .LookBookSliderContent {
+                .SpaceItem {
+                    &:first-child {
+                        margin-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 968px) {
+        .LeftButton, .RightButton {
+            display: block;
+        }
+    }
+}

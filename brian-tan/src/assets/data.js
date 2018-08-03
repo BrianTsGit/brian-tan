@@ -264,5 +264,70 @@ export const fashionMagazineData = {
             image_url: 'https://images.pexels.com/photos/786003/pexels-photo-786003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             url: 'https://www.gq.com/?us_site=y'
         }
+    ],
+    lookBookItems: [
+        {   
+            _id: 'lookBookItem1',
+            image_url: 'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'Levi Henry\'s Best Casual Looks',
+            photo_count: 32
+        },
+        {
+            _id: 'lookBookItem2',
+            image_url: 'https://images.pexels.com/photos/1138903/pexels-photo-1138903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'Javier Dillem\'s Most Dapper Outfits of 2016',
+            photo_count: 23
+        },
+        {
+            _id: 'lookBookItem3',
+            image_url: 'https://images.pexels.com/photos/715546/pexels-photo-715546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'The Effortless Style of Zachary King',
+            photo_count: 42
+        },
+        {
+            _id: 'lookBookItem4',
+            image_url: 'https://images.pexels.com/photos/936072/pexels-photo-936072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'The Joshua Reed Look Book',
+            photo_count: 55
+        },
+        {
+            _id: 'lookBookItem5',
+            image_url: 'https://images.pexels.com/photos/450212/pexels-photo-450212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'The Lenny Woo Look Book',
+            photo_count: 44
+        },
+        {
+            _id: 'lookBookItem6',
+            image_url: 'https://images.pexels.com/photos/793253/pexels-photo-793253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'The Hap Patel Look Book',
+            photo_count: 16
+        },
+        {   
+            _id: 'lookBookItem7',
+            image_url: 'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'Levi Henry\'s Best Casual Looks',
+            photo_count: 32
+        },
+        {
+            _id: 'lookBookItem8',
+            image_url: 'https://images.pexels.com/photos/1138903/pexels-photo-1138903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'Javier Dillem\'s Most Dapper Outfits of 2016',
+            photo_count: 23
+        },
+        {
+            _id: 'lookBookItem9',
+            image_url: 'https://images.pexels.com/photos/715546/pexels-photo-715546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y',
+            description: 'The Effortless Style of Zachary King',
+            photo_count: 42
+        },
     ]
 };
