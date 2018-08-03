@@ -40,6 +40,7 @@ const lookBook = (props) => {
                 <div className={classes.LookBookSliderContent} ref={lookBookSliderContent}>
                     <div className={classes.SpaceItem}></div>
                     {lookBookItems}
+                    <div className={classes.SpaceItem}></div>
                 </div>
                 <button className={classes.LeftButton} onClick={scrollLeftHandler}>
                     <i className="fas fa-arrow-left" />
