@@ -242,5 +242,27 @@ export const fashionMagazineData = {
                 creator: 'GERALD PESHDU'
             }
         ]
-    }
+    },
+    recommendations: [
+        {
+            category: 'casual',
+            image_url: 'https://images.pexels.com/photos/1271135/pexels-photo-1271135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y'
+        },
+        {
+            category: 'suits',
+            image_url: 'https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y'
+        },
+        {
+            category: 'accessories',
+            image_url: 'https://images.pexels.com/photos/35185/hats-fedora-hat-manufacture-stack.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y'
+        },
+        {
+            category: 'footwear',
+            image_url: 'https://images.pexels.com/photos/786003/pexels-photo-786003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            url: 'https://www.gq.com/?us_site=y'
+        }
+    ]
 };

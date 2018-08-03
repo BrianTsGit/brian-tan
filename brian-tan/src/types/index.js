@@ -1,4 +1,4 @@
-import { shape, number, string, oneOf } from 'prop-types';
+import { shape, number, string, oneOf, bool } from 'prop-types';
 
 export const yelpBusinessType = shape({
     yelp_id: string.isRequired,
@@ -45,4 +45,10 @@ export const headlineFeedItemType = shape({
     description: string.isRequired,
     time_published: number.isRequired,
     image_url: string.isRequired
+})
+
+export const recommendationItemType = shape({
+    isActive: bool,
+    image_url: string.isRequired,
+    category: string.isRequired
 })

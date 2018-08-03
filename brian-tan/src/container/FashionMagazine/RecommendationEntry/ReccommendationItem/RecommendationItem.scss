@@ -1,0 +1,56 @@
+.RecommendationItem {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .5s;
+
+    &.ActiveItem {
+        opacity: 1;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .ItemText {
+        position: absolute;
+        left: 20px;
+        bottom: 30%;
+        color: white;
+
+        h2 {
+            font-size: 28px;
+        }
+
+        span {
+            font-size: 22px;
+        }
+
+        i {
+            margin-left: 10px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .ItemText {
+            left: 80px;
+    
+            h2 {
+                font-size: 36px;
+            }
+    
+            span {
+                font-size: 28px;
+            }
+    
+            i {
+                margin-left: 15px;
+            }
+        }
+    }
+}
