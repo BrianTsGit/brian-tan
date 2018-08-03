@@ -52,3 +52,11 @@ export const recommendationItemType = shape({
     image_url: string.isRequired,
     category: string.isRequired
 })
+
+export const lookBookItemType = shape({
+    _id: string.isRequired,
+    image_url: string.isRequired,
+    description: string.isRequired,
+    url: string.isRequired,
+    photo_count: number.isRequired
+})

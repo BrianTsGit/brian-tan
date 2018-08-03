@@ -8,6 +8,7 @@ import TitleCardGrid from '../../component/FashionMagazine/TitleCardGrid/TitleCa
 import HeadlineFeed from '../../component/FashionMagazine/HeadlineFeed/HeadlineFeed';
 import SectionPreviewGrid from '../../component/FashionMagazine/SectionPreviewGrid/SectionPreviewGrid';
 import RecommendationEntry from './RecommendationEntry/RecommendationEntry';
+import LookBook from '../../component/FashionMagazine/LookBook/LookBook';
 
 class FashionMagazine extends Component {
     state = fashionMagazineData;
@@ -33,6 +34,7 @@ class FashionMagazine extends Component {
                 <SectionPreviewGrid
                     sectionPreview={this.state.sectionPreview3.sectionPreview}
                     titleCards={this.state.sectionPreview3.titleCards} />
+                <LookBook lookBookItems={this.state.lookBookItems} />
             </div>
         );
     }
