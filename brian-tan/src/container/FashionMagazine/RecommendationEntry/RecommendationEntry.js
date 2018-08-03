@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import classes from './RecommendationEntry.scss'
+import { recommendationItemType } from '../../../types/index';
 import RecommendationItem from './ReccommendationItem/RecommendationItem';
 
 class RecommendationEntry extends Component {
@@ -29,7 +30,7 @@ class RecommendationEntry extends Component {
         );
     }
 
-    componentWillMount () {
+    componentWillUnmount () {
         clearInterval(this.recommendationTimer);
     }
 
@@ -74,5 +75,9 @@ class RecommendationEntry extends Component {
         );
     }
 }
+
+RecommendationEntry.propTypes = {
+    recommendations: PropTypes.arrayOf(recommendationItemType)
+};
 
 export default RecommendationEntry;

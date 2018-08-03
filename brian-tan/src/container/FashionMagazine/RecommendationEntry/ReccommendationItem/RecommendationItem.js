@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import classes from './RecommendationItem.scss'
+import { recommendationItemType } from '../../../../types/index';
 
 const recommendationItem = (props) => {
 
@@ -29,11 +30,7 @@ const recommendationItem = (props) => {
 }
 
 recommendationItem.propTypes = {
-    recommendation: PropTypes.shape({
-        isActive: PropTypes.bool,
-        image_url: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired
-    })
+    recommendation: recommendationItemType
 };
 
 export default recommendationItem;
