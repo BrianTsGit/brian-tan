@@ -63,5 +63,12 @@
         height: calc(100vh - 75px);
         z-index: 2;
         display: flex;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 968px) {
+        .CellContainer {
+            padding: 40px;
+        } 
     }
 }

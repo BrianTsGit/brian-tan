@@ -14,7 +14,7 @@ const conceptGridCell = (props) => {
                     onClick={props.clicked}
                     onMouseEnter={props.mouseEnter}
                     onMouseLeave={props.mouseLeave}>
-                        <span>{props.concept.text}</span>  
+                        <img src={props.concept.logo} alt="Logo Image" /> 
                 </div>
             </NavLink>
         </div>
