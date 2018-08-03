@@ -17,15 +17,16 @@ const lookBook = (props) => {
     }
 
     const scrollRightHandler = () => {
-        lookBookSliderContent.current.scrollBy({
-            left: 750,
-            behavior: 'smooth'
-        });
+        scrollLookBookSliderContent(750);
     }
 
     const scrollLeftHandler = () => {
+        scrollLookBookSliderContent(-750);
+    }
+
+    const scrollLookBookSliderContent = distance => {
         lookBookSliderContent.current.scrollBy({
-            left: -750,
+            left: distance,
             behavior: 'smooth'
         });
     }
