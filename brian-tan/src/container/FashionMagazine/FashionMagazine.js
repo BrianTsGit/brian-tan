@@ -7,7 +7,6 @@ import FeatureItems from '../../component/FashionMagazine/FeatureItems/FeatureIt
 import TitleCardGrid from '../../component/FashionMagazine/TitleCardGrid/TitleCardGrid';
 import HeadlineFeed from '../../component/FashionMagazine/HeadlineFeed/HeadlineFeed';
 import SectionPreviewGrid from '../../component/FashionMagazine/SectionPreviewGrid/SectionPreviewGrid';
-import ReccommendationEntry from './RecommendationEntry/RecommendationEntry';
 import RecommendationEntry from './RecommendationEntry/RecommendationEntry';
 
 class FashionMagazine extends Component {
