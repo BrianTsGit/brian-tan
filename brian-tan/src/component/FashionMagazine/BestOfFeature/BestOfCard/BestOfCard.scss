@@ -1,0 +1,100 @@
+.BestOfCard {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    margin-bottom: 5px;
+
+    .BestOfCardImageLink {
+        width: 35%;
+
+        .BestOfCardImage {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .BestOfCardDescription {
+        position: relative;
+        width: 65%;
+        height: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        background-color: white;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+        span {
+            color: #ff4545;
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        h2 {
+            font-size: 12px;
+        }
+
+        .StoryCreator {
+            position: absolute;
+            bottom: 10px;
+            
+            span {
+                color: black;
+                font-size: 10px;
+            }
+
+            i {
+                color: #ff4545;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    @media (min-width: 640px) and (max-width: 767px) {
+        .BestOfCardDescription {
+            padding: 20px;
+    
+            span {
+                font-size: 12px;
+            }
+    
+            h2 {
+                font-size: 16px;
+            }
+    
+            .StoryCreator {
+                bottom: 20px;
+            }
+        } 
+    }
+
+    @media (min-width: 968px) {
+        .BestOfCardImageLink {
+            width: 50%;
+        }
+
+        .BestOfCardDescription {
+            width: 50%;
+
+            h2 {
+                font-size: 16px;
+            }
+        }
+    }
+}

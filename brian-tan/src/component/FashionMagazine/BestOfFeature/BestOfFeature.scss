@@ -1,0 +1,106 @@
+.BestOfFeature {
+    position: relative;
+    width: 100%;
+    height: 210vw;
+    background-color: #f2f2f2;
+
+    .BestOfHeroImageLink {
+        text-decoration: none;
+
+        .BestOfHeroImage {
+            width: 100%;
+            height: 50%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .BestOfHeroText {
+                position: absolute;
+                left: 20%;
+                top: 15%;
+                width: 60%;
+                color: white;
+                text-align: center;
+
+                h2 {
+                    margin: 10px 0;
+                    font-size: 30px;
+                }
+
+                span {
+                    font-size: 16px;
+                }
+
+                i {
+                    color: #ff4545;
+                }
+            }
+        }
+    }
+
+    .FeatureStories {
+        position: absolute;
+        left: 10%;
+        bottom: 20px;
+        width: 80%;
+        height: 65%;
+    }
+
+    @media (min-width: 640px) {
+        height: 180vw;
+
+        .BestOfHeroImageLink {
+            .BestOfHeroImage {
+                height: 60%;
+
+                .BestOfHeroText {
+                    top: 20%;
+
+                    h2 {
+                        font-size: 46px;
+                    }
+    
+                    span {
+                        font-size: 20px;
+                    }
+                }
+            } 
+        }
+
+        .FeatureStories {
+            height: 60%;
+            bottom: 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        height: 70vw;
+
+        .BestOfHeroImageLink {
+            .BestOfHeroImage {
+                height: 100%;
+
+                .BestOfHeroText {
+                    top: 40%;
+                    left: 15%;
+                    width: 25%;
+                }
+            }
+        }
+
+        .FeatureStories {
+            left: auto;
+            right: 5%;
+            bottom: 5%;
+            width: 35%;
+            height: 80%;
+        }
+    }
+
+    @media (min-width: 968px) {
+        height: 55vw;
+    }
+}

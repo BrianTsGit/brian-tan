@@ -56,7 +56,7 @@ export const fashionMagazineData = {
             _id: 'titleCard5',
             url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
             image_url: 'https://images.pexels.com/photos/794064/pexels-photo-794064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-            category: 'Icons',
+            category: 'Profile',
             headline: 'A Saturday With Fractures Star Cheri King',
             creator: 'JIAN KOO'
         },
@@ -329,5 +329,35 @@ export const fashionMagazineData = {
             description: 'The Effortless Style of Zachary King',
             photo_count: 42
         },
-    ]
+    ],
+    bestOfContent: {
+        hero_image: 'https://images.pexels.com/photos/167523/pexels-photo-167523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        hero_url: 'https://www.gq.com/?us_site=y',
+        bestOfStories: [
+            {
+                _id: 'bestOfStory1',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/790744/pexels-photo-790744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                category: 'Profile',
+                headline: 'How Rae Kapoldi Prepares to Write Her Summer Hits',
+                creator: 'PETE HU' 
+            },
+            {
+                _id: 'bestOfStory2',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                category: 'Best of GQ',
+                headline: 'Jenkins the Corgi Has Saved More Lives Than You',
+                creator: 'CHERYL SAUNDERS' 
+            },
+            {
+                _id: 'bestOfStory3',
+                url: 'https://www.gq.com/story/underrated-exercises-according-to-personal-trainers',
+                image_url: 'https://images.pexels.com/photos/1204612/pexels-photo-1204612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                category: 'GQ Cover Story',
+                headline: 'Sunny Tsai is the Youngest Oscar Nominated Director',
+                creator: 'PETE HU' 
+            },
+        ]
+    }
 };
