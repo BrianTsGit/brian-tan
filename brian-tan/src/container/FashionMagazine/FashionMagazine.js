@@ -9,6 +9,7 @@ import HeadlineFeed from '../../component/FashionMagazine/HeadlineFeed/HeadlineF
 import SectionPreviewGrid from '../../component/FashionMagazine/SectionPreviewGrid/SectionPreviewGrid';
 import RecommendationEntry from './RecommendationEntry/RecommendationEntry';
 import LookBook from '../../component/FashionMagazine/LookBook/LookBook';
+import BestOfFeature from '../../component/FashionMagazine/BestOfFeature/BestOfFeature';
 
 class FashionMagazine extends Component {
     state = fashionMagazineData;
@@ -31,10 +32,14 @@ class FashionMagazine extends Component {
                 <SectionPreviewGrid
                     sectionPreview={this.state.sectionPreview2.sectionPreview}
                     titleCards={this.state.sectionPreview2.titleCards} />
+                <BestOfFeature 
+                    hero_image={this.state.bestOfContent.hero_image}
+                    hero_url={this.state.bestOfContent.hero_url}
+                    bestOfCards={this.state.bestOfContent.bestOfStories} />
                 <SectionPreviewGrid
                     sectionPreview={this.state.sectionPreview3.sectionPreview}
                     titleCards={this.state.sectionPreview3.titleCards} />
-                <LookBook lookBookItems={this.state.lookBookItems} />
+                <LookBook headerTitle="Celebrity Look Books" lookBookItems={this.state.lookBookItems} />
             </div>
         );
     }

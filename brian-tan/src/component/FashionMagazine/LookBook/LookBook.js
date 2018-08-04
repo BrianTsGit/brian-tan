@@ -34,7 +34,7 @@ const lookBook = (props) => {
     return (
         <div className={classes.LookBook}>
             <div className={classes.Header}>
-                <h2>Celebrity Look Books</h2>
+                <h2>{props.headerTitle}</h2>
             </div>
             <div className={classes.LookBookSlider}>
                 <div className={classes.LookBookSliderContent} ref={lookBookSliderContent}>
@@ -54,6 +54,7 @@ const lookBook = (props) => {
 }
 
 lookBook.propTypes = {
+    headerTitle: PropTypes.string.isRequired,
     lookBookItems: PropTypes.arrayOf(lookBookItemType)
 };
 

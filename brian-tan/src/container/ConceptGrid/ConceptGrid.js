@@ -12,11 +12,13 @@ class ConceptGrid extends Component {
     state = {
         concepts: [
             {
+                _id: 'concept1',
                 logo: brianTanLogo,
                 image: 'https://images.pexels.com/photos/1064129/pexels-photo-1064129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 route: '/'
             },
             {
+                _id: 'concept2',
                 logo: gqCloneLogo,
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 route: '/ga-magazine'
@@ -53,7 +55,7 @@ class ConceptGrid extends Component {
         let conceptCells = this.state.concepts.map(concept => {
             return (
                 <ConceptGridCell 
-                    key={concept.text}
+                    key={concept._id}
                     concept={concept}
                     clicked={this.props.closeConceptGrid}
                     mouseEnter={() => this.onConceptCellMouseEnterHandler(concept.image)}

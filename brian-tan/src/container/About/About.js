@@ -27,7 +27,7 @@ class About extends Component {
                     This site is currently hosted on Heroku and built using the MERN stack (MongoDB / Express / React / Node JS)
                     <br />
                     <br />
-                    Drawings across this site were done by Amy Li.
+                    Drawings done by Amy Li.
                 </p>
             );
         }
@@ -39,9 +39,10 @@ class About extends Component {
                 </div>
                 <div className={classes.AboutDescription}>
                     <p>
-                    My name is Brian and I’m a software developer from Queens, NY. When I get 
+                    My name is Brian and I’m a full stack developer from Queens, NY. When I get 
                     bored and curious enough I create things like sites that use antiquated 
-                    fonts. Some of my long-term goals include being Chopped Champion, traveling, 
+                    fonts. I want to use this site as a playground for learning new skills and recreating
+                    designs I admire. Some of my long-term goals include being Chopped Champion, traveling, 
                     getting a six-pack, and becoming a resident of Flavortown.
                     </p>
                 </div>
