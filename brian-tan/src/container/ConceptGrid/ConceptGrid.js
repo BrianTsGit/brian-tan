@@ -5,6 +5,7 @@ import classes from './ConceptGrid.scss';
 import * as actions from '../../store/actions/index';
 import brianTanLogo from '../../assets/images/brian_tan_site_logo.png';
 import gqCloneLogo from '../../assets/images/gq_clone_logo.png';
+import foodJournalLogo from '../../assets/images/food_journal_logo.png';
 import ConceptGridImage from '../../component/ConceptGrid/ConceptGridImage/ConceptGridImage';
 import ConceptGridCell from '../../component/ConceptGrid/ConceptGridCell/ConceptGridCell';
 
@@ -19,20 +20,16 @@ class ConceptGrid extends Component {
             },
             {
                 _id: 'concept2',
+                logo: foodJournalLogo,
+                image: 'https://images.pexels.com/photos/845847/pexels-photo-845847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                route: '/food-journal'
+            },
+            {
+                _id: 'concept3',
                 logo: gqCloneLogo,
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 route: '/ga-magazine'
-            },
-            // {
-            //     text: 'yeppers',
-            //     image: 'https://images.pexels.com/photos/1086719/pexels-photo-1086719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            //     route: '/coming-soon'
-            // },
-            // {
-            //     text: 'Montage Magazine',
-            //     image: 'https://images.pexels.com/photos/936112/pexels-photo-936112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            //     route: '/coming-soon'
-            // },
+            }
         ],
         conceptGridImage: null
     };
