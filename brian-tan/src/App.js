@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 
 import classes from './App.scss';
 import Layout from './hoc/Layout/Layout';
-import Home from './container/Home/Home';
-import Food from './container/Food/Food';
+import FoodJournal from './container/Food/Food';
 import About from './container/About/About';
 import FashionMagazine from './container/FashionMagazine/FashionMagazine';
-import Placeholder from './component/UI/Placeholder/Placeholder';
+import PersonalSite from './container/PersonalSite/PersonalSite';
 
 class App extends Component {
 
@@ -23,11 +22,10 @@ class App extends Component {
       <div className={innerBodyClasses}>
         <Layout>
           <Switch>
-            <Route path="/food" component={Food}></Route>
             <Route path="/about" component={About}></Route>
             <Route path="/ga-magazine" component={FashionMagazine}></Route>
-            <Route path="/coming-soon" component={Placeholder}></Route>
-            <Route path="/" component={Home}></Route>
+            <Route path="/food-journal" component={FoodJournal}></Route>
+            <Route path="/" component={PersonalSite}></Route>
           </Switch>
         </Layout>
       </div>

@@ -8,6 +8,7 @@ import YelpSearch from './YelpSearch/YelpSearch';
 import YelpBusinessGrid from './YelpBusinessGrid/YelpBusinessGrid';
 import Map from './FoodMap/FoodMap';
 import FallenSnowmanBanner from '../../component/BannerTemplates/FallenSnowmanBanner/FallenSnowmanBanner';
+import TopRestaurants from './TopRestaurants/TopRestaurants';
 
 class Food extends Component {
     render () {
@@ -16,7 +17,7 @@ class Food extends Component {
                 <div className={sharedClasses.Banner}>
                     <FallenSnowmanBanner 
                         icons={foodBannerImages}
-                        header="The Food Part of the Website." />
+                        header="The Food Journal." />
                 </div>
                 <div className={classes.HitListSection}>
                     <div className={classes.HitListTitle}>
@@ -26,6 +27,7 @@ class Food extends Component {
                     <YelpBusinessGrid />
                 </div>
                 <Map />
+                <TopRestaurants />
             </Aux>
         );
     }
