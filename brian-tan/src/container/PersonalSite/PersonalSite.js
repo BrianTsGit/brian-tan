@@ -5,11 +5,9 @@ import classes from './PersonalSite.scss'
 import initials from '../../assets/images/initials_white.png';
 
 class PersonalSite extends Component {
-
     state = {
 
     }
-
 
     render () {
         return(
