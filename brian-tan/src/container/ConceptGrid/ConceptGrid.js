@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import classes from './ConceptGrid.scss';
 import * as actions from '../../store/actions/index';
 import brianTanLogo from '../../assets/images/brian_tan_site_logo.png';
-import gqCloneLogo from '../../assets/images/gq_clone_logo.png';
+import gqHomeLogo from '../../assets/images/gq_home_logo.png';
 import foodJournalLogo from '../../assets/images/food_journal_logo.png';
 import ConceptGridImage from '../../component/ConceptGrid/ConceptGridImage/ConceptGridImage';
 import ConceptGridCell from '../../component/ConceptGrid/ConceptGridCell/ConceptGridCell';
@@ -26,9 +26,9 @@ class ConceptGrid extends Component {
             },
             {
                 _id: 'concept3',
-                logo: gqCloneLogo,
+                logo: gqHomeLogo,
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                route: '/ga-magazine'
+                route: '/gq-magazine'
             }
         ],
         conceptGridImage: null
