@@ -25,19 +25,19 @@ class Priceline extends Component {
         },
         hireReasons: [
             {
-                title: 'EXPERIENCED BACKEND DEVELOPER',
-                description: 'Involved in numerous projects for database management and REST API creation',
-                iconClassName: 'fas fa-database'
-            },
-            {
-                title: 'FRONTEND WIZARD',
-                description: 'Skilled in front-end technologies such as Angular, React, and responsive designs',
+                title: 'EXPERIENCED WEB DEVELOPER',
+                description: 'Skilled with Javascript and ES6 features as well as AngularJS and React/Redux frameworks. Has many previous experiences building RESTful APIs in Node and .NET frameworks.',
                 iconClassName: 'fas fa-desktop'
             },
             {
-                title: 'STUDENT FOR LIFE',
-                description: 'Constantly broadening skillset and absorbing best practices',
-                iconClassName: 'fas fa-glasses'
+                title: 'GREAT EYE FOR DETAIL',
+                description: 'Builds responsive designs that adapt to all device sizes with close attention to mockups.',
+                iconClassName: 'fas fa-eye'
+            },
+            {
+                title: 'TEAM PLAYER',
+                description: 'Always ready to talk through a solution with others and does not hesitate to reach out for help.',
+                iconClassName: 'fas fa-handshake'
             },
         ]
     }
