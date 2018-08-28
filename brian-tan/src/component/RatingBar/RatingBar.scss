@@ -1,0 +1,43 @@
+.RatingBar {
+    height: 40px;
+    margin-top: 20px;
+
+    .Description {
+        height: 30px;
+        display: flex;
+
+        .Criteria, .Rating {
+            width: 50%;
+            height: 100%;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+    .Bar {
+        width: 100%;
+        height: 4px;
+        background-color: lightGrey;
+
+        .BarFill {
+            height: 100%;
+            background-color: #73ABFF
+        }
+    }
+
+    &.Large {
+        height: 50px;
+
+        .Description {
+            height: 35px;
+    
+            .Criteria, .Rating {
+                font-size: 14px;
+            }
+        }
+
+        .Bar {
+            height: 8px;
+        }
+    }
+}

@@ -8,6 +8,7 @@ import FoodJournal from './container/Food/Food';
 import About from './container/About/About';
 import FashionMagazine from './container/FashionMagazine/FashionMagazine';
 import PersonalSite from './container/PersonalSite/PersonalSite';
+import Priceline from './container/CoverLetter/Priceline/Priceline';
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/about" component={About}></Route>
             <Route path="/gq-magazine" component={FashionMagazine}></Route>
             <Route path="/food-journal" component={FoodJournal}></Route>
+            <Route path="/price-line-cover-letter" component={Priceline}></Route>
             <Route path="/" component={PersonalSite}></Route>
           </Switch>
         </Layout>
