@@ -1,36 +1,49 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import classes from './Priceline.scss'
 import Aux from '../../../hoc/Aux/Aux';
-import IconList from '../../../component/IconList/IconList';
-import RatingBar from '../../../component/RatingBar/RatingBar';
+import SearchBar from '../../../component/Priceline/SearchBar/SearchBar';
+import DevDetails from '../../../component/Priceline/DevDetails/DevDetails';
+import MapContainer from '../../MapContainer/MapContainer';
 
 class Priceline extends Component {
 
     state = {
         date: 'DATE HERE',
+        location: {
+            coordinates: {
+                longitude: -73.7801,
+                latitude: 40.7335
+            },
+            center: {
+                lng: -73.7781,
+                lat: 40.6413
+            }
+        },
         hireReasons: [
             {
-                title: 'AWESOME TEAM MEMBER',
-                description: 'Team mates give him an exceptional rating of 9.6 / 10',
-                iconClassName: 'fas fa-trophy'
+                title: 'EXPERIENCED BACKEND DEVELOPER',
+                description: 'Involved in numerous projects for database management and REST API creation',
+                iconClassName: 'fas fa-database'
             },
             {
-                title: 'ASKER OF QUESTIONS',
-                description: 'Team mates give him an exceptional rating of 9.6 / 10',
-                iconClassName: 'fas fa-trophy'
+                title: 'FRONTEND WIZARD',
+                description: 'Skilled in front-end technologies such as Angular, React, and responsive designs',
+                iconClassName: 'fas fa-desktop'
             },
             {
-                title: 'ETERNAL STUDENT',
-                description: 'He is constantly learning and absorbing best practices.'
+                title: 'STUDENT FOR LIFE',
+                description: 'Constantly broadening skillset and absorbing best practices',
+                iconClassName: 'fas fa-glasses'
             },
         ]
     }
 
     componentDidMount () {
         let currentDate = new Date();
-        currentDate = currentDate.toString();
+        currentDate = currentDate.toString().substring(0, 10);
 
         this.setState({
             date: currentDate
@@ -40,17 +53,7 @@ class Priceline extends Component {
     render () {
         return(
             <div className={classes.AppBody}>
-                <div className={classes.SmallSearchBar}>
-                        <div className={classes.SearchContent}>
-                            <div className={classes.Icon}>
-                                <i className="fas fa-search" />
-                            </div>
-                            <div className={classes.SearchMaterial}>
-                                <h6>Brian Tan</h6>
-                                <span>{this.state.date}</span>
-                            </div>
-                        </div>
-                </div>
+                <SearchBar term="Brian Tan" filter={this.state.date} />
                 <div className={classes.PricelineContainer}> 
                     <div className={classes.GeneralInformation}>
                         <div className={classes.Details}>
@@ -63,7 +66,7 @@ class Priceline extends Component {
                                     <i className="fas fa-star" />
                                 </div>
                                 <div className={classes.HireStatus}>
-                                    <span>TOP VIEWED DEVELOPER</span>
+                                    <i className="fas fa-level-up-alt" /><span>TOP VIEWED DEVELOPER</span>
                                 </div>
                             </div>
                             <h4>Fresh Meadows, Queens NY</h4>
@@ -77,7 +80,9 @@ class Priceline extends Component {
                             </div>
                         </div>
                         <div className={classes.CallToAction}>
-                            <button>CONTACT</button>
+                            <NavLink to="/">
+                                <button className={classes.ActionButton}><span>Contact</span></button>
+                            </NavLink>
                         </div>
                     </div>
                     <div className={classes.Divider}></div>
@@ -86,49 +91,32 @@ class Priceline extends Component {
                             <img src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="main" />
                         </div>
                         <div className={classes.AccessoryImages}>
-                            <div className={classes.LocationBox}></div>
-                            <div className={classes.MapBox}></div>
-                        </div>
-                    </div>
-                    <div className={classes.DevDetails}>
-                        <div className={[classes.DevDetailsSection, classes.Reasons].join(' ')}>
-                            <h3>3 Reasons to Hire</h3>
-                            <IconList listItems={this.state.hireReasons} />
-                        </div>
-                        <div className={[classes.DevDetailsSection, classes.About].join(' ')}>
-                            <h3>About this Developer</h3>
-                            <p>
-                                Stop at Daiwa Roynet Hotel Ginza to discover the wonders of Tokyo. 
-                                Both business travelers and tourists can enjoy the hotel's facilities and services. 
-                                All the necessary facilities, including free Wi-Fi in all rooms, convenience store, laundromat, 24-hour front desk, facilities for disabled guests, are at hand. 
-                                Designed for comfort, selected guestrooms offer television LCD/plasma screen, air purifier, complimentary instant coffee, complimentary tea, humidifier to ensure a restful night. 
-                                The hotel offers various recreational opportunities. 
-                                Daiwa Roynet Hotel Ginza combines warm hospitality with a lovely ambiance to make your stay in Tokyo unforgettable.
-                            </p>
-                        </div>
-                        <div className={[classes.DevDetailsSection, classes.Rating].join(' ')}>
-                            <div className={classes.ScoreRating}>
-                                <div className={classes.ScoreBubble}>9.5</div>
-                                <div className={classes.Text}><span>Employer Rating</span></div>
+                            <div className={classes.LocationBox}>
+                                <span>Your hire is in: <strong>Queens NY</strong></span>
                             </div>
-                            <RatingBar criteria="Overall Score" rating={9.5} large />
-                            <div className={classes.RatingNote}>
-                                <span>Score breakdown (based on 9 reviews)</span>
-                            </div>
-                            <RatingBar criteria="PROFESSIONALISM" rating={9.7}  />
-                            <RatingBar criteria="EXPERTISE" rating={9.2}  />
-                            <RatingBar criteria="COOPERATION" rating={9.7}  />
-                            <div className={classes.RatingNote}>
-                                <span>All ratings are most likely verified</span>
+                            <div className={classes.MapBox}>
+                                <MapContainer locations={[this.state.location]} initialCenter={this.state.location.center}/>
                             </div>
                         </div>
                     </div>
+                    <div className={classes.LongDivider}><div className={classes.Fill}></div></div>
+                    <DevDetails hireReasons={this.state.hireReasons} />
                     <div className={classes.Divider}></div>
+                    <div className={classes.LongDivider}><div className={classes.Fill}></div></div>
                     <div className={classes.ScoreReviews}>
                         <div className={classes.ScoreBubble}>9.5</div>
                         <div className={classes.Description}>Team Member Score &amp; Reviews</div>
                     </div>
                     <div className={classes.Divider}></div>
+                    <div className={classes.Note}>
+                        <span> 
+                            * Page is mobile responsive. Code can be found&nbsp;
+                            <a href="https://github.com/BrianTsGit/brian-tan/tree/master/brian-tan" target="_blank">
+                                here
+                            </a>
+                            .
+                        </span>
+                    </div>
                 </div>
             </div>
         );
