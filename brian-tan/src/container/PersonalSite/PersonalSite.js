@@ -31,6 +31,11 @@ class PersonalSite extends Component {
                         Contact me at brian.lin.tan@gmail.com
                     </h4>
                 </div>
+                {/* <div className={classes.SkillTree}>
+                    <div className={classes.SkillTreeBackdrop}>
+                        <img src="https://i.imgur.com/HRTML.jpg" alt="skilltreebackdrop" />
+                    </div>
+                </div> */}
             </div>
         );
     };

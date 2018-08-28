@@ -1,0 +1,34 @@
+.IconListItem {
+    width: 100%;
+    display: flex;
+
+    .Icon {
+        width: 35px;
+        height: 100%;
+        padding: 0 15px 10px 0;
+        box-sizing: border-box;
+        color: #0a0;
+
+        i {
+            font-size: 16px;
+        }
+    }
+
+    .ListText {
+        width: calc(100% - 40px);
+        padding-bottom: 20px;
+
+        h5 {
+            margin: 0 auto;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0a0;
+        }
+
+        span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #687B8E;
+        }
+    }
+}
