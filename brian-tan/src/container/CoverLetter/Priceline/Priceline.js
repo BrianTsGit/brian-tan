@@ -90,7 +90,7 @@ class Priceline extends Component {
                     <div className={classes.Divider}></div>
                     <div className={classes.DevImages}>
                         <div className={classes.MainImage}>
-                            <img src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="main" />
+                            <img src="https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="main" />
                         </div>
                         <div className={classes.AccessoryImages}>
                             <div className={classes.LocationBox}>
