@@ -1,0 +1,54 @@
+.DetailedSearchBar {
+    display: none;
+    width: 100%;
+    height: 80px;
+    padding: 15px 40px;
+    font-family: 'Montserrat';
+    background-color: #f6f8fa;
+    box-sizing: border-box;
+
+    .SearchArticle {
+        display: flex;
+        width: 200px;
+        height: 100%;
+        padding: 12px 15px;
+        margin-right: 10px;
+        background-color: #fff;
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+        .Icon {
+            width: 30px;
+            font-size: 14px;
+            color: #007aff;
+        }
+
+        .SearchParam {
+            font-size: 16px;
+        }
+    }
+
+    .SearchButton {
+        width: 275px;
+        height: 100%;
+        color: #007aff;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 12px 0;
+        border: 2px solid #007aff;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+        text-align: center;
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}

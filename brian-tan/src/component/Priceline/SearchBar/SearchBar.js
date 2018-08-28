@@ -7,15 +7,15 @@ const searchBar = (props) => {
 
     return (
         <div className={classes.SearchBar}>
-                <div className={classes.SearchContent}>
-                    <div className={classes.Icon}>
-                        <i className="fas fa-search" />
-                    </div>
-                    <div className={classes.SearchMaterial}>
-                        <h6>{props.term}</h6>
-                        <span>{props.filter}</span>
-                    </div>
+            <div className={classes.SearchContent}>
+                <div className={classes.Icon}>
+                    <i className="fas fa-search" />
                 </div>
+                <div className={classes.SearchMaterial}>
+                    <h6>{props.term}</h6>
+                    <span>{props.filter}</span>
+                </div>
+            </div>
         </div>
     );
 }

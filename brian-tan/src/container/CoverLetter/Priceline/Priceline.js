@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import classes from './Priceline.scss'
 import Aux from '../../../hoc/Aux/Aux';
 import SearchBar from '../../../component/Priceline/SearchBar/SearchBar';
+import DetailedSearchBar from '../../../component/Priceline/DetailedSearchBar/DetailedSearchBar';
 import DevDetails from '../../../component/Priceline/DevDetails/DevDetails';
 import MapContainer from '../../MapContainer/MapContainer';
 
@@ -54,6 +55,7 @@ class Priceline extends Component {
         return(
             <div className={classes.AppBody}>
                 <SearchBar term="Brian Tan" filter={this.state.date} />
+                <DetailedSearchBar term="Brian Tan" filter={this.state.date} />
                 <div className={classes.PricelineContainer}> 
                     <div className={classes.GeneralInformation}>
                         <div className={classes.Details}>
