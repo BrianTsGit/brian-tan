@@ -129,6 +129,7 @@
         width: 100%;
         display: none;
         padding: 15px;
+        box-sizing: border-box;
 
         .MainImage {
             width: 100%;
@@ -216,6 +217,7 @@
         width: 100%;
         padding: 0 15px;
         margin: 40px 0;
+        box-sizing: border-box;
 
         .Fill {
             background-color: lightgray;
