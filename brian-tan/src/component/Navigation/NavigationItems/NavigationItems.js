@@ -13,7 +13,7 @@ const navigationItems = (props) => {
     return (
         <ul className={navigationItemsClasses}>
             <li className={classes.NavigationControl}>
-                <span onClick={props.showConcepts}>Concepts</span>
+                <span onClick={props.showConcepts}>PROJECTS</span>
             </li>
             {/* <NavigationItem sectionName="About" link="/about" clicked={props.clicked} /> */}
         </ul>

@@ -20,15 +20,15 @@ class ConceptGrid extends Component {
             },
             {
                 _id: 'concept2',
-                logo: foodJournalLogo,
-                image: 'https://images.pexels.com/photos/845847/pexels-photo-845847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                route: '/food-journal'
-            },
-            {
-                _id: 'concept3',
                 logo: gqHomeLogo,
                 image: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 route: '/gq-magazine'
+            },
+            {
+                _id: 'concept3',
+                logo: foodJournalLogo,
+                image: 'https://images.pexels.com/photos/845847/pexels-photo-845847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                route: '/food-journal'
             }
         ],
         conceptGridImage: null
