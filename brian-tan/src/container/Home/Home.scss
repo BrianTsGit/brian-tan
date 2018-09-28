@@ -122,10 +122,9 @@ ul.ProjectList {
         display: inline-block;
         text-align: center;
 
-        span {
-            &:hover {
-                cursor: pointer;
-            }
+        a {
+            color: white;
+            text-decoration: none;
         }
     }
 

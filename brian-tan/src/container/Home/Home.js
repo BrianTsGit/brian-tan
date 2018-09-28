@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import classes from './Home.scss'
 import SocialMediaContacts from '../../component/SocialMediaContacts/SocialMediaContacts';
-import digaaiVideo from '../../assets/videos/digaaiVideo.mp4';
-import foodJournalVideo from '../../assets/videos/foodJournalVideo.mp4';
-import inqueensVideo from '../../assets/videos/inqueensVideo.mp4';
+// import digaaiVideo from '../../assets/videos/digaaiVideo.mp4';
+// import foodJournalVideo from '../../assets/videos/foodJournalVideo.mp4';
+// import inqueensVideo from '../../assets/videos/inqueensVideo.mp4';
 
 class Home extends Component {
     constructor (props) {
@@ -21,9 +21,14 @@ class Home extends Component {
             this.foodJournalVidRef = element;
         };
 
-        this.inqueensVidRef = null;
-        this.setInqueensVidRef = element => {
-            this.inqueensVidRef = element;
+        this.gqMagVidRef = null;
+        this.setGqMagVidRef = element => {
+            this.gqMagVidRef = element;
+        };
+
+        this.priceLineVidRef = null;
+        this.setPriceLineVidRef = element => {
+            this.priceLineVidRef = element;
         };
 
         this.activateVideo = this.activateVideo.bind(this);
@@ -38,7 +43,10 @@ class Home extends Component {
             foodJournalVid: {
                 isActive: false
             },
-            inqueensVid: {
+            gqMagVid: {
+                isActive: false
+            },
+            priceLineVid: {
                 isActive: false
             }
         }
@@ -70,7 +78,7 @@ class Home extends Component {
         let digaaiVideoElement = (
             <div className={classes.ProjectVideo}>
                 <video className={this.state.videosConfig.digaaiVid.isActive ? classes.ActiveVideo : null} ref={this.setDigaaiVidRef} loop muted>
-                    <source src={digaaiVideo} type="video/mp4" />
+                    <source src="https://s3.amazonaws.com/briantan/digaaiVideo.mp4" type="video/mp4" />
                 </video>
             </div>
         );
@@ -78,15 +86,23 @@ class Home extends Component {
         let foodJournalVideoElement = (
             <div className={classes.ProjectVideo}>
                 <video className={this.state.videosConfig.foodJournalVid.isActive ? classes.ActiveVideo : null} ref={this.setFoodJournalVidRef} loop muted>
-                    <source src={foodJournalVideo} type="video/mp4" />
+                    <source src="https://s3.amazonaws.com/briantan/foodJournalVideo.mp4" type="video/mp4" />
                 </video>
             </div>
         );
 
-        let inqueensVideoElement = (
+        let gqMagVideoElement = (
             <div className={classes.ProjectVideo}>
-                <video className={this.state.videosConfig.inqueensVid.isActive ? classes.ActiveVideo : null} ref={this.setInqueensVidRef} loop muted>
-                    <source src={inqueensVideo} type="video/mp4" />
+                <video className={this.state.videosConfig.gqMagVid.isActive ? classes.ActiveVideo : null} ref={this.setGqMagVidRef} loop muted>
+                    <source src="https://s3.amazonaws.com/briantan/gqVideo.mp4" type="video/mp4" />
+                </video>
+            </div>
+        );
+
+        let priceLineVideoElement = (
+            <div className={classes.ProjectVideo}>
+                <video className={this.state.videosConfig.priceLineVid.isActive ? classes.ActiveVideo : null} ref={this.setPriceLineVidRef} loop muted>
+                    <source src="https://s3.amazonaws.com/briantan/pricelineVideo.mp4" type="video/mp4" />
                 </video>
             </div>
         );
@@ -96,7 +112,8 @@ class Home extends Component {
                 <div className={classes.VideoLayer}>
                     {digaaiVideoElement}
                     {foodJournalVideoElement}
-                    {inqueensVideoElement}
+                    {gqMagVideoElement}
+                    {priceLineVideoElement}
                 </div>
                 <div className={classes.DetailLayer}>
                     <div className={classes.HomeHeader}>
@@ -108,22 +125,37 @@ class Home extends Component {
                         <h3>Projects</h3>
                         <ul className={classes.ProjectList}>
                             <li>
-                                <span onMouseEnter={() => this.activateVideo(this.digaaiVidRef, 'digaaiVid')}
+                                <a 
+                                    href="https://digaai.herokuapp.com/" 
+                                    target="_blank"
+                                    onMouseEnter={() => this.activateVideo(this.digaaiVidRef, 'digaaiVid')}
                                     onMouseLeave={() => this.deactivateVideo(this.digaaiVidRef, 'digaaiVid')}>
                                     digaai
-                                </span>
+                                </a>
                             </li>
                             <li>
-                                <span onMouseEnter={() => this.activateVideo(this.foodJournalVidRef, 'foodJournalVid')} 
+                                <NavLink 
+                                    to="/food-journal"
+                                    onMouseEnter={() => this.activateVideo(this.foodJournalVidRef, 'foodJournalVid')} 
                                     onMouseLeave={() => this.deactivateVideo(this.foodJournalVidRef, 'foodJournalVid')}>
                                     food journal
-                                </span>
+                                </NavLink>
                             </li>
                             <li>
-                                <span onMouseEnter={() => this.activateVideo(this.inqueensVidRef, 'inqueensVid')} 
-                                    onMouseLeave={() => this.deactivateVideo(this.inqueensVidRef, 'inqueensVid')}>
-                                    inqueens
-                                </span>
+                                <NavLink 
+                                    to="/gq-magazine"
+                                    onMouseEnter={() => this.activateVideo(this.gqMagVidRef, 'gqMagVid')} 
+                                    onMouseLeave={() => this.deactivateVideo(this.gqMagVidRef, 'gqMagVid')}>
+                                    GQ Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink 
+                                    to="/price-line-cover-letter"
+                                    onMouseEnter={() => this.activateVideo(this.priceLineVidRef, 'priceLineVid')} 
+                                    onMouseLeave={() => this.deactivateVideo(this.priceLineVidRef, 'priceLineVid')}>
+                                    Priceline CL
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
