@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import classes from './Home.scss'
+import SocialMediaContacts from '../../component/SocialMediaContacts/SocialMediaContacts';
 import digaaiVideo from '../../assets/videos/digaaiVideo.mp4';
 import foodJournalVideo from '../../assets/videos/foodJournalVideo.mp4';
+import inqueensVideo from '../../assets/videos/inqueensVideo.mp4';
 
 class Home extends Component {
     constructor (props) {
@@ -19,6 +21,11 @@ class Home extends Component {
             this.foodJournalVidRef = element;
         };
 
+        this.inqueensVidRef = null;
+        this.setInqueensVidRef = element => {
+            this.inqueensVidRef = element;
+        };
+
         this.activateVideo = this.activateVideo.bind(this);
         this.deactivateVideo = this.deactivateVideo.bind(this);
     }
@@ -29,6 +36,9 @@ class Home extends Component {
                 isActive: false
             },
             foodJournalVid: {
+                isActive: false
+            },
+            inqueensVid: {
                 isActive: false
             }
         }
@@ -73,16 +83,26 @@ class Home extends Component {
             </div>
         );
 
+        let inqueensVideoElement = (
+            <div className={classes.ProjectVideo}>
+                <video className={this.state.videosConfig.inqueensVid.isActive ? classes.ActiveVideo : null} ref={this.setInqueensVidRef} loop muted>
+                    <source src={inqueensVideo} type="video/mp4" />
+                </video>
+            </div>
+        );
+
         return (
             <div className={classes.Home}>
                 <div className={classes.VideoLayer}>
                     {digaaiVideoElement}
                     {foodJournalVideoElement}
+                    {inqueensVideoElement}
                 </div>
                 <div className={classes.DetailLayer}>
                     <div className={classes.HomeHeader}>
                         <h1>BRIAN TAN</h1>
                         <span>Software Developer</span>
+                        <SocialMediaContacts />
                     </div>
                     <div className={classes.ProjectContainer}>
                         <h3>Projects</h3>
@@ -99,7 +119,12 @@ class Home extends Component {
                                     food journal
                                 </span>
                             </li>
-                            <li><span>inqueens</span></li>
+                            <li>
+                                <span onMouseEnter={() => this.activateVideo(this.inqueensVidRef, 'inqueensVid')} 
+                                    onMouseLeave={() => this.deactivateVideo(this.inqueensVidRef, 'inqueensVid')}>
+                                    inqueens
+                                </span>
+                            </li>
                         </ul>
                     </div>
                 </div>
