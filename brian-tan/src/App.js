@@ -3,12 +3,13 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import classes from './App.scss';
-import Layout from './hoc/Layout/Layout';
+// import Layout from './hoc/Layout/Layout';
 import FoodJournal from './container/Food/Food';
 import About from './container/About/About';
 import FashionMagazine from './container/FashionMagazine/FashionMagazine';
 import PersonalSite from './container/PersonalSite/PersonalSite';
 import Priceline from './container/CoverLetter/Priceline/Priceline';
+import Home from './container/Home/Home';
 
 class App extends Component {
 
@@ -21,15 +22,13 @@ class App extends Component {
 
     return (
       <div className={innerBodyClasses}>
-        <Layout>
-          <Switch>
-            <Route path="/about" component={About}></Route>
-            <Route path="/gq-magazine" component={FashionMagazine}></Route>
-            <Route path="/food-journal" component={FoodJournal}></Route>
-            <Route path="/price-line-cover-letter" component={Priceline}></Route>
-            <Route path="/" component={PersonalSite}></Route>
-          </Switch>
-        </Layout>
+        <Switch>
+          <Route path="/about" component={About}></Route>
+          <Route path="/gq-magazine" component={FashionMagazine}></Route>
+          <Route path="/food-journal" component={FoodJournal}></Route>
+          <Route path="/price-line-cover-letter" component={Priceline}></Route>
+          <Route path="/" component={Home}></Route>
+        </Switch>
       </div>
     );
   }
