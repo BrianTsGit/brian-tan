@@ -117,11 +117,13 @@ class Home extends Component {
                 </div>
                 <div className={classes.DetailLayer}>
                     <div className={classes.HomeHeader}>
-                        <h1>BRIAN TAN</h1>
-                        <span>Software Developer</span>
-                        <SocialMediaContacts />
+                        <h1 className={classes.HeaderDrop}>BRIAN TAN</h1>
+                        <span className={classes.Appear}>Software Developer</span>
+                        <div className={classes.Appear}>
+                            <SocialMediaContacts />
+                        </div>
                     </div>
-                    <div className={classes.ProjectContainer}>
+                    <div className={classes.ProjectContainer + ' ' + classes.Appear}>
                         <h3>Projects</h3>
                         <ul className={classes.ProjectList}>
                             <li>
